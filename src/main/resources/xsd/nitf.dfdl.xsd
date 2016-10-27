@@ -298,7 +298,198 @@ The message root is 'NITF'.
         <xs:element name="ImageSegment" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../Header/NumberOfImageSegments }">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Header" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ImageSegmentLengths[dfdl:occursIndex()]/HeaderLength }" />
+              <xs:element name="Header" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ImageSegmentLengths[dfdl:occursIndex()]/HeaderLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FilePartType" type="nitf:BCS-A" dfdl:length="2" />
+                    <xs:element name="ImageIdentifier1" type="nitf:BCS-A" dfdl:length="10" />
+                    <xs:element name="ImageDateAndTime" type="nitf:dateTime" />
+                    <xs:element name="TargetIdentifier">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BasicEncyclopediaIdentifier" type="nitf:BCS-A" dfdl:length="10" nillable="true" />
+                          <xs:element name="FacilityOSuffix" type="nitf:BCS-A" dfdl:length="5" nillable="true" />
+                          <xs:element name="CountryCode" type="nitf:BCS-A" dfdl:length="2" nillable="true" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ImageIdentifier2" type="nitf:BCS-A" dfdl:length="80" nillable="true" />
+                    <xs:group ref="nitf:ClassificationInformation" />
+                    <xs:element name="Encryption" type="nitf:BCS-NP" dfdl:length="1" />
+                    <xs:element name="ImageSource" type="nitf:BCS-A" dfdl:length="42" nillable="true" />
+                    <xs:element name="NumberOfSignificantRowsInImage" type="nitf:BCS-NP" dfdl:length="8" />
+                    <xs:element name="NumberOfSignificantColumnsInImage" type="nitf:BCS-NP" dfdl:length="8" />
+                    <xs:element name="PixelValueType" type="nitf:BCS-A" dfdl:length="3" />
+                    <xs:element name="ImageRepresentation" type="nitf:BCS-A" dfdl:length="8" />
+                    <xs:element name="ImageCategory" type="nitf:BCS-A" dfdl:length="8" />
+                    <xs:element name="ActualBitsPerPixelPerBand" type="nitf:BCS-NP" dfdl:length="2" />
+                    <xs:element name="PixelJustification" type="nitf:BCS-A" dfdl:length="1" />
+                    <xs:element name="ImageCoordinateRepresentation" type="nitf:BCS-A" dfdl:length="1" nillable="true" />
+                    <xs:element name="ImageGeographicLocation" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="60">
+                      <xs:complexType>
+                        <xs:choice>
+                          <xs:element name="MilitaryGridReferenceSystem"> <!-- zzBJKeeeeennnnn -->
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:sequence>
+                                  <xs:annotation>
+                                    <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                      <dfdl:discriminator test="{ fn:not(fn:nilled(../../ImageCoordinateRepresentation)) and (../../ImageCoordinateRepresentation eq 'U') }" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:sequence>
+                                <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Lattitude" type="nitf:BCS-A" dfdl:length="15" />
+                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="15" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="NorthernHemisphere"> <!-- zzeeeeeennnnnnn -->
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:sequence>
+                                  <xs:annotation>
+                                    <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                      <dfdl:discriminator test="{ fn:not(fn:nilled(../../ImageCoordinateRepresentation)) and (../../ImageCoordinateRepresentation eq 'N') }" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:sequence>
+                                <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Lattitude" type="nitf:BCS-A" dfdl:length="15" />
+                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="15" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SouthernHemisphere"> <!-- zzeeeeeennnnnnn -->
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:sequence>
+                                  <xs:annotation>
+                                    <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                      <dfdl:discriminator test="{ fn:not(fn:nilled(../../ImageCoordinateRepresentation)) and (../../ImageCoordinateRepresentation eq 'S') }" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:sequence>
+                                <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Lattitude" type="nitf:BCS-A" dfdl:length="15" />
+                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="15" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Geographic"> <!-- ddmmssXddmmssY -->
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:sequence>
+                                  <xs:annotation>
+                                    <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                      <dfdl:discriminator test="{ fn:not(fn:nilled(../../ImageCoordinateRepresentation)) and (../../ImageCoordinateRepresentation eq 'G') }" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:sequence>
+                                <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Lattitude" type="nitf:BCS-A" dfdl:length="7" />
+                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="8" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DecimalDegrees"> <!-- +-dd.ddd+-ddd.ddd -->
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:sequence>
+                                  <xs:annotation>
+                                    <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                      <dfdl:discriminator test="{ fn:not(fn:nilled(../../ImageCoordinateRepresentation)) and (../../ImageCoordinateRepresentation eq 'D') }" />
+                                    </xs:appinfo>
+                                  </xs:annotation>
+                                </xs:sequence>
+                                <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Lattitude" type="nitf:BCS-A" dfdl:length="7" />
+                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="8" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NumberOfImageComments" type="nitf:BCS-NP" dfdl:length="1" />
+                    <xs:element name="ImageComment" minOccurs="0" maxOccurs="9" type="nitf:ECS-A" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfImageComments }" dfdl:length="80" />
+                    <xs:element name="ImageCompression" type="nitf:BCS-A" dfdl:length="2" />
+                    <xs:element name="CompressionRateCode" type="nitf:BCS-A" minOccurs="0" dfdl:length="4" dfdl:occursCountKind="expression"
+                         dfdl:occursCount="{
+                           if ((../ImageCompression eq 'C1') or (../ImageCompression eq 'C3') or (../ImageCompression eq 'C4') or
+                               (../ImageCompression eq 'C5') or (../ImageCompression eq 'C8') or (../ImageCompression eq 'M1') or
+                               (../ImageCompression eq 'M3') or (../ImageCompression eq 'M4') or (../ImageCompression eq 'M5') or
+                               (../ImageCompression eq 'M8') or (../ImageCompression eq 'I1'))
+                           then 1
+                           else 0
+                         }" />
+                    <xs:element name="NumberOfBands" type="nitf:BCS-NP" dfdl:length="1" />
+                    <xs:element name="NumberOfMultispectralBands" minOccurs="0" type="nitf:BCS-NP" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfBands eq 0) then 1 else 0 }" dfdl:length="5" />
+                    <xs:element name="Band" minOccurs="1" maxOccurs="99999" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../NumberOfMultispectralBands)) then ../NumberOfMultispectralBands[1] else ../NumberOfBands }">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Representation" type="nitf:BCS-A" dfdl:length="2" nillable="true" />
+                          <xs:element name="Subcategory" type="nitf:BCS-A" dfdl:length="6" nillable="true"/>
+                          <xs:element name="ImageFilterCondition" type="nitf:BCS-A" dfdl:length="1" />
+                          <xs:element name="StandardImageFilterCode" type="nitf:BCS-A" dfdl:length="3" nillable="true" />
+                          <xs:element name="NumberOfLUTS" type="nitf:BCS-NP" dfdl:length="1" />
+                          <xs:element name="NumberOfLUTEntries" minOccurs="0" type="nitf:BCS-NP" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfLUTS eq 0) then 0 else 1 }" dfdl:length="5" />
+                          <xs:element name="LUT" type="xs:hexBinary" minOccurs="0" maxOccurs="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfLUTS }" dfdl:lengthKind="explicit" dfdl:length="{ ../NumberOfLUTEntries[1] }" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ImageSyncCode" type="nitf:BCS-NP" dfdl:length="1" />
+                    <xs:element name="ImageMode" type="nitf:BCS-A" dfdl:length="1" />
+                    <xs:element name="NumberOfBlocksPerRow" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="NumberOfBlocksPerColumn" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="NumberOfPixelsPerBlockHorizontal" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="NumberOfPixelsPerBlockVertical" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="NumberOfBitsPerPixelPerBand" type="nitf:BCS-NP" dfdl:length="2" />
+                    <xs:element name="ImageDisplayLevel" type="nitf:BCS-NP" dfdl:length="3" />
+                    <xs:element name="AttachmentLevel" type="nitf:BCS-NP" dfdl:length="3" />
+                    <xs:element name="ImageLocation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Row" type="nitf:BCS-N" dfdl:length="5" />
+                          <xs:element name="Column" type="nitf:BCS-N" dfdl:length="5" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ImageMagnification" type="nitf:BCS-A" dfdl:length="4" />
+                    <xs:element name="UserDefinedImageDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+                    <xs:element name="UserDefinedOverflow" type="nitf:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedImageDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="UserDefinedImageData" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../UserDefinedImageDataLength - 3 }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedImageDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="ImageExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+                    <xs:element name="ImageExtendedSubheaderOverflow" type="nitf:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ImageExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="ImageExtendedSubheaderData" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../ImageExtendedSubheaderDataLength - 3 }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ImageExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
               <xs:element name="Data" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength }" />
             </xs:sequence>
           </xs:complexType>
