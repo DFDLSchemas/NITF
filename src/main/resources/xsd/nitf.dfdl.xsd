@@ -550,7 +550,23 @@ The message root is 'NITF'.
         <xs:element name="TextSegment" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../Header/NumberOfTextSegments }">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Header" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/TextSegmentLengths[dfdl:occursIndex()]/HeaderLength }" />
+              <xs:element name="Header" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/TextSegmentLengths[dfdl:occursIndex()]/HeaderLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FilePartType" type="nitf:BCS-A" dfdl:length="2" />
+                    <xs:element name="TextIdentifier" type="nitf:BCS-A" dfdl:length="7" />
+                    <xs:element name="TextAttachmentLevel" type="nitf:BCS-NP" dfdl:length="3" />
+                    <xs:element name="TextDateAndTime" type="nitf:dateTime" />
+                    <xs:element name="TextTitle" type="nitf:ECS-A" dfdl:length="80" />
+                    <xs:group ref="nitf:ClassificationInformation" />
+                    <xs:element name="Encryption" type="nitf:BCS-NP" dfdl:length="1" />
+                    <xs:element name="TextFormat" type="nitf:BCS-A" dfdl:length="3" />
+                    <xs:element name="TextExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+                    <xs:element name="TextExtendedSubheaderOverflow" minOccurs="0" type="nitf:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="TextExtendedSubheaderData" minOccurs="0" type="xs:hexBinary" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../TextExtendedSubheaderDataLength - 3 }" /> <!-- TODO: user defined type -->
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
               <xs:element name="Data" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/TextSegmentLengths[dfdl:occursIndex()]/DataLength }" />
             </xs:sequence>
           </xs:complexType>
