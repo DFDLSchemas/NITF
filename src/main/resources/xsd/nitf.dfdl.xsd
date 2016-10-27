@@ -498,7 +498,50 @@ The message root is 'NITF'.
         <xs:element name="GraphicSegment" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../Header/NumberOfGraphicSegments }">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Header" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/GraphicSegmentLengths[dfdl:occursIndex()]/HeaderLength }" />
+              <xs:element name="Header" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/GraphicSegmentLengths[dfdl:occursIndex()]/HeaderLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FilePartType" type="nitf:BCS-A" dfdl:length="2" />
+                    <xs:element name="GraphicIdentifier" type="nitf:BCS-A" dfdl:length="10" />
+                    <xs:element name="GraphicName" type="nitf:ECS-A" dfdl:length="20" />
+                    <xs:group ref="nitf:ClassificationInformation" />
+                    <xs:element name="Encryption" type="nitf:BCS-NP" dfdl:length="1" />
+                    <xs:element name="GraphicType" type="nitf:BCS-A" dfdl:length="1" />
+                    <xs:element name="ReservedForFutureUse1" type="nitf:BCS-NPbig" dfdl:length="13" />
+                    <xs:element name="GraphicDisplayLevel" type="nitf:BCS-NP" dfdl:length="3" />
+                    <xs:element name="GraphicAttachmentLevel" type="nitf:BCS-NP" dfdl:length="3" />
+                    <xs:element name="GraphicLocation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Row" type="nitf:BCS-N" dfdl:length="5" />
+                          <xs:element name="Column" type="nitf:BCS-N" dfdl:length="5" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FirstGraphicBoundLocation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Row" type="nitf:BCS-N" dfdl:length="5" />
+                          <xs:element name="Column" type="nitf:BCS-N" dfdl:length="5" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="GraphicColor" type="nitf:BCS-A" dfdl:length="1" />
+                    <xs:element name="SecondGraphicBoundLocation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Row" type="nitf:BCS-N" dfdl:length="5" />
+                          <xs:element name="Column" type="nitf:BCS-N" dfdl:length="5" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ReservedForFutureUse2" type="nitf:BCS-NP" dfdl:length="2" />
+                    <xs:element name="GraphicExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+                    <xs:element name="GraphicExtendedSubheaderOverflow" minOccurs="0" type="nitf:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="GraphicExtendedSubheaderData" minOccurs="0" type="xs:hexBinary" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../GraphicExtendedSubheaderDataLength - 3 }" /> <!-- TODO: user defined type -->
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
               <xs:element name="Data" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/GraphicSegmentLengths[dfdl:occursIndex()]/DataLength }" />
             </xs:sequence>
           </xs:complexType>
