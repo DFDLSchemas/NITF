@@ -603,8 +603,25 @@ The message root is 'NITF'.
         <xs:element name="ReservedExtensionSegment" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../Header/NumberOfReservedExtensionSegments }">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Header" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ReservedExtensionSegmentLengths[dfdl:occursIndex()]/HeaderLength }" />
-              <xs:element name="Data" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ReservedExtensionSegmentLengths[dfdl:occursIndex()]/DataLength }" />
+              <xs:element name="Header" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ReservedExtensionSegmentLengths[dfdl:occursIndex()]/HeaderLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FilePartType" type="nitf:BCS-A" dfdl:length="2" />
+                    <xs:element name="UniqueRESTypeIdentifier" type="nitf:BCS-A" dfdl:length="25" />
+                    <xs:element name="VersionOfTheDataDefinition" type="nitf:BCS-NP" dfdl:length="2" />
+                    <xs:group ref="nitf:ClassificationInformation" />
+                    <xs:element name="RESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="RESUserDefinedSubheaderFields" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../RESUserDefinedSubheaderLength }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../RESUserDefinedSubheaderLength eq 0) then 0 else 1 }" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Data" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ReservedExtensionSegmentLengths[dfdl:occursIndex()]/DataLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RESUserDefinedData" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../../Header/ReservedExtensionSegmentLengths[dfdl:occursIndex()]/DataLength }" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
