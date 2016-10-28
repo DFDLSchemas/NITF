@@ -575,8 +575,27 @@ The message root is 'NITF'.
         <xs:element name="DataExtensionSegment" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../Header/NumberOfDataExtensionSegments }">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Header" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/DataExtensionSegmentLengths[dfdl:occursIndex()]/HeaderLength }" />
-              <xs:element name="Data" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/DataExtensionSegmentLengths[dfdl:occursIndex()]/DataLength }" />
+              <xs:element name="Header" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/DataExtensionSegmentLengths[dfdl:occursIndex()]/HeaderLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FilePartType" type="nitf:BCS-A" dfdl:length="2" />
+                    <xs:element name="UniqueDESTypeIdentifier" type="nitf:BCS-A" dfdl:length="25" />
+                    <xs:element name="VersionOfTheDataDefinition" type="nitf:BCS-NP" dfdl:length="2" />
+                    <xs:group ref="nitf:ClassificationInformation" />
+                    <xs:element name="DESOverflowedHeaderType" type="nitf:BCS-A" minOccurs="0" dfdl:length="6" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') then 1 else 0 }" />
+                    <xs:element name="DESDataItemOverflowed" type="nitf:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../DESOverflowedHeaderType)) then 1 else 0 }" />
+                    <xs:element name="DESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="DESUserDefinedSubheaderFields" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../DESUserDefinedSubheaderLength }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../DESUserDefinedSubheaderLength eq 0) then 0 else 1 }" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Data" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/DataExtensionSegmentLengths[dfdl:occursIndex()]/DataLength }">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DESUserDefinedData" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../../Header/DataExtensionSegmentLengths[dfdl:occursIndex()]/DataLength }" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
