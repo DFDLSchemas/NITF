@@ -79,7 +79,7 @@ The message root is 'NITF'.
         textNumberCheckPolicy="strict" textNumberJustification="right"
         textNumberPadCharacter="0" textNumberPattern="#0" textNumberRep="standard"
         textNumberRoundingIncrement="0.0" textNumberRoundingMode="roundUp"
-        textNumberRounding="pattern" textOutputMinLength="0" textPadKind="none"
+        textNumberRounding="pattern" textOutputMinLength="0" textPadKind="padChar"
         textStandardBase="10" textStandardDecimalSeparator="."
         textStandardGroupingSeparator="," textStandardInfinityRep="Inf"
         textStandardNaNRep="NaN" textStandardZeroRep="" textStandardExponentRep=""
@@ -171,26 +171,37 @@ The message root is 'NITF'.
               </xs:element>
               <xs:element name="OriginatorsName" type="nitf:ECS-A" dfdl:length="24" nillable="true" />
               <xs:element name="OriginatorsPhoneNumber" type="nitf:ECS-A" dfdl:length="18" nillable="true" />
-              <xs:element name="FileLength" type="nitf:BCS-NPbig" dfdl:length="12" >
+              <xs:element name="FileLength" type="nitf:BCS-NPbig" dfdl:length="12" > <!-- TODO: Output Value Calc -->
                 <xs:annotation>
                   <xs:appinfo source="http://www.ogf.org/dfdl/">
                     <dfdl:assert message="FileLength of 999999999999 (unknown file length when header was created) is not supported." test="{ . ne 999999999999 }" />
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
-              <xs:element name="FileHeaderLength" type="nitf:BCS-NP" dfdl:length="6" />
-              <xs:element name="NumberOfImageSegments" type="nitf:BCS-NP" dfdl:length="3" />
+              <xs:element name="FileHeaderLength" type="nitf:BCS-NP" dfdl:length="6" /> <!-- TODO: Output Value Calc -->
+              <xs:element name="NumberOfImageSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../ImageSegment) }" />
               <xs:element name="ImageSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfImageSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="6">
+                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="6" dfdl:outputValueCalc="{
+                      426 +
+                      (60 * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/ImageGeographicLocation)) +
+                      (80 * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/ImageComment)) +
+                      (4  * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/CompressionRateCode)) +
+                      (5  * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/NumberOfMultispectralBands)) +
+                      (3  * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/UserDefinedOverflow)) +
+                      (3  * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/ImageExtendedSubheaderOverflow)) +
+                      (if (fn:exists(../../../ImageSegment[dfdl:occursIndex()]/Header/Bands)) then dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Header/Bands, 'bytes') else 0) +
+                      (if (fn:exists(../../../ImageSegment[dfdl:occursIndex()]/Header/UserDefinedImageData)) then dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Header/UserDefinedImageData[1], 'bytes') else 0) +
+                      (if (fn:exists(../../../ImageSegment[dfdl:occursIndex()]/Header/ImageExtendedSubheaderData)) then dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Header/ImageExtendedSubheaderData[1], 'bytes') else 0)
+                      }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 999999 (unknown image header length when header was created) is not supported." test="{ . ne 999999 }" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitf:BCS-NPbig" dfdl:length="10">
+                    <xs:element name="DataLength" type="nitf:BCS-NPbig" dfdl:length="10" dfdl:outputValueCalc="{ dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999999999 (unknown image data length when header was created) is not supported." test="{ . ne 9999999999 }" />
@@ -200,18 +211,22 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="NumberOfGraphicSegments" type="nitf:BCS-NP" dfdl:length="3" />
+              <xs:element name="NumberOfGraphicSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../GraphicSegment) }" />
               <xs:element name="GraphicSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfGraphicSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4">
+                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                      258 +
+                      (3  * fn:count(../../../GraphicSegment[dfdl:occursIndex()]/Header/GraphicExtendedSubheaderOverflow)) +
+                      (if (fn:exists(../../../GraphicSegment[dfdl:occursIndex()]/Header/GraphicExtendedSubheaderData)) then dfdl:valueLength(../../../GraphicSegment[dfdl:occursIndex()]/Header/GraphicExtendedSubheaderData[1], 'bytes') else 0)
+                      }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999 (unknown graphic header length when header was created) is not supported." test="{ . ne 9999 }" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="6">
+                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="6" dfdl:outputValueCalc="{ dfdl:valueLength(../../../GraphicSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 999999 (unknown graphic data length when header was created) is not supported." test="{ . ne 999999 }" />
@@ -222,18 +237,22 @@ The message root is 'NITF'.
                 </xs:complexType>
               </xs:element>
               <xs:element name="ReservedForFutureUse" type="nitf:BCS-NP" dfdl:length="3" />
-              <xs:element name="NumberOfTextSegments" type="nitf:BCS-NP" dfdl:length="3" />
+              <xs:element name="NumberOfTextSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../TextSegment) }" />
               <xs:element name="TextSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfTextSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4">
+                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                      282 +
+                      (3  * fn:count(../../../TextSegment[dfdl:occursIndex()]/Header/TextExtendedSubheaderOverflow)) +
+                      (if (fn:exists(../../../TextSegment[dfdl:occursIndex()]/Header/TextExtendedSubheaderData)) then dfdl:valueLength(../../../TextSegment[dfdl:occursIndex()]/Header/TextExtendedSubheaderData[1], 'bytes') else 0)
+                      }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999 (unknown text header length when header was created) is not supported." test="{ . ne 9999 }" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="5">
+                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../../../TextSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 99999 (unknown text data length when header was created) is not supported." test="{ . ne 99999 }" />
@@ -243,18 +262,23 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="NumberOfDataExtensionSegments" type="nitf:BCS-NP" dfdl:length="3" />
+              <xs:element name="NumberOfDataExtensionSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../DataExtensionSegment) }" />
               <xs:element name="DataExtensionSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfDataExtensionSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4">
+                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                      200 +
+                      (3  * fn:count(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESOverflowedHeaderType)) +
+                      (if (../../../DataExtensionSegment[dfdl:occursIndex()]/Header/UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') then 6 else 0) +
+                      (if (fn:exists(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESUserDefinedSubheaderFields)) then dfdl:valueLength(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESUserDefinedSubheaderFields[1], 'bytes') else 0)
+                      }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999 (unknown data extension header length when header was created) is not supported." test="{ . ne 9999 }" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="9">
+                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="9" dfdl:outputValueCalc="{ dfdl:valueLength(../../../DataExtensionSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 999999999 (unknown data extension data length when header was created) is not supported." test="{ . ne 999999999 }" />
@@ -264,18 +288,21 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="NumberOfReservedExtensionSegments" type="nitf:BCS-NP" dfdl:length="3" />
+              <xs:element name="NumberOfReservedExtensionSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../ReservedExtensionSegment) }" />
               <xs:element name="ReservedExtensionSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfReservedExtensionSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4">
+                    <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                      200 +
+                      (if (fn:exists(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Header/RESUserDefinedSubheaderFields)) then dfdl:valueLength(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Header/RESUserDefinedSubheaderFields[1], 'bytes') else 0)
+                      }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999 (unknown reserved extension header length when header was created) is not supported." test="{ . ne 9999 }" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="7">
+                    <xs:element name="DataLength" type="nitf:BCS-NP" dfdl:length="7" dfdl:outputValueCalc="{ dfdl:valueLength(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999999 (unknown reserved extension data length when header was created) is not supported." test="{ . ne 9999999 }" />
@@ -285,7 +312,9 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="UserDefinedHeaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+              <xs:element name="UserDefinedHeaderDataLength" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                if (fn:exists(../UserDefinedHeaderData)) then dfdl:valueLength(../UserDefinedHeaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
+                }"/>
               <xs:element name="UserDefinedHeaderOverflow" minOccurs="0" type="nitf:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedHeaderDataLength eq 0) then 0 else 1 }" />
               <xs:element name="UserDefinedHeaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedHeaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../UserDefinedHeaderDataLength - 3 }">
                 <xs:complexType>
@@ -294,7 +323,9 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="ExtendedHeaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+              <xs:element name="ExtendedHeaderDataLength" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                if (fn:exists(../ExtendedHeaderData)) then dfdl:valueLength(../ExtendedHeaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
+                }"/>
               <xs:element name="ExtendedHeaderDataOverflow" minOccurs="0" type="nitf:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ExtendedHeaderDataLength eq 0) then 0 else 1 }" />
               <xs:element name="ExtendedHeaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ExtendedHeaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../ExtendedHeaderDataLength - 3 }">
                 <xs:complexType>
