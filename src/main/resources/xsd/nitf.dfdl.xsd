@@ -674,7 +674,9 @@ The message root is 'NITF'.
                     <xs:group ref="nitf:ClassificationInformation" />
                     <xs:element name="DESOverflowedHeaderType" type="nitf:BCS-A" minOccurs="0" dfdl:length="6" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') then 1 else 0 }" />
                     <xs:element name="DESDataItemOverflowed" type="nitf:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../DESOverflowedHeaderType)) then 1 else 0 }" />
-                    <xs:element name="DESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="DESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                      if (fn:exists(../DESUserDefinedSubheaderFields)) then dfdl:valueLength(../DESUserDefinedSubheaderFields[1], 'bytes') else 0
+                      }" />
                     <xs:element name="DESUserDefinedSubheaderFields" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../DESUserDefinedSubheaderLength }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../DESUserDefinedSubheaderLength eq 0) then 0 else 1 }" />
                   </xs:sequence>
                 </xs:complexType>
