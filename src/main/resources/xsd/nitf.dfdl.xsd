@@ -709,7 +709,9 @@ The message root is 'NITF'.
                     <xs:element name="UniqueRESTypeIdentifier" type="nitf:BCS-A" dfdl:length="25" />
                     <xs:element name="VersionOfTheDataDefinition" type="nitf:BCS-NP" dfdl:length="2" />
                     <xs:group ref="nitf:ClassificationInformation" />
-                    <xs:element name="RESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" />
+                    <xs:element name="RESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                      if (fn:exists(../RESUserDefinedSubheaderFields)) then dfdl:valueLength(../RESUserDefinedSubheaderFields[1], 'bytes') else 0
+                      }" />
                     <xs:element name="RESUserDefinedSubheaderFields" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../RESUserDefinedSubheaderLength }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../RESUserDefinedSubheaderLength eq 0) then 0 else 1 }" />
                   </xs:sequence>
                 </xs:complexType>
