@@ -643,7 +643,9 @@ The message root is 'NITF'.
                     <xs:group ref="nitf:ClassificationInformation" />
                     <xs:element name="Encryption" type="nitf:BCS-NP" dfdl:length="1" />
                     <xs:element name="TextFormat" type="nitf:BCS-A" dfdl:length="3" />
-                    <xs:element name="TextExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+                    <xs:element name="TextExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                      if (fn:exists(../TextExtendedSubheaderData)) then dfdl:valueLength(../TextExtendedSubheaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
+                      }" />
                     <xs:element name="TextExtendedSubheaderOverflow" minOccurs="0" type="nitf:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
                     <xs:element name="TextExtendedSubheaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../TextExtendedSubheaderDataLength - 3 }">
                       <xs:complexType>
