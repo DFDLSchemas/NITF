@@ -610,7 +610,9 @@ The message root is 'NITF'.
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="ReservedForFutureUse2" type="nitf:BCS-NP" dfdl:length="2" />
-                    <xs:element name="GraphicExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" />
+                    <xs:element name="GraphicExtendedSubheaderDataLength" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                      if (fn:exists(../GraphicExtendedSubheaderData)) then dfdl:valueLength(../GraphicExtendedSubheaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
+                      }" />
                     <xs:element name="GraphicExtendedSubheaderOverflow" minOccurs="0" type="nitf:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
                     <xs:element name="GraphicExtendedSubheaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../GraphicExtendedSubheaderDataLength - 3 }">
                       <xs:complexType>
