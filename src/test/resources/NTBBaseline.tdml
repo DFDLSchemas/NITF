@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2016 Tresys Technology, LLC. All rights reserved.
+
+Developed by: Tresys Technology, LLC
+              http://www.tresys.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal with
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+ 1. Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimers.
+
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimers in the
+    documentation and/or other materials provided with the distribution.
+
+ 3. Neither the names of Tresys Technology, nor the names of its contributors
+    may be used to endorse or promote products derived from this Software
+  without specific prior written permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE
+SOFTWARE.
+-->
+<tdml:testSuite suiteName="NTBBaseline" description="Unit tests"
+  xmlns:tns="http://example.com"
+  xmlns:tdml="http://www.ibm.com/xmlns/dfdl/testData" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:fn="http://www.w3.org/2005/xpath-functions" 
+  xsi:schemaLocation="http://www.ogf.org/dfdl/dfdl-1.0/ xsd/DFDL_part3_model.xsd 
+  http://www.w3.org/2001/XMLSchema xsd/XMLSchema_for_DFDL.xsd
+  http://www.ibm.com/xmlns/dfdl/testData xsd/tdml.xsd"
+  defaultRoundTrip="true">
+
+  <tdml:parserTestCase name="i_3001a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3001a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3001a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3004g" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3004g.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3004g.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3008a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3008a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3008a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3015a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3015a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3015a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3018a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3018a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3018a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3025b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3025b.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3025b.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3034c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034c.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034c.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3034f" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034f.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3041a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3041a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3041a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3051e" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3051e.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3051e.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3052a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3052a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3052a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3060a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3060a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3060a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3063f" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3063f.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3063f.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3068a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3068a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3068a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3076a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3076a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3076a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3090m" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3090m.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3090m.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3090u" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3090u.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3090u.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3113g" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3113g.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3113g.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3114e" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3114e.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3114e.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3117ax" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3117ax.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3117ax.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3128b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3128b.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3128b.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3201c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3201c.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3201c.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3228c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3228c.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3228c.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3228e" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3228e.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3228e.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3301a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3301a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3301a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3301h" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3301h.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3301h.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3301k" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3301k.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3301k.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3303a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3303a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3303a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3309a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3309a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3309a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3311a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3311a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3311a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3405a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3405a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3405a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3430a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3430a.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3430a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_3450c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3450c.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3450c.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="i_5012c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_5012c.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_5012c.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3004f" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3004f.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3004f.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3005b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3005b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3005b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3010a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3010a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3010a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3017a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3017a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3017a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3022b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3022b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3022b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3033b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3033b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3033b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3034d" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3034d.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3034d.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3038a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3038a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3038a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3050a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3050a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3050a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3051v" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3051v.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3051v.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3059a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3059a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3059a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3061a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3061a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3061a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3063h" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3063h.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3063h.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3073a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3073a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3073a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3090i" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3090i.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3090i.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3090q" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3090q.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3090q.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3101b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3101b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3101b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3114a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3114a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3114a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3114i" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3114i.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3114i.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3118b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3118b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3118b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3119b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3119b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3119b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3201a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3201a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3201a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3228b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3228b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3228b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3229b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3229b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3229b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3301b" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3301b.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3301b.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3301e" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3301e.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3301e.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3301j" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3301j.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3301j.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3302a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3302a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3302a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3304a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3304a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3304a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3310a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3310a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3310a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3361c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3361c.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3361c.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3417c" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3417c.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3417c.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3437a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3437a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3437a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns3450e" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3450e.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3450e.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+  <tdml:parserTestCase name="ns5600a" root="NITF" model="xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns5600a.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns5600a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+
+</tdml:testSuite>

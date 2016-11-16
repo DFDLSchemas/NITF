@@ -1,0 +1,80 @@
+<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+  <Header>
+    <FileProfileName>NSIF</FileProfileName>
+    <FileVersion>01.00</FileVersion>
+    <ComplexityLevel>3</ComplexityLevel>
+    <StandardType>BF01</StandardType>
+    <OriginatingStationID>NS3114A</OriginatingStationID>
+    <FileDateAndTime>1999-01-07T08:48:00.000000+00:00</FileDateAndTime>
+    <FileTitle>Checks the handling of an NITF file with a STA text file.</FileTitle>
+    <SecurityClassification>U</SecurityClassification>
+    <SecurityClassificationSystem xsi:nil="true" />
+    <Codewords xsi:nil="true" />
+    <ControlAndHandling xsi:nil="true" />
+    <ReleasingInstructions xsi:nil="true" />
+    <DeclassificationType xsi:nil="true" />
+    <DeclassificationDate xsi:nil="true" />
+    <DeclassificationExemption xsi:nil="true" />
+    <Downgrade xsi:nil="true" />
+    <DowngradeDate xsi:nil="true" />
+    <ClassificationText xsi:nil="true" />
+    <ClassificationAuthorityType xsi:nil="true" />
+    <ClassificationAuthority xsi:nil="true" />
+    <ClassificationReason xsi:nil="true" />
+    <SecuritySourceDate xsi:nil="true" />
+    <SecurityControlNumber xsi:nil="true" />
+    <FileCopyNumber>1</FileCopyNumber>
+    <FileNumberOfCopies>1</FileNumberOfCopies>
+    <Encryption>0</Encryption>
+    <FileBackgroundColor>
+      <Red>00</Red>
+      <Green>7F</Green>
+      <Blue>00</Blue>
+    </FileBackgroundColor>
+    <OriginatorsName>JITC Fort Huachuca, AZ</OriginatorsName>
+    <OriginatorsPhoneNumber>(520) 538-5458</OriginatorsPhoneNumber>
+    <FileLength>680</FileLength>
+    <FileHeaderLength>397</FileHeaderLength>
+    <NumberOfImageSegments>0</NumberOfImageSegments>
+    <NumberOfGraphicSegments>0</NumberOfGraphicSegments>
+    <ReservedForFutureUse>0</ReservedForFutureUse>
+    <NumberOfTextSegments>1</NumberOfTextSegments>
+    <TextSegmentLengths>
+      <HeaderLength>282</HeaderLength>
+      <DataLength>1</DataLength>
+    </TextSegmentLengths>
+    <NumberOfDataExtensionSegments>0</NumberOfDataExtensionSegments>
+    <NumberOfReservedExtensionSegments>0</NumberOfReservedExtensionSegments>
+    <UserDefinedHeaderDataLength>0</UserDefinedHeaderDataLength>
+    <ExtendedHeaderDataLength>0</ExtendedHeaderDataLength>
+  </Header>
+  <TextSegment>
+    <Header>
+      <FilePartType>TE</FilePartType>
+      <TextIdentifier>JITC001</TextIdentifier>
+      <TextAttachmentLevel>0</TextAttachmentLevel>
+      <TextDateAndTime>1998-01-07T08:48:00.000000+00:00</TextDateAndTime>
+      <TextTitle>This is the title of unclassified text file #1 in NITF  file   U21H00N1.</TextTitle>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true" />
+      <Codewords xsi:nil="true" />
+      <ControlAndHandling xsi:nil="true" />
+      <ReleasingInstructions xsi:nil="true" />
+      <DeclassificationType xsi:nil="true" />
+      <DeclassificationDate xsi:nil="true" />
+      <DeclassificationExemption xsi:nil="true" />
+      <Downgrade xsi:nil="true" />
+      <DowngradeDate xsi:nil="true" />
+      <ClassificationText xsi:nil="true" />
+      <ClassificationAuthorityType xsi:nil="true" />
+      <ClassificationAuthority xsi:nil="true" />
+      <ClassificationReason xsi:nil="true" />
+      <SecuritySourceDate xsi:nil="true" />
+      <SecurityControlNumber xsi:nil="true" />
+      <Encryption>0</Encryption>
+      <TextFormat>STA</TextFormat>
+      <TextExtendedSubheaderDataLength>0</TextExtendedSubheaderDataLength>
+    </Header>
+    <Data>41</Data>
+  </TextSegment>
+</nitf:NITF>

@@ -1,0 +1,119 @@
+<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+  <Header>
+    <FileProfileName>NSIF</FileProfileName>
+    <FileVersion>01.00</FileVersion>
+    <ComplexityLevel>3</ComplexityLevel>
+    <StandardType>BF01</StandardType>
+    <OriginatingStationID>NS3034D</OriginatingStationID>
+    <FileDateAndTime>1997-12-18T12:15:39.000000+00:00</FileDateAndTime>
+    <FileTitle>Check a mask header with 0 or black (00) being the transparent pixels color.</FileTitle>
+    <SecurityClassification>U</SecurityClassification>
+    <SecurityClassificationSystem xsi:nil="true" />
+    <Codewords xsi:nil="true" />
+    <ControlAndHandling xsi:nil="true" />
+    <ReleasingInstructions xsi:nil="true" />
+    <DeclassificationType xsi:nil="true" />
+    <DeclassificationDate xsi:nil="true" />
+    <DeclassificationExemption xsi:nil="true" />
+    <Downgrade xsi:nil="true" />
+    <DowngradeDate xsi:nil="true" />
+    <ClassificationText xsi:nil="true" />
+    <ClassificationAuthorityType xsi:nil="true" />
+    <ClassificationAuthority xsi:nil="true" />
+    <ClassificationReason xsi:nil="true" />
+    <SecuritySourceDate xsi:nil="true" />
+    <SecurityControlNumber xsi:nil="true" />
+    <FileCopyNumber>1</FileCopyNumber>
+    <FileNumberOfCopies>1</FileNumberOfCopies>
+    <Encryption>0</Encryption>
+    <FileBackgroundColor>
+      <Red>00</Red>
+      <Green>FF</Green>
+      <Blue>00</Blue>
+    </FileBackgroundColor>
+    <OriginatorsName>JITC</OriginatorsName>
+    <OriginatorsPhoneNumber>(520) 538-5458</OriginatorsPhoneNumber>
+    <FileLength>937</FileLength>
+    <FileHeaderLength>404</FileHeaderLength>
+    <NumberOfImageSegments>1</NumberOfImageSegments>
+    <ImageSegmentLengths>
+      <HeaderLength>439</HeaderLength>
+      <DataLength>94</DataLength>
+    </ImageSegmentLengths>
+    <NumberOfGraphicSegments>0</NumberOfGraphicSegments>
+    <ReservedForFutureUse>0</ReservedForFutureUse>
+    <NumberOfTextSegments>0</NumberOfTextSegments>
+    <NumberOfDataExtensionSegments>0</NumberOfDataExtensionSegments>
+    <NumberOfReservedExtensionSegments>0</NumberOfReservedExtensionSegments>
+    <UserDefinedHeaderDataLength>0</UserDefinedHeaderDataLength>
+    <ExtendedHeaderDataLength>0</ExtendedHeaderDataLength>
+  </Header>
+  <ImageSegment>
+    <Header>
+      <FilePartType>IM</FilePartType>
+      <ImageIdentifier1>Missing ID</ImageIdentifier1>
+      <ImageDateAndTime>1996-12-18T12:15:39.000000+00:00</ImageDateAndTime>
+      <TargetIdentifier>
+        <BasicEncyclopediaIdentifier xsi:nil="true" />
+        <FacilityOSuffix xsi:nil="true" />
+        <CountryCode xsi:nil="true" />
+      </TargetIdentifier>
+      <ImageIdentifier2>- BASE IMAGE -</ImageIdentifier2>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true" />
+      <Codewords xsi:nil="true" />
+      <ControlAndHandling xsi:nil="true" />
+      <ReleasingInstructions xsi:nil="true" />
+      <DeclassificationType xsi:nil="true" />
+      <DeclassificationDate xsi:nil="true" />
+      <DeclassificationExemption xsi:nil="true" />
+      <Downgrade xsi:nil="true" />
+      <DowngradeDate xsi:nil="true" />
+      <ClassificationText xsi:nil="true" />
+      <ClassificationAuthorityType xsi:nil="true" />
+      <ClassificationAuthority xsi:nil="true" />
+      <ClassificationReason xsi:nil="true" />
+      <SecuritySourceDate xsi:nil="true" />
+      <SecurityControlNumber xsi:nil="true" />
+      <Encryption>0</Encryption>
+      <ImageSource>Unknown</ImageSource>
+      <NumberOfSignificantRowsInImage>18</NumberOfSignificantRowsInImage>
+      <NumberOfSignificantColumnsInImage>35</NumberOfSignificantColumnsInImage>
+      <PixelValueType>B</PixelValueType>
+      <ImageRepresentation>MONO</ImageRepresentation>
+      <ImageCategory>VIS</ImageCategory>
+      <ActualBitsPerPixelPerBand>1</ActualBitsPerPixelPerBand>
+      <PixelJustification>R</PixelJustification>
+      <ImageCoordinateRepresentation xsi:nil="true" />
+      <NumberOfImageComments>0</NumberOfImageComments>
+      <ImageCompression>NM</ImageCompression>
+      <NumberOfBands>1</NumberOfBands>
+      <Bands>
+        <Band>
+          <Representation>M</Representation>
+          <Subcategory xsi:nil="true" />
+          <ImageFilterCondition>N</ImageFilterCondition>
+          <StandardImageFilterCode xsi:nil="true" />
+          <NumberOfLUTS>0</NumberOfLUTS>
+        </Band>
+      </Bands>
+      <ImageSyncCode>0</ImageSyncCode>
+      <ImageMode>B</ImageMode>
+      <NumberOfBlocksPerRow>1</NumberOfBlocksPerRow>
+      <NumberOfBlocksPerColumn>1</NumberOfBlocksPerColumn>
+      <NumberOfPixelsPerBlockHorizontal>35</NumberOfPixelsPerBlockHorizontal>
+      <NumberOfPixelsPerBlockVertical>18</NumberOfPixelsPerBlockVertical>
+      <NumberOfBitsPerPixelPerBand>1</NumberOfBitsPerPixelPerBand>
+      <ImageDisplayLevel>1</ImageDisplayLevel>
+      <AttachmentLevel>0</AttachmentLevel>
+      <ImageLocation>
+        <Row>100</Row>
+        <Column>100</Column>
+      </ImageLocation>
+      <ImageMagnification>1.0</ImageMagnification>
+      <UserDefinedImageDataLength>0</UserDefinedImageDataLength>
+      <ImageExtendedSubheaderDataLength>0</ImageExtendedSubheaderDataLength>
+    </Header>
+    <Data>0000000F00000004000100000000000000400000003E0000001FF000000FFF800007FFFC0003FFFFE001FFFFFF00FFFFFFF80001F00000003E00000007C0000000F80000001F00000003E00000007C0000000F80000001F00000003E0000</Data>
+  </ImageSegment>
+</nitf:NITF>

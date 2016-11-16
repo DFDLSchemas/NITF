@@ -1,0 +1,80 @@
+<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+  <Header>
+    <FileProfileName>NITF</FileProfileName>
+    <FileVersion>02.10</FileVersion>
+    <ComplexityLevel>3</ComplexityLevel>
+    <StandardType>BF01</StandardType>
+    <OriginatingStationID>I_3114E</OriginatingStationID>
+    <FileDateAndTime>1999-01-07T08:48:00.000000+00:00</FileDateAndTime>
+    <FileTitle>Checks the handling of an NITF file with all UT1 text values.</FileTitle>
+    <SecurityClassification>U</SecurityClassification>
+    <SecurityClassificationSystem xsi:nil="true" />
+    <Codewords xsi:nil="true" />
+    <ControlAndHandling xsi:nil="true" />
+    <ReleasingInstructions xsi:nil="true" />
+    <DeclassificationType xsi:nil="true" />
+    <DeclassificationDate xsi:nil="true" />
+    <DeclassificationExemption xsi:nil="true" />
+    <Downgrade xsi:nil="true" />
+    <DowngradeDate xsi:nil="true" />
+    <ClassificationText xsi:nil="true" />
+    <ClassificationAuthorityType xsi:nil="true" />
+    <ClassificationAuthority xsi:nil="true" />
+    <ClassificationReason xsi:nil="true" />
+    <SecuritySourceDate xsi:nil="true" />
+    <SecurityControlNumber xsi:nil="true" />
+    <FileCopyNumber>1</FileCopyNumber>
+    <FileNumberOfCopies>1</FileNumberOfCopies>
+    <Encryption>0</Encryption>
+    <FileBackgroundColor>
+      <Red>00</Red>
+      <Green>7F</Green>
+      <Blue>00</Blue>
+    </FileBackgroundColor>
+    <OriginatorsName>JITC Fort Huachuca, AZ</OriginatorsName>
+    <OriginatorsPhoneNumber>(520) 538-5458</OriginatorsPhoneNumber>
+    <FileLength>1776</FileLength>
+    <FileHeaderLength>397</FileHeaderLength>
+    <NumberOfImageSegments>0</NumberOfImageSegments>
+    <NumberOfGraphicSegments>0</NumberOfGraphicSegments>
+    <ReservedForFutureUse>0</ReservedForFutureUse>
+    <NumberOfTextSegments>1</NumberOfTextSegments>
+    <TextSegmentLengths>
+      <HeaderLength>282</HeaderLength>
+      <DataLength>1097</DataLength>
+    </TextSegmentLengths>
+    <NumberOfDataExtensionSegments>0</NumberOfDataExtensionSegments>
+    <NumberOfReservedExtensionSegments>0</NumberOfReservedExtensionSegments>
+    <UserDefinedHeaderDataLength>0</UserDefinedHeaderDataLength>
+    <ExtendedHeaderDataLength>0</ExtendedHeaderDataLength>
+  </Header>
+  <TextSegment>
+    <Header>
+      <FilePartType>TE</FilePartType>
+      <TextIdentifier>JITC001</TextIdentifier>
+      <TextAttachmentLevel>0</TextAttachmentLevel>
+      <TextDateAndTime>1998-01-07T08:48:00.000000+00:00</TextDateAndTime>
+      <TextTitle>This is an unclassified UT1 text file with all values Hex 0xA0 to 0xFF tested.</TextTitle>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true" />
+      <Codewords xsi:nil="true" />
+      <ControlAndHandling xsi:nil="true" />
+      <ReleasingInstructions xsi:nil="true" />
+      <DeclassificationType xsi:nil="true" />
+      <DeclassificationDate xsi:nil="true" />
+      <DeclassificationExemption xsi:nil="true" />
+      <Downgrade xsi:nil="true" />
+      <DowngradeDate xsi:nil="true" />
+      <ClassificationText xsi:nil="true" />
+      <ClassificationAuthorityType xsi:nil="true" />
+      <ClassificationAuthority xsi:nil="true" />
+      <ClassificationReason xsi:nil="true" />
+      <SecuritySourceDate xsi:nil="true" />
+      <SecurityControlNumber xsi:nil="true" />
+      <Encryption>0</Encryption>
+      <TextFormat>UT1</TextFormat>
+      <TextExtendedSubheaderDataLength>0</TextExtendedSubheaderDataLength>
+    </Header>
+    <Data>55543120746573742066696C650D0A48455820413020746F2046460D0A0D0A3136302020202020200D0A3136312020202020A10D0A3136322020202020A20D0A3136332020202020A30D0A3136342020202020A40D0A3136352020202020A50D0A3136362020202020A60D0A3136372020202020A70D0A3136382020202020A80D0A31363920202020202863290D0A3137302020202020AA0D0A3137312020202020AB0D0A3137322020202020AC0D0A3137332020202020AD0D0A31373420202020202872290D0A3137352020202020AF0D0A3137362020202020B00D0A3137372020202020B10D0A3137382020202020B20D0A3137392020202020B30D0A3138302020202020B40D0A3138312020202020B50D0A3138322020202020B60D0A3138332020202020B70D0A3138342020202020B80D0A3138352020202020B90D0A3138362020202020BA0D0A3138372020202020BB0D0A3138382020202020312F340D0A3138392020202020312F320D0A3139302020202020332F340D0A3139312020202020BF0D0A3139322020202020C00D0A3139332020202020C10D0A3139342020202020C20D0A3139352020202020C30D0A3139362020202020C40D0A3139372020202020C50D0A3139382020202020C60D0A3139392020202020C70D0A3230302020202020C80D0A3230312020202020C90D0A3230322020202020CA0D0A3230332020202020CB0D0A3230342020202020CC0D0A3230352020202020CD0D0A3230362020202020CE0D0A3230372020202020CF0D0A3230382020202020D00D0A3230392020202020D10D0A3231302020202020D20D0A3231312020202020D30D0A3231322020202020D40D0A3231332020202020D50D0A3231342020202020D60D0A3231352020202020D70D0A3231362020202020D80D0A3231372020202020D90D0A3231382020202020DA0D0A3231392020202020DB0D0A3232302020202020DC0D0A3232312020202020DD0D0A3232322020202020DE0D0A3232332020202020DF0D0A3232342020202020E00D0A3232352020202020E10D0A3232362020202020E20D0A3232372020202020E30D0A3232382020202020E40D0A3232392020202020E50D0A3233302020202020E60D0A3233312020202020E70D0A3233322020202020E80D0A3233332020202020E90D0A3233342020202020EA0D0A3233352020202020EB0D0A3233362020202020EC0D0A3233372020202020ED0D0A3233382020202020EE0D0A3233392020202020EF0D0A3234302020202020F00D0A3234312020202020F10D0A3234322020202020F20D0A3234332020202020F30D0A3234342020202020F40D0A3234352020202020F50D0A3234362020202020F60D0A3234372020202020F70D0A3234382020202020F80D0A3234392020202020F90D0A3235302020202020FA0D0A3235312020202020FB0D0A3235322020202020FC0D0A3235332020202020FD0D0A3235342020202020FE0D0A3235352020202020FF0D0A</Data>
+  </TextSegment>
+</nitf:NITF>

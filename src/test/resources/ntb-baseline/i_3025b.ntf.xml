@@ -1,0 +1,129 @@
+<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+  <Header>
+    <FileProfileName>NITF</FileProfileName>
+    <FileVersion>02.10</FileVersion>
+    <ComplexityLevel>3</ComplexityLevel>
+    <StandardType>BF01</StandardType>
+    <OriginatingStationID>I_3025b</OriginatingStationID>
+    <FileDateAndTime>1999-02-16T12:01:59.000000+00:00</FileDateAndTime>
+    <FileTitle>Checks a JPEG-compressed 64x64 8-bit mono image with leading FF's.</FileTitle>
+    <SecurityClassification>U</SecurityClassification>
+    <SecurityClassificationSystem xsi:nil="true" />
+    <Codewords xsi:nil="true" />
+    <ControlAndHandling xsi:nil="true" />
+    <ReleasingInstructions xsi:nil="true" />
+    <DeclassificationType xsi:nil="true" />
+    <DeclassificationDate xsi:nil="true" />
+    <DeclassificationExemption xsi:nil="true" />
+    <Downgrade xsi:nil="true" />
+    <DowngradeDate xsi:nil="true" />
+    <ClassificationText xsi:nil="true" />
+    <ClassificationAuthorityType xsi:nil="true" />
+    <ClassificationAuthority xsi:nil="true" />
+    <ClassificationReason xsi:nil="true" />
+    <SecuritySourceDate xsi:nil="true" />
+    <SecurityControlNumber xsi:nil="true" />
+    <FileCopyNumber>1</FileCopyNumber>
+    <FileNumberOfCopies>1</FileNumberOfCopies>
+    <Encryption>0</Encryption>
+    <FileBackgroundColor>
+      <Red>00</Red>
+      <Green>7F</Green>
+      <Blue>00</Blue>
+    </FileBackgroundColor>
+    <OriginatorsName>JITC Fort Huachuca, AZ</OriginatorsName>
+    <OriginatorsPhoneNumber>(520) 538-5458</OriginatorsPhoneNumber>
+    <FileLength>2199</FileLength>
+    <FileHeaderLength>404</FileHeaderLength>
+    <NumberOfImageSegments>1</NumberOfImageSegments>
+    <ImageSegmentLengths>
+      <HeaderLength>1163</HeaderLength>
+      <DataLength>632</DataLength>
+    </ImageSegmentLengths>
+    <NumberOfGraphicSegments>0</NumberOfGraphicSegments>
+    <ReservedForFutureUse>0</ReservedForFutureUse>
+    <NumberOfTextSegments>0</NumberOfTextSegments>
+    <NumberOfDataExtensionSegments>0</NumberOfDataExtensionSegments>
+    <NumberOfReservedExtensionSegments>0</NumberOfReservedExtensionSegments>
+    <UserDefinedHeaderDataLength>0</UserDefinedHeaderDataLength>
+    <ExtendedHeaderDataLength>0</ExtendedHeaderDataLength>
+  </Header>
+  <ImageSegment>
+    <Header>
+      <FilePartType>IM</FilePartType>
+      <ImageIdentifier1>0000000001</ImageIdentifier1>
+      <ImageDateAndTime>1998-02-16T12:01:59.000000+00:00</ImageDateAndTime>
+      <TargetIdentifier>
+        <BasicEncyclopediaIdentifier xsi:nil="true" />
+        <FacilityOSuffix xsi:nil="true" />
+        <CountryCode xsi:nil="true" />
+      </TargetIdentifier>
+      <ImageIdentifier2>This is an unclassified image in an unclassified NITF file Q1.</ImageIdentifier2>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true" />
+      <Codewords xsi:nil="true" />
+      <ControlAndHandling xsi:nil="true" />
+      <ReleasingInstructions xsi:nil="true" />
+      <DeclassificationType xsi:nil="true" />
+      <DeclassificationDate xsi:nil="true" />
+      <DeclassificationExemption xsi:nil="true" />
+      <Downgrade xsi:nil="true" />
+      <DowngradeDate xsi:nil="true" />
+      <ClassificationText xsi:nil="true" />
+      <ClassificationAuthorityType xsi:nil="true" />
+      <ClassificationAuthority xsi:nil="true" />
+      <ClassificationReason xsi:nil="true" />
+      <SecuritySourceDate xsi:nil="true" />
+      <SecurityControlNumber xsi:nil="true" />
+      <Encryption>0</Encryption>
+      <ImageSource xsi:nil="true" />
+      <NumberOfSignificantRowsInImage>64</NumberOfSignificantRowsInImage>
+      <NumberOfSignificantColumnsInImage>64</NumberOfSignificantColumnsInImage>
+      <PixelValueType>INT</PixelValueType>
+      <ImageRepresentation>MONO</ImageRepresentation>
+      <ImageCategory>VIS</ImageCategory>
+      <ActualBitsPerPixelPerBand>8</ActualBitsPerPixelPerBand>
+      <PixelJustification>R</PixelJustification>
+      <ImageCoordinateRepresentation xsi:nil="true" />
+      <NumberOfImageComments>9</NumberOfImageComments>
+      <ImageComment>This is image comment #1 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #2 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #3 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #4 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #5 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #6 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #7 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #8 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageComment>This is image comment #9 for the unclassified image #1 from test message Q1.</ImageComment>
+      <ImageCompression>C3</ImageCompression>
+      <CompressionRateCode>00.0</CompressionRateCode>
+      <NumberOfBands>1</NumberOfBands>
+      <Bands>
+        <Band>
+          <Representation>M</Representation>
+          <Subcategory xsi:nil="true" />
+          <ImageFilterCondition>N</ImageFilterCondition>
+          <StandardImageFilterCode xsi:nil="true" />
+          <NumberOfLUTS>0</NumberOfLUTS>
+        </Band>
+      </Bands>
+      <ImageSyncCode>0</ImageSyncCode>
+      <ImageMode>B</ImageMode>
+      <NumberOfBlocksPerRow>1</NumberOfBlocksPerRow>
+      <NumberOfBlocksPerColumn>1</NumberOfBlocksPerColumn>
+      <NumberOfPixelsPerBlockHorizontal>64</NumberOfPixelsPerBlockHorizontal>
+      <NumberOfPixelsPerBlockVertical>64</NumberOfPixelsPerBlockVertical>
+      <NumberOfBitsPerPixelPerBand>8</NumberOfBitsPerPixelPerBand>
+      <ImageDisplayLevel>1</ImageDisplayLevel>
+      <AttachmentLevel>0</AttachmentLevel>
+      <ImageLocation>
+        <Row>0</Row>
+        <Column>0</Column>
+      </ImageLocation>
+      <ImageMagnification>1.0</ImageMagnification>
+      <UserDefinedImageDataLength>0</UserDefinedImageDataLength>
+      <ImageExtendedSubheaderDataLength>0</ImageExtendedSubheaderDataLength>
+    </Header>
+    <Data>FFFFFFFFFFFFFFD8FFE600194E49544600020042000100010008000100000801010000FFDB004300084848484848484848484E4A4C4A4E5951545451596A5D5E635E5D6A816F6C74746C6F81878088918880879BA0B1B1A09BC1D5E4D5C1FFFFFFFFFFFFFFFFFFFFFFC400D20000010501010101010100000000000000000102030405060708090A0B100002010303020403050504040000017D01020300041105122131410613516107227114328191A1082342B1C11552D1F02433627282090A161718191A25262728292A3435363738393A434445464748494A535455565758595A636465666768696A737475767778797A838485868788898A92939495969798999AA2A3A4A5A6A7A8A9AAB2B3B4B5B6B7B8B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6D7D8D9DAE1E2E3E4E5E6E7E8E9EAF1F2F3F4F5F6F7F8F9FAFFDD00040008FFC0000B080040004001001100FFDA0008010000003F00D18CAA0C91963FA0AB0663D862B1BCC627935A4CF907D474AE3893EB5166A6CD4A0E0E457FFFD0A2D8C9C564D4806580F535EF0400300019AF10230483DAA0A519A662BFFFD18197017D4F5AC7C575B12FCE0FA735EA86B8D9173861DBAD712056DAA13CF6AE9446A083D7DABFFFD2D193B0AC2AF52886173EB5B06A239A66D53CE2AC9F6AC066C57FFFD3BEE41C63EB593DEBAC6765E38C56579ADED5A2263D315D410C3907F0AABBFB1E0D72920EF5FFD47B1F9BE82AA0EBF8D750395663DF81F4AE0EBB08D41393D07F3AF4DE2B25941AE5D8718CD7FFD58C8C1AAF5D1E70A47A572DC575AAE70004271E953173FDD22B0B71CF5ADEEB5FFFD6BEE3047D2B2075A71F7A78DB9AEB4CA070A3F3AA419DCE335D608D7BF26ACED03B57FFD9</Data>
+  </ImageSegment>
+</nitf:NITF>

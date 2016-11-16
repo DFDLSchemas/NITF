@@ -1,0 +1,95 @@
+<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+  <Header>
+    <FileProfileName>NSIF</FileProfileName>
+    <FileVersion>01.00</FileVersion>
+    <ComplexityLevel>3</ComplexityLevel>
+    <StandardType>BF01</StandardType>
+    <OriginatingStationID>NS3051V</OriginatingStationID>
+    <FileDateAndTime>1997-09-24T11:25:10.000000+00:00</FileDateAndTime>
+    <FileTitle>Checks for new nitf 2.1 polygon set element, NIST polygonset test 06.</FileTitle>
+    <SecurityClassification>U</SecurityClassification>
+    <SecurityClassificationSystem xsi:nil="true" />
+    <Codewords xsi:nil="true" />
+    <ControlAndHandling xsi:nil="true" />
+    <ReleasingInstructions xsi:nil="true" />
+    <DeclassificationType xsi:nil="true" />
+    <DeclassificationDate xsi:nil="true" />
+    <DeclassificationExemption xsi:nil="true" />
+    <Downgrade xsi:nil="true" />
+    <DowngradeDate xsi:nil="true" />
+    <ClassificationText xsi:nil="true" />
+    <ClassificationAuthorityType xsi:nil="true" />
+    <ClassificationAuthority xsi:nil="true" />
+    <ClassificationReason xsi:nil="true" />
+    <SecuritySourceDate xsi:nil="true" />
+    <SecurityControlNumber xsi:nil="true" />
+    <FileCopyNumber>1</FileCopyNumber>
+    <FileNumberOfCopies>1</FileNumberOfCopies>
+    <Encryption>0</Encryption>
+    <FileBackgroundColor>
+      <Red>00</Red>
+      <Green>7F</Green>
+      <Blue>00</Blue>
+    </FileBackgroundColor>
+    <OriginatorsName>JITC Fort Huachuca, AZ</OriginatorsName>
+    <OriginatorsPhoneNumber>(520) 538-5458</OriginatorsPhoneNumber>
+    <FileLength>1592</FileLength>
+    <FileHeaderLength>398</FileHeaderLength>
+    <NumberOfImageSegments>0</NumberOfImageSegments>
+    <NumberOfGraphicSegments>1</NumberOfGraphicSegments>
+    <GraphicSegmentLengths>
+      <HeaderLength>258</HeaderLength>
+      <DataLength>936</DataLength>
+    </GraphicSegmentLengths>
+    <ReservedForFutureUse>0</ReservedForFutureUse>
+    <NumberOfTextSegments>0</NumberOfTextSegments>
+    <NumberOfDataExtensionSegments>0</NumberOfDataExtensionSegments>
+    <NumberOfReservedExtensionSegments>0</NumberOfReservedExtensionSegments>
+    <UserDefinedHeaderDataLength>0</UserDefinedHeaderDataLength>
+    <ExtendedHeaderDataLength>0</ExtendedHeaderDataLength>
+  </Header>
+  <GraphicSegment>
+    <Header>
+      <FilePartType>SY</FilePartType>
+      <GraphicIdentifier>POLYGONSET</GraphicIdentifier>
+      <GraphicName>POLYGON_SET</GraphicName>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true" />
+      <Codewords xsi:nil="true" />
+      <ControlAndHandling xsi:nil="true" />
+      <ReleasingInstructions xsi:nil="true" />
+      <DeclassificationType xsi:nil="true" />
+      <DeclassificationDate xsi:nil="true" />
+      <DeclassificationExemption xsi:nil="true" />
+      <Downgrade xsi:nil="true" />
+      <DowngradeDate xsi:nil="true" />
+      <ClassificationText xsi:nil="true" />
+      <ClassificationAuthorityType xsi:nil="true" />
+      <ClassificationAuthority xsi:nil="true" />
+      <ClassificationReason xsi:nil="true" />
+      <SecuritySourceDate xsi:nil="true" />
+      <SecurityControlNumber xsi:nil="true" />
+      <Encryption>0</Encryption>
+      <GraphicType>C</GraphicType>
+      <ReservedForFutureUse1>0</ReservedForFutureUse1>
+      <GraphicDisplayLevel>1</GraphicDisplayLevel>
+      <GraphicAttachmentLevel>0</GraphicAttachmentLevel>
+      <GraphicLocation>
+        <Row>1100</Row>
+        <Column>100</Column>
+      </GraphicLocation>
+      <FirstGraphicBoundLocation>
+        <Row>175</Row>
+        <Column>125</Column>
+      </FirstGraphicBoundLocation>
+      <GraphicColor>C</GraphicColor>
+      <SecondGraphicBoundLocation>
+        <Row>1075</Row>
+        <Column>825</Column>
+      </SecondGraphicBoundLocation>
+      <ReservedForFutureUse2>0</ReservedForFutureUse2>
+      <GraphicExtendedSubheaderDataLength>0</GraphicExtendedSubheaderDataLength>
+    </Header>
+    <Data>00250454657874001022000111660001FFFF0001105F00424150726F66696C6549643A4E4954462F43474D3B50726F66696C6545643A323330312D322F536F757263653A4E495446204C61623B446174653A313939383033303211BF02220B54494D45535F524F4D414E0C54494D45535F4954414C49430A54494D45535F424F4C441154494D45535F424F4C445F4954414C49430948454C5645544943411148454C5645544943415F4F424C495155450E48454C5645544943415F424F4C441648454C5645544943415F424F4C445F4F424C4951554507434F55524945520C434F55524945525F424F4C440E434F55524945525F4954414C494313434F55524945525F424F4C445F4954414C49431A484552534845592F434152544F475241504849435F524F4D414E1A484552534845592F434152544F475241504849435F475245454B15484552534845592F53494D504C45585F524F4D414E15484552534845592F53494D504C45585F475245454B16484552534845592F53494D504C45585F53435249505415484552534845592F434F4D504C45585F524F4D414E15484552534845592F434F4D504C45585F475245454B16484552534845592F434F4D504C45585F53435249505416484552534845592F434F4D504C45585F4954414C494318484552534845592F434F4D504C45585F435952494C4C494314484552534845592F4455504C45585F524F4D414E15484552534845592F545249504C45585F524F4D414E16484552534845592F545249504C45585F4954414C494315484552534845592F474F544849435F4745524D414E16484552534845592F474F544849435F454E474C49534816484552534845592F474F544849435F4954414C49414E006A095049435420444553432042000120A200002062000020C8000000007FFF7FFF00805142000151C3FF00000051E200145208000000010001000053A300FF000050830000FF00409C00190019000115504C475345543033202052656C6561736520312E30409F00260019004B00011F4E4953542043474D20496E74657270726574657220546573742053756974655042000150620001402800C802D500C80307402800AF02EE00E102EE402801F4036B01F4039D402801DB0384020D0384402802BC030702BC0339402802A3032002D50320402801C201A901C20177402801DB019001A901905362000153C200015302000552C2000353820001411F002400C802EE000001F40384000102BC0320000301C201900001015E0258000102580226000200A00040</Data>
+  </GraphicSegment>
+</nitf:NITF>
