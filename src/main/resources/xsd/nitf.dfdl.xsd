@@ -770,7 +770,7 @@ The message root is 'NITF'.
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UniqueExtensionTypeIdentifier" type="nitf:BCS-A" dfdl:length="6" />
-              <xs:element name="LengthOfData" type="nitf:BCS-NP" dfdl:length="5" />
+              <xs:element name="LengthOfData" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../UserDefinedData, 'bytes') }" />
               <!-- TODO: the format of some TRE's are registered and defined in the DataExtensioNRegistry maintained by JITC -->
               <xs:element name="UserDefinedData" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../LengthOfData }" />
             </xs:sequence>
