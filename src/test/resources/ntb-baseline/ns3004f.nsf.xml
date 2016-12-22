@@ -88,19 +88,19 @@
       <ImageGeographicLocation>
         <Geographic>
           <Corner>
-            <Lattitude>200000N</Lattitude>
+            <Latitude>200000N</Latitude>
             <Longitude>0200000W</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>200000N</Lattitude>
+            <Latitude>200000N</Latitude>
             <Longitude>0200000E</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>200000S</Lattitude>
+            <Latitude>200000S</Latitude>
             <Longitude>0200000E</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>200000S</Lattitude>
+            <Latitude>200000S</Latitude>
             <Longitude>0200000W</Longitude>
           </Corner>
         </Geographic>

@@ -100,19 +100,19 @@
       <ImageGeographicLocation>
         <DecimalDegrees>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-070.933</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+41.950</Lattitude>
+            <Latitude>+41.950</Latitude>
             <Longitude>-070.933</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+41.950</Lattitude>
+            <Latitude>+41.950</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
         </DecimalDegrees>
@@ -188,19 +188,19 @@
       <ImageGeographicLocation>
         <DecimalDegrees>
           <Corner>
-            <Lattitude>+42.450</Lattitude>
+            <Latitude>+42.450</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.450</Lattitude>
+            <Latitude>+42.450</Latitude>
             <Longitude>-070.933</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-070.933</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
         </DecimalDegrees>
@@ -276,19 +276,19 @@
       <ImageGeographicLocation>
         <DecimalDegrees>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-071.167</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+41.950</Lattitude>
+            <Latitude>+41.950</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+41.950</Lattitude>
+            <Latitude>+41.950</Latitude>
             <Longitude>-071.167</Longitude>
           </Corner>
         </DecimalDegrees>
@@ -364,19 +364,19 @@
       <ImageGeographicLocation>
         <DecimalDegrees>
           <Corner>
-            <Lattitude>+42.450</Lattitude>
+            <Latitude>+42.450</Latitude>
             <Longitude>-071.167</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.450</Lattitude>
+            <Latitude>+42.450</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-071.050</Longitude>
           </Corner>
           <Corner>
-            <Lattitude>+42.201</Lattitude>
+            <Latitude>+42.201</Latitude>
             <Longitude>-071.167</Longitude>
           </Corner>
         </DecimalDegrees>
