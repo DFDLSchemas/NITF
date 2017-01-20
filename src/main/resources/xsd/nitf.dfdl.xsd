@@ -51,6 +51,8 @@ The message root is 'NITF'.
            targetNamespace="urn:nitf:2.1"
            elementFormDefault="unqualified">
 
+  <xs:import schemaLocation="xsd/jpeg.dfdl.xsd" />
+
   <xs:annotation>
     <xs:appinfo source="http://www.ogf.org/dfdl/">
 
@@ -124,6 +126,21 @@ The message root is 'NITF'.
     <xs:restriction base="xs:date" />
   </xs:simpleType>
 
+  <xs:simpleType name="unsignedBinaryIntBytes" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:representation="binary">
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+
+  <xs:simpleType name="signedBinaryIntBytes" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:representation="binary">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="unsignedBinaryIntBits" dfdl:lengthKind="explicit" dfdl:lengthUnits="bits" dfdl:representation="binary" dfdl:alignmentUnits="bits">
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+
+  <xs:simpleType name="signedBinaryIntBits" dfdl:lengthKind="explicit" dfdl:lengthUnits="bits" dfdl:representation="binary" dfdl:alignmentUnits="bits">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
 
   <xs:element name="NITF">
     <xs:complexType>
@@ -564,7 +581,68 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Data" type="xs:hexBinary" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength }" />
+              <xs:element name="Data" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength }"> 
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="MaskTable" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:contains(../../Header/ImageCompression, 'M')) then 1 else 0 }">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BlockedImageDataOffset" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" />
+                          <xs:element name="BlockMaskRecordLength" type="nitf:unsignedBinaryIntBytes" dfdl:length="2" />
+                          <xs:element name="PadPixelMaskRecordLength" type="nitf:unsignedBinaryIntBytes" dfdl:length="2" />
+                          <xs:element name="PadOutputPixelCodeLength" type="nitf:unsignedBinaryIntBytes" dfdl:length="2" />
+                          <xs:element name="PadOutputPixelCode" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../PadOutputPixelCodeLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ fn:ceiling(../PadOutputPixelCodeLength div 8.0) }" dfdl:lengthUnits="bytes">
+                            <xs:complexType>
+                              <xs:sequence dfdl:alignmentUnits="bits">
+                                <xs:sequence dfdl:hiddenGroupRef="nitf:PadOutputPixelCodeLeadingSpace" />
+                                <xs:choice dfdl:choiceDispatchKey="{ ../../../Header/PixelValueType }" dfdl:alignmentUnits="bits">
+                                  <xs:element name="Integer" dfdl:choiceBranchKey="INT" type="nitf:unsignedBinaryIntBits" dfdl:length="{ ../../PadOutputPixelCodeLength }"/>
+                                  <xs:element name="SignedInteger" dfdl:choiceBranchKey="SI" type="nitf:signedBinaryIntBits" dfdl:length="{ ../../PadOutputPixelCodeLength }" />
+                                  <xs:choice dfdl:choiceBranchKey="R" dfdl:choiceDispatchKey="{ ../../../Header/NumberOfBitsPerPixelPerBand }" dfdl:alignmentUnits="bits">
+                                    <xs:annotation>
+                                      <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                        <dfdl:assert test="{ ../PadOutputPixelCodeLength eq ../../../Header/NumberOfBitsPerPixelPerBand }" />
+                                      </xs:appinfo>
+                                    </xs:annotation>
+                                    <xs:element name="Float" dfdl:choiceBranchKey="32" type="xs:float" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                                    <xs:element name="Double" dfdl:choiceBranchKey="64" type="xs:double" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                                  </xs:choice>
+                                  <xs:sequence dfdl:choiceBranchKey="C" dfdl:alignmentUnits="bits">
+                                    <xs:annotation>
+                                      <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                        <dfdl:assert test="{ ../PadOutputPixelCodeLength eq 64 }" />
+                                      </xs:appinfo>
+                                    </xs:annotation>
+                                    <xs:element name="Real" type="xs:float" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                                    <xs:element name="Imaginary" type="xs:float" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                                  </xs:sequence>
+                                  <xs:element name="BiLevel" dfdl:choiceBranchKey="B" type="nitf:unsignedBinaryIntBits" dfdl:length="1">
+                                    <xs:annotation>
+                                      <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                        <dfdl:assert test="{ ../../PadOutputPixelCodeLength eq 1 }" />
+                                      </xs:appinfo>
+                                    </xs:annotation>
+                                  </xs:element>
+                                </xs:choice>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="BlockMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../BlockMaskRecordLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1] else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
+                          <xs:element name="PadPixelMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../PadOutputPixelCodeLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1] else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PayloadLength" type="xs:int" dfdl:inputValueCalc="{ (../../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength) - (if (fn:exists(../MaskTable)) then dfdl:valueLength(../MaskTable[1], 'bytes') else 0) }" />
+                    <xs:choice dfdl:choiceDispatchKey="{ ../Header/ImageCompression }">
+                      <xs:element ref="JFIF" dfdl:choiceBranchKey="C3 M3 C5 M5 I1" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+                      <xs:element name="JPEG2000" dfdl:choiceBranchKey="C8 M8" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+                      <xs:element name="BiLevel" dfdl:choiceBranchKey="C1 M1" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+                      <xs:element name="VectorQuantization" dfdl:choiceBranchKey="C4 M4" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+                      <xs:element name="NoCompression" dfdl:choiceBranchKey="NC NM" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+                    </xs:choice>
+                  </xs:sequence>
+                </xs:complexType> 
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -779,5 +857,11 @@ The message root is 'NITF'.
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:group name="PadOutputPixelCodeLeadingSpace">
+    <xs:sequence>
+      <xs:element name="LeadingSpace" type="xs:int" dfdl:lengthKind="explicit" dfdl:length="{ if (../../../../Header/PixelJustification eq 'L') then 0 else (xs:int(fn:ceiling(../../PadOutputPixelCodeLength div 8.0) * 8) - ../../PadOutputPixelCodeLength) }" dfdl:lengthUnits="bits" dfdl:representation="binary" dfdl:outputValueCalc="{ 0 }"/>
+    </xs:sequence>
+  </xs:group>
 
 </xs:schema>
