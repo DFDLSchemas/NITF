@@ -17,7 +17,8 @@ class TestNTBBaseline {
   @Test def test_i_3001a() { runner.runOneTest("i_3001a") }
   @Test def test_i_3004g() { runner.runOneTest("i_3004g") }
   @Test def test_i_3008a() { runner.runOneTest("i_3008a") }
-  @Test def test_i_3015a() { runner.runOneTest("i_3015a") }
+  @Test def test_i_3015a_parse() { runner.runOneTest("i_3015a_parse") }
+  @Test def test_i_3015a_unparse() { runner.runOneTest("i_3015a_unparse") }
   @Test def test_i_3018a() { runner.runOneTest("i_3018a") }
   @Test def test_i_3025b() { runner.runOneTest("i_3025b") }
   @Test def test_i_3034c() { runner.runOneTest("i_3034c") }
@@ -51,7 +52,8 @@ class TestNTBBaseline {
   @Test def test_ns3004f() { runner.runOneTest("ns3004f") }
   @Test def test_ns3005b() { runner.runOneTest("ns3005b") }
   @Test def test_ns3010a() { runner.runOneTest("ns3010a") }
-  @Test def test_ns3017a() { runner.runOneTest("ns3017a") }
+  @Test def test_ns3017a_parse() { runner.runOneTest("ns3017a_parse") }
+  @Test def test_ns3017a_unparse() { runner.runOneTest("ns3017a_unparse") }
   @Test def test_ns3022b() { runner.runOneTest("ns3022b") }
   @Test def test_ns3033b() { runner.runOneTest("ns3033b") }
   @Test def test_ns3034d() { runner.runOneTest("ns3034d") }

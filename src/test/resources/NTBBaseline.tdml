@@ -70,7 +70,11 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="i_3015a" root="NITF" model="xsd/nitf.dfdl.xsd">
+  <!-- Note that this test does not round trip. This files contains a JPEG that
+       has a comment with CRLF newlines in it. When outputting to XML, CRLF is
+       converted to just LF, so on unparse we lose that information. This
+       results in a Length and Text fields being different on unparse -->
+  <tdml:parserTestCase name="i_3015a_parse" root="NITF" model="xsd/nitf.dfdl.xsd" roundTrip="false">
     <tdml:document>
       <tdml:documentPart type="file">ntb-baseline/i_3015a.ntf</tdml:documentPart>
     </tdml:document>
@@ -78,6 +82,17 @@ SOFTWARE.
       <tdml:dfdlInfoset type="file">ntb-baseline/i_3015a.ntf.xml</tdml:dfdlInfoset>
     </tdml:infoset>
   </tdml:parserTestCase>
+
+  <!-- This is the unparse version of the above test to ensure that unparse
+       does work as expected. For similar reasons to above, this will not round trip. -->
+  <tdml:unparserTestCase name="i_3015a_unparse" root="NITF" model="xsd/nitf.dfdl.xsd" roundTrip="false">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3015a.ntf.xml.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3015a.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:unparserTestCase>
 
   <tdml:parserTestCase name="i_3018a" root="NITF" model="xsd/nitf.dfdl.xsd">
     <tdml:document>
@@ -376,7 +391,11 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ns3017a" root="NITF" model="xsd/nitf.dfdl.xsd">
+  <!-- Note that this test does not round trip. This files contains a JPEG that
+       has a comment with CRLF newlines in it. When outputting to XML, CRLF is
+       converted to just LF, so on unparse we lose that information. This
+       results in a Length and Text fields being different on unparse -->
+  <tdml:parserTestCase name="ns3017a_parse" root="NITF" model="xsd/nitf.dfdl.xsd" roundTrip="false">
     <tdml:document>
       <tdml:documentPart type="file">ntb-baseline/ns3017a.nsf</tdml:documentPart>
     </tdml:document>
@@ -384,6 +403,17 @@ SOFTWARE.
       <tdml:dfdlInfoset type="file">ntb-baseline/ns3017a.nsf.xml</tdml:dfdlInfoset>
     </tdml:infoset>
   </tdml:parserTestCase>
+
+  <!-- This is the unparse version of the above test to ensure that unparse
+       does work as expected. For similar reasons to above, this will not round trip. -->
+  <tdml:unparserTestCase name="ns3017a_unparse" root="NITF" model="xsd/nitf.dfdl.xsd" roundTrip="false">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/ns3017a.nsf.xml.nsf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/ns3017a.nsf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:unparserTestCase>
 
   <tdml:parserTestCase name="ns3022b" root="NITF" model="xsd/nitf.dfdl.xsd">
     <tdml:document>
