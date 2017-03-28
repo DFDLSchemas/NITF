@@ -51,7 +51,7 @@ The message root is 'NITF'.
            targetNamespace="urn:nitf:2.1"
            elementFormDefault="unqualified">
 
-  <xs:import schemaLocation="xsd/jpeg.dfdl.xsd" />
+  <xs:import schemaLocation="com/mitre/jpeg/xsd/jpeg.dfdl.xsd" />
 
   <xs:annotation>
     <xs:appinfo source="http://www.ogf.org/dfdl/">
