@@ -71,7 +71,6 @@ The message root is 'NITF'.
         encoding="us-ascii" encodingErrorPolicy="error" escapeSchemeRef=""
         fillByte="%NUL;" floating="no" ignoreCase="no" initiatedContent="no"
         initiator="" leadingSkip="0" lengthKind="implicit" lengthUnits="bytes"
-        nilKind="literalValue" nilValueDelimiterPolicy="none" nilValue="%SP;"
         occursCountKind="implicit" outputNewLine="%CR;%LF;"
         prefixIncludesPrefixLength="no" separator=""
         separatorPosition="infix" sequenceKind="ordered" terminator=""
@@ -87,19 +86,27 @@ The message root is 'NITF'.
         textStandardNaNRep="NaN" textStandardZeroRep="" textStandardExponentRep=""
         textStringJustification="left" textStringPadCharacter="%SP;"
         textTrimKind="none" textZonedSignStyle="asciiStandard" trailingSkip="0"
-        truncateSpecifiedLengthString="no" useNilForDefault="no" utf16Width="fixed"
+        truncateSpecifiedLengthString="no" utf16Width="fixed"
         bitOrder="mostSignificantBitFirst" byteOrder="bigEndian"/>
+
+      <dfdl:defineFormat name="nilString">
+        <dfdl:format nilKind="literalValue" nilValue="%ES;" useNilForDefault="no" nilValueDelimiterPolicy="none" />
+      </dfdl:defineFormat>
+
+      <dfdl:defineFormat name="nilDate">
+        <dfdl:format nilKind="literalCharacter" nilValue="%SP;" useNilForDefault="no" nilValueDelimiterPolicy="none" />
+      </dfdl:defineFormat>
 
     </xs:appinfo>
   </xs:annotation>
 
   <!-- Should only 0x20-0x7E and 0xA0-0xFF -->
-  <xs:simpleType name="ECS-A" dfdl:lengthKind="explicit" dfdl:textTrimKind="padChar" dfdl:nilKind="literalValue" dfdl:nilValue="%ES;">
+  <xs:simpleType name="ECS-A" dfdl:lengthKind="explicit" dfdl:textTrimKind="padChar">
     <xs:restriction base="xs:string" />
   </xs:simpleType>
 
   <!-- Should only allow space, tilde, and 0x20-0x7E -->
-  <xs:simpleType name="BCS-A" dfdl:lengthKind="explicit" dfdl:textTrimKind="padChar" dfdl:nilKind="literalValue" dfdl:nilValue="%ES;">
+  <xs:simpleType name="BCS-A" dfdl:lengthKind="explicit" dfdl:textTrimKind="padChar">
     <xs:restriction base="xs:string" />
   </xs:simpleType>
 
@@ -118,11 +125,11 @@ The message root is 'NITF'.
     <xs:restriction base="xs:unsignedLong" />
   </xs:simpleType>
 
-  <xs:simpleType name="dateTime" dfdl:lengthKind="explicit" dfdl:length="14" dfdl:calendarPatternKind="explicit" dfdl:calendarPattern="yyyyMMddHHmmss" dfdl:nilKind="literalCharacter" dfdl:nilValue="%SP;">
+  <xs:simpleType name="dateTime" dfdl:lengthKind="explicit" dfdl:length="14" dfdl:calendarPatternKind="explicit" dfdl:calendarPattern="yyyyMMddHHmmss">
     <xs:restriction base="xs:dateTime" />
   </xs:simpleType>
 
-  <xs:simpleType name="date" dfdl:lengthKind="explicit" dfdl:length="8" dfdl:calendarPatternKind="explicit" dfdl:calendarPattern="yyyyMMdd" dfdl:nilKind="literalCharacter" dfdl:nilValue="%SP;">
+  <xs:simpleType name="date" dfdl:lengthKind="explicit" dfdl:length="8" dfdl:calendarPatternKind="explicit" dfdl:calendarPattern="yyyyMMdd">
     <xs:restriction base="xs:date" />
   </xs:simpleType>
 
@@ -172,7 +179,7 @@ The message root is 'NITF'.
               </xs:element>
               <xs:element name="OriginatingStationID" type="nitf:BCS-A" dfdl:length="10" />
               <xs:element name="FileDateAndTime" type="nitf:dateTime" />
-              <xs:element name="FileTitle" type="nitf:ECS-A" dfdl:length="80" nillable="true" />
+              <xs:element name="FileTitle" type="nitf:ECS-A" dfdl:length="80" nillable="true" dfdl:ref="nitf:nilString"/>
               <xs:group ref="nitf:ClassificationInformation"/>
               <xs:element name="FileCopyNumber" type="nitf:BCS-NP" dfdl:length="5" />
               <xs:element name="FileNumberOfCopies" type="nitf:BCS-NP" dfdl:length="5" />
@@ -186,8 +193,8 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="OriginatorsName" type="nitf:ECS-A" dfdl:length="24" nillable="true" />
-              <xs:element name="OriginatorsPhoneNumber" type="nitf:ECS-A" dfdl:length="18" nillable="true" />
+              <xs:element name="OriginatorsName" type="nitf:ECS-A" dfdl:length="24" nillable="true" dfdl:ref="nitf:nilString" />
+              <xs:element name="OriginatorsPhoneNumber" type="nitf:ECS-A" dfdl:length="18" nillable="true" dfdl:ref="nitf:nilString" />
               <xs:element name="FileLength" type="nitf:BCS-NPbig" dfdl:length="12" > <!-- TODO: Output Value Calc -->
                 <xs:annotation>
                   <xs:appinfo source="http://www.ogf.org/dfdl/">
@@ -367,16 +374,16 @@ The message root is 'NITF'.
                     <xs:element name="TargetIdentifier">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="BasicEncyclopediaIdentifier" type="nitf:BCS-A" dfdl:length="10" nillable="true" />
-                          <xs:element name="FacilityOSuffix" type="nitf:BCS-A" dfdl:length="5" nillable="true" />
-                          <xs:element name="CountryCode" type="nitf:BCS-A" dfdl:length="2" nillable="true" />
+                          <xs:element name="BasicEncyclopediaIdentifier" type="nitf:BCS-A" dfdl:length="10" nillable="true" dfdl:ref="nitf:nilString" />
+                          <xs:element name="FacilityOSuffix" type="nitf:BCS-A" dfdl:length="5" nillable="true" dfdl:ref="nitf:nilString" />
+                          <xs:element name="CountryCode" type="nitf:BCS-A" dfdl:length="2" nillable="true" dfdl:ref="nitf:nilString" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="ImageIdentifier2" type="nitf:BCS-A" dfdl:length="80" nillable="true" />
+                    <xs:element name="ImageIdentifier2" type="nitf:BCS-A" dfdl:length="80" nillable="true" dfdl:ref="nitf:nilString" />
                     <xs:group ref="nitf:ClassificationInformation" />
                     <xs:element name="Encryption" type="nitf:BCS-NP" dfdl:length="1" />
-                    <xs:element name="ImageSource" type="nitf:BCS-A" dfdl:length="42" nillable="true" />
+                    <xs:element name="ImageSource" type="nitf:BCS-A" dfdl:length="42" nillable="true" dfdl:ref="nitf:nilString" />
                     <xs:element name="NumberOfSignificantRowsInImage" type="nitf:BCS-NP" dfdl:length="8" />
                     <xs:element name="NumberOfSignificantColumnsInImage" type="nitf:BCS-NP" dfdl:length="8" />
                     <xs:element name="PixelValueType" type="nitf:BCS-A" dfdl:length="3" />
@@ -384,7 +391,7 @@ The message root is 'NITF'.
                     <xs:element name="ImageCategory" type="nitf:BCS-A" dfdl:length="8" />
                     <xs:element name="ActualBitsPerPixelPerBand" type="nitf:BCS-NP" dfdl:length="2" />
                     <xs:element name="PixelJustification" type="nitf:BCS-A" dfdl:length="1" />
-                    <xs:element name="ImageCoordinateRepresentation" type="nitf:BCS-A" dfdl:length="1" nillable="true" dfdl:outputValueCalc="{
+                    <xs:element name="ImageCoordinateRepresentation" type="nitf:BCS-A" dfdl:length="1" nillable="true" dfdl:ref="nitf:nilString" dfdl:outputValueCalc="{
                       if (fn:exists(../ImageGeographicLocation)) then
                         if (fn:exists(../ImageGeographicLocation/MilitaryGridReferenceSystem)) then 'U'
                         else if (fn:exists(../ImageGeographicLocation/NorthernHemisphere)) then 'N'
@@ -525,10 +532,10 @@ The message root is 'NITF'.
                           <xs:element name="Band" minOccurs="1" maxOccurs="99999" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../../NumberOfMultispectralBands)) then ../../NumberOfMultispectralBands[1] else ../../NumberOfBands }">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="Representation" type="nitf:BCS-A" dfdl:length="2" nillable="true" />
-                                <xs:element name="Subcategory" type="nitf:BCS-A" dfdl:length="6" nillable="true"/>
+                                <xs:element name="Representation" type="nitf:BCS-A" dfdl:length="2" nillable="true" dfdl:ref="nitf:nilString" />
+                                <xs:element name="Subcategory" type="nitf:BCS-A" dfdl:length="6" nillable="true" dfdl:ref="nitf:nilString" />
                                 <xs:element name="ImageFilterCondition" type="nitf:BCS-A" dfdl:length="1" />
-                                <xs:element name="StandardImageFilterCode" type="nitf:BCS-A" dfdl:length="3" nillable="true" />
+                                <xs:element name="StandardImageFilterCode" type="nitf:BCS-A" dfdl:length="3" nillable="true" dfdl:ref="nitf:nilString" />
                                 <xs:element name="NumberOfLUTS" type="nitf:BCS-NP" dfdl:length="1" dfdl:outputValueCalc="{ fn:count(../LUT) }"/>
                                 <xs:element name="NumberOfLUTEntries" minOccurs="0" type="nitf:BCS-NP" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfLUTS eq 0) then 0 else 1 }" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../LUT[1], 'bytes') }" />
                                 <xs:element name="LUT" type="xs:hexBinary" minOccurs="0" maxOccurs="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfLUTS }" dfdl:lengthKind="explicit" dfdl:length="{ ../NumberOfLUTEntries[1] }" />
@@ -823,21 +830,21 @@ The message root is 'NITF'.
         </xs:simpleType>
       </xs:element>
       <!-- TODO: all these classificiation fields are validated based on FileSecurityClassification and other information -->
-      <xs:element name="SecurityClassificationSystem" type="nitf:ECS-A" dfdl:length="2" nillable="true" />
-      <xs:element name="Codewords" type="nitf:BCS-A" dfdl:length="11" nillable="true" />
-      <xs:element name="ControlAndHandling" type="nitf:ECS-A" dfdl:length="2" nillable="true" />
-      <xs:element name="ReleasingInstructions" type="nitf:ECS-A" dfdl:length="20" nillable="true" />
-      <xs:element name="DeclassificationType" type="nitf:ECS-A" dfdl:length="2" nillable="true" />
-      <xs:element name="DeclassificationDate" type="nitf:ECS-A" dfdl:length="8" nillable="true" />
-      <xs:element name="DeclassificationExemption" type="nitf:ECS-A" dfdl:length="4" nillable="true" />
-      <xs:element name="Downgrade" type="nitf:ECS-A" dfdl:length="1" nillable="true" />
-      <xs:element name="DowngradeDate" type="nitf:date" nillable="true" />
-      <xs:element name="ClassificationText" type="nitf:ECS-A" dfdl:length="43" nillable="true" />
-      <xs:element name="ClassificationAuthorityType" type="nitf:ECS-A" dfdl:length="1" nillable="true" />
-      <xs:element name="ClassificationAuthority" type="nitf:ECS-A" dfdl:length="40" nillable="true" />
-      <xs:element name="ClassificationReason" type="nitf:ECS-A" dfdl:length="1" nillable="true" />
-      <xs:element name="SecuritySourceDate" type="nitf:date" nillable="true" />
-      <xs:element name="SecurityControlNumber" type="nitf:ECS-A" dfdl:length="15" nillable="true" />
+      <xs:element name="SecurityClassificationSystem" type="nitf:ECS-A" dfdl:length="2" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="Codewords" type="nitf:BCS-A" dfdl:length="11" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="ControlAndHandling" type="nitf:ECS-A" dfdl:length="2" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="ReleasingInstructions" type="nitf:ECS-A" dfdl:length="20" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="DeclassificationType" type="nitf:ECS-A" dfdl:length="2" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="DeclassificationDate" type="nitf:ECS-A" dfdl:length="8" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="DeclassificationExemption" type="nitf:ECS-A" dfdl:length="4" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="Downgrade" type="nitf:ECS-A" dfdl:length="1" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="DowngradeDate" type="nitf:date" nillable="true" dfdl:ref="nitf:nilDate" />
+      <xs:element name="ClassificationText" type="nitf:ECS-A" dfdl:length="43" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="ClassificationAuthorityType" type="nitf:ECS-A" dfdl:length="1" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="ClassificationAuthority" type="nitf:ECS-A" dfdl:length="40" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="ClassificationReason" type="nitf:ECS-A" dfdl:length="1" nillable="true" dfdl:ref="nitf:nilString" />
+      <xs:element name="SecuritySourceDate" type="nitf:date" nillable="true" dfdl:ref="nitf:nilDate" />
+      <xs:element name="SecurityControlNumber" type="nitf:ECS-A" dfdl:length="15" nillable="true" dfdl:ref="nitf:nilString" />
     </xs:sequence>
   </xs:group>
 
