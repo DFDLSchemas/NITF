@@ -525,11 +525,17 @@ The message root is 'NITF'.
                            else 0
                          }" />
                     <xs:element name="NumberOfBands" type="nitf:BCS-NP" dfdl:length="1" dfdl:outputValueCalc="{ if (fn:count(../Bands/Band) le 9) then fn:count(../Bands/Band) else 0  }" />
-                    <xs:element name="NumberOfMultispectralBands" minOccurs="0" type="nitf:BCS-NP" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfBands eq 0) then 1 else 0 }" dfdl:length="5" dfdl:outputValueCalc="{ if (fn:count(../Bands/Band) gt 9) then fn:count(../Bands/Band) else daf:error() }" />
+                    <xs:element name="NumberOfMultispectralBands" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfBands eq 0) then 1 else 0 }">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Value" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ if (fn:count(../../Bands/Band) gt 9) then fn:count(../../Bands/Band) else daf:error() }" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
                     <xs:element name="Bands">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Band" minOccurs="1" maxOccurs="99999" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../../NumberOfMultispectralBands)) then ../../NumberOfMultispectralBands[1] else ../../NumberOfBands }">
+                          <xs:element name="Band" minOccurs="1" maxOccurs="99999" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../../NumberOfMultispectralBands)) then ../../NumberOfMultispectralBands[1]/Value else ../../NumberOfBands }">
                             <xs:complexType>
                               <xs:sequence>
                                 <xs:element name="Representation" type="nitf:BCS-A" dfdl:length="2" nillable="true" dfdl:ref="nitf:nilString" />
@@ -537,8 +543,14 @@ The message root is 'NITF'.
                                 <xs:element name="ImageFilterCondition" type="nitf:BCS-A" dfdl:length="1" />
                                 <xs:element name="StandardImageFilterCode" type="nitf:BCS-A" dfdl:length="3" nillable="true" dfdl:ref="nitf:nilString" />
                                 <xs:element name="NumberOfLUTS" type="nitf:BCS-NP" dfdl:length="1" dfdl:outputValueCalc="{ fn:count(../LUT) }"/>
-                                <xs:element name="NumberOfLUTEntries" minOccurs="0" type="nitf:BCS-NP" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfLUTS eq 0) then 0 else 1 }" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../LUT[1], 'bytes') }" />
-                                <xs:element name="LUT" type="xs:hexBinary" minOccurs="0" maxOccurs="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfLUTS }" dfdl:lengthKind="explicit" dfdl:length="{ ../NumberOfLUTEntries[1] }" />
+                                <xs:element name="NumberOfLUTEntries" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfLUTS eq 0) then 0 else 1 }">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Value" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../../LUT[1], 'bytes') }" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="LUT" type="xs:hexBinary" minOccurs="0" maxOccurs="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfLUTS }" dfdl:lengthKind="explicit" dfdl:length="{ ../NumberOfLUTEntries[1]/Value }" />
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
@@ -634,8 +646,8 @@ The message root is 'NITF'.
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element name="BlockMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../BlockMaskRecordLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1] else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
-                          <xs:element name="PadPixelMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../PadOutputPixelCodeLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1] else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
+                          <xs:element name="BlockMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../BlockMaskRecordLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1]/Value else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
+                          <xs:element name="PadPixelMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../PadOutputPixelCodeLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1]/Value else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>

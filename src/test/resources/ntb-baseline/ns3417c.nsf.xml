@@ -214,22 +214,54 @@
                 <Destination_Identifier>0</Destination_Identifier>
                 <Huffman_Code>
                   <Lengths>
-                    <Length>0</Length>
-                    <Length>2</Length>
-                    <Length>3</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>0</Length>
-                    <Length>2</Length>
-                    <Length>3</Length>
-                    <Length>0</Length>
-                    <Length>0</Length>
-                    <Length>0</Length>
-                    <Length>0</Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>2</Value>
+                    </Length>
+                    <Length>
+                      <Value>3</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>2</Value>
+                    </Length>
+                    <Length>
+                      <Value>3</Value>
+                    </Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
                   </Lengths>
                   <Values>
                     <Value></Value>
@@ -256,22 +288,54 @@
                 <Destination_Identifier>0</Destination_Identifier>
                 <Huffman_Code>
                   <Lengths>
-                    <Length>0</Length>
-                    <Length>2</Length>
-                    <Length>2</Length>
-                    <Length>2</Length>
-                    <Length>1</Length>
-                    <Length>3</Length>
-                    <Length>3</Length>
-                    <Length>3</Length>
-                    <Length>3</Length>
-                    <Length>2</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>0</Length>
-                    <Length>1</Length>
-                    <Length>1</Length>
-                    <Length>201</Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>2</Value>
+                    </Length>
+                    <Length>
+                      <Value>2</Value>
+                    </Length>
+                    <Length>
+                      <Value>2</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>3</Value>
+                    </Length>
+                    <Length>
+                      <Value>3</Value>
+                    </Length>
+                    <Length>
+                      <Value>3</Value>
+                    </Length>
+                    <Length>
+                      <Value>3</Value>
+                    </Length>
+                    <Length>
+                      <Value>2</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>0</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>1</Value>
+                    </Length>
+                    <Length>
+                      <Value>201</Value>
+                    </Length>
                   </Lengths>
                   <Values>
                     <Value></Value>

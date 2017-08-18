@@ -88,7 +88,9 @@
       <NumberOfImageComments>0</NumberOfImageComments>
       <ImageCompression>NC</ImageCompression>
       <NumberOfBands>0</NumberOfBands>
-      <NumberOfMultispectralBands>31</NumberOfMultispectralBands>
+      <NumberOfMultispectralBands>
+        <Value>31</Value>
+      </NumberOfMultispectralBands>
       <Bands>
         <Band>
           <Representation xsi:nil="true" />

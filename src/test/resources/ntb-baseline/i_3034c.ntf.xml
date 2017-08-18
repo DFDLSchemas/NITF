@@ -95,7 +95,9 @@
           <ImageFilterCondition>N</ImageFilterCondition>
           <StandardImageFilterCode xsi:nil="true" />
           <NumberOfLUTS>3</NumberOfLUTS>
-          <NumberOfLUTEntries>2</NumberOfLUTEntries>
+          <NumberOfLUTEntries>
+            <Value>2</Value>
+          </NumberOfLUTEntries>
           <LUT>FF00</LUT>
           <LUT>00FF</LUT>
           <LUT>0000</LUT>
