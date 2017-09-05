@@ -16,7 +16,7 @@ libraryDependencies in ThisBuild := Seq(
   "com.mitre" % "dfdl-jpeg" % "0.0.1",
   "junit" % "junit" % "4.11" % "test",
   "com.novocode" % "junit-interface" % "0.10" % "test",
-  "edu.illinois.ncsa" %% "daffodil-tdml" % "2.0.0-SNAPSHOT" % "test"
+  "edu.illinois.ncsa" %% "daffodil-tdml" % "2.0.0" % "test"
 )
 
 retrieveManaged := true
