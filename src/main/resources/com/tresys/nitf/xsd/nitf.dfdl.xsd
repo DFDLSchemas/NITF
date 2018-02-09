@@ -46,7 +46,7 @@ The message root is 'NITF'.
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
            xmlns:fn="http://www.w3.org/2005/xpath-functions"
-           xmlns:daf="urn:ogf:dfdl:2013:imp:opensource.ncsa.illinois.edu:2012:ext"
+           xmlns:daf="urn:ogf:dfdl:2013:imp:daffodil.apache.org:2018:ext"
            xmlns:nitf="urn:nitf:2.1"
            targetNamespace="urn:nitf:2.1"
            elementFormDefault="unqualified">

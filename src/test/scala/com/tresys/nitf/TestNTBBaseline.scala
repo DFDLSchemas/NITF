@@ -1,7 +1,7 @@
 package com.tresys.nitf
 import org.junit.Test
-import edu.illinois.ncsa.daffodil.tdml.DFDLTestSuite
-import edu.illinois.ncsa.daffodil.util.Misc
+import org.apache.daffodil.tdml.DFDLTestSuite
+import org.apache.daffodil.util.Misc
 
 object TestNTBBaseline {
   val tdmlFile = "NTBBaseline.tdml"
