@@ -398,7 +398,7 @@ The message root is 'NITF'.
                         else if (fn:exists(../ImageGeographicLocation/SouthernHemisphere)) then 'S'
                         else if (fn:exists(../ImageGeographicLocation/Geographic)) then 'G'
                         else if (fn:exists(../ImageGeographicLocation/DecimalDegrees)) then 'D'
-                        else daf:error()
+                        else fn:error('nitf', 'fn:error called.', .)
                       else ' '
                     }"/>
                     <xs:element name="ImageGeographicLocation" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="60">
@@ -528,7 +528,7 @@ The message root is 'NITF'.
                     <xs:element name="NumberOfMultispectralBands" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfBands eq 0) then 1 else 0 }">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Value" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ if (fn:count(../../Bands/Band) gt 9) then fn:count(../../Bands/Band) else daf:error() }" />
+                          <xs:element name="Value" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ if (fn:count(../../Bands/Band) gt 9) then fn:count(../../Bands/Band) else fn:error('nitf', 'fn:error called.', .) }" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
