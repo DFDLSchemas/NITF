@@ -38,10 +38,19 @@ SOFTWARE.
   xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" 
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:fn="http://www.w3.org/2005/xpath-functions" 
+  xmlns:daf="urn:ogf:dfdl:2013:imp:daffodil.apache.org:2018:ext"
   xsi:schemaLocation="http://www.ogf.org/dfdl/dfdl-1.0/ xsd/DFDL_part3_model.xsd 
   http://www.w3.org/2001/XMLSchema xsd/XMLSchema_for_DFDL.xsd
   http://www.ibm.com/xmlns/dfdl/testData xsd/tdml.xsd"
-  defaultRoundTrip="true">
+  defaultRoundTrip="true"
+  defaultConfig="cfg_tuning">
+  
+  <tdml:defineConfig name="cfg_tuning">
+    <daf:tunables>
+      <daf:maxOccursBounds>50000</daf:maxOccursBounds>
+      <daf:suppressSchemaDefinitionWarnings>alignmentNotSame</daf:suppressSchemaDefinitionWarnings>
+    </daf:tunables>
+  </tdml:defineConfig>
 
   <tdml:parserTestCase name="i_3001a" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
     <tdml:document>
@@ -103,7 +112,8 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="i_3025b" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+  <tdml:parserTestCase name="i_3025b" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd"
+    roundTrip="twoPass">
     <tdml:document>
       <tdml:documentPart type="file">ntb-baseline/i_3025b.ntf</tdml:documentPart>
     </tdml:document>
@@ -415,7 +425,8 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:unparserTestCase>
 
-  <tdml:parserTestCase name="ns3022b" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+  <tdml:parserTestCase name="ns3022b" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd" 
+   roundTrip="twoPass">
     <tdml:document>
       <tdml:documentPart type="file">ntb-baseline/ns3022b.nsf</tdml:documentPart>
     </tdml:document>
