@@ -1,4 +1,8 @@
+.cache
+bin
 lib_managed
 target
-/bin/
+project/
 .cache-tests
+.cache-main
+*~
