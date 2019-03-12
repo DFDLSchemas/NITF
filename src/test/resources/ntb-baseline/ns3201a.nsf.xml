@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
   <Header>
     <FileProfileName>NSIF</FileProfileName>
@@ -5,24 +6,24 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3201a</OriginatingStationID>
-    <FileDateAndTime>1999-02-17T10:19:39.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>1999-02-17T10:19:39+00:00</FileDateAndTime>
     <FileTitle>Checks an uncomp. 487x347 8-bit color w/3 LUTS each at 128 bytes. flowers.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
-    <SecurityClassificationSystem xsi:nil="true" />
-    <Codewords xsi:nil="true" />
-    <ControlAndHandling xsi:nil="true" />
-    <ReleasingInstructions xsi:nil="true" />
-    <DeclassificationType xsi:nil="true" />
-    <DeclassificationDate xsi:nil="true" />
-    <DeclassificationExemption xsi:nil="true" />
-    <Downgrade xsi:nil="true" />
-    <DowngradeDate xsi:nil="true" />
-    <ClassificationText xsi:nil="true" />
-    <ClassificationAuthorityType xsi:nil="true" />
-    <ClassificationAuthority xsi:nil="true" />
-    <ClassificationReason xsi:nil="true" />
-    <SecuritySourceDate xsi:nil="true" />
-    <SecurityControlNumber xsi:nil="true" />
+    <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+    <Codewords xsi:nil="true"></Codewords>
+    <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+    <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+    <DeclassificationType xsi:nil="true"></DeclassificationType>
+    <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+    <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+    <Downgrade xsi:nil="true"></Downgrade>
+    <DowngradeDate xsi:nil="true"></DowngradeDate>
+    <ClassificationText xsi:nil="true"></ClassificationText>
+    <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+    <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+    <ClassificationReason xsi:nil="true"></ClassificationReason>
+    <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+    <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
     <FileCopyNumber>0</FileCopyNumber>
     <FileNumberOfCopies>0</FileNumberOfCopies>
     <Encryption>0</Encryption>
@@ -31,8 +32,8 @@
       <Green>7F</Green>
       <Blue>00</Blue>
     </FileBackgroundColor>
-    <OriginatorsName xsi:nil="true" />
-    <OriginatorsPhoneNumber xsi:nil="true" />
+    <OriginatorsName xsi:nil="true"></OriginatorsName>
+    <OriginatorsPhoneNumber xsi:nil="true"></OriginatorsPhoneNumber>
     <FileLength>170590</FileLength>
     <FileHeaderLength>413</FileHeaderLength>
     <NumberOfImageSegments>1</NumberOfImageSegments>
@@ -56,31 +57,31 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>IMAGE 01</ImageIdentifier1>
-      <ImageDateAndTime>1998-02-17T10:19:39.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>1998-02-17T10:19:39+00:00</ImageDateAndTime>
       <TargetIdentifier>
-        <BasicEncyclopediaIdentifier xsi:nil="true" />
-        <FacilityOSuffix xsi:nil="true" />
-        <CountryCode xsi:nil="true" />
+        <BasicEncyclopediaIdentifier xsi:nil="true"></BasicEncyclopediaIdentifier>
+        <FacilityOSuffix xsi:nil="true"></FacilityOSuffix>
+        <CountryCode xsi:nil="true"></CountryCode>
       </TargetIdentifier>
-      <ImageIdentifier2 xsi:nil="true" />
+      <ImageIdentifier2 xsi:nil="true"></ImageIdentifier2>
       <SecurityClassification>U</SecurityClassification>
-      <SecurityClassificationSystem xsi:nil="true" />
-      <Codewords xsi:nil="true" />
-      <ControlAndHandling xsi:nil="true" />
-      <ReleasingInstructions xsi:nil="true" />
-      <DeclassificationType xsi:nil="true" />
-      <DeclassificationDate xsi:nil="true" />
-      <DeclassificationExemption xsi:nil="true" />
-      <Downgrade xsi:nil="true" />
-      <DowngradeDate xsi:nil="true" />
-      <ClassificationText xsi:nil="true" />
-      <ClassificationAuthorityType xsi:nil="true" />
-      <ClassificationAuthority xsi:nil="true" />
-      <ClassificationReason xsi:nil="true" />
-      <SecuritySourceDate xsi:nil="true" />
-      <SecurityControlNumber xsi:nil="true" />
+      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+      <Codewords xsi:nil="true"></Codewords>
+      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+      <DeclassificationType xsi:nil="true"></DeclassificationType>
+      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+      <Downgrade xsi:nil="true"></Downgrade>
+      <DowngradeDate xsi:nil="true"></DowngradeDate>
+      <ClassificationText xsi:nil="true"></ClassificationText>
+      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+      <ClassificationReason xsi:nil="true"></ClassificationReason>
+      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
       <Encryption>0</Encryption>
-      <ImageSource xsi:nil="true" />
+      <ImageSource xsi:nil="true"></ImageSource>
       <NumberOfSignificantRowsInImage>347</NumberOfSignificantRowsInImage>
       <NumberOfSignificantColumnsInImage>487</NumberOfSignificantColumnsInImage>
       <PixelValueType>INT</PixelValueType>
@@ -88,16 +89,16 @@
       <ImageCategory>VIS</ImageCategory>
       <ActualBitsPerPixelPerBand>8</ActualBitsPerPixelPerBand>
       <PixelJustification>R</PixelJustification>
-      <ImageCoordinateRepresentation xsi:nil="true" />
+      <ImageCoordinateRepresentation xsi:nil="true"></ImageCoordinateRepresentation>
       <NumberOfImageComments>0</NumberOfImageComments>
       <ImageCompression>NC</ImageCompression>
       <NumberOfBands>1</NumberOfBands>
       <Bands>
         <Band>
           <Representation>LU</Representation>
-          <Subcategory xsi:nil="true" />
+          <Subcategory xsi:nil="true"></Subcategory>
           <ImageFilterCondition>N</ImageFilterCondition>
-          <StandardImageFilterCode xsi:nil="true" />
+          <StandardImageFilterCode xsi:nil="true"></StandardImageFilterCode>
           <NumberOfLUTS>3</NumberOfLUTS>
           <NumberOfLUTEntries>
             <Value>128</Value>
@@ -134,28 +135,32 @@
       <FilePartType>TE</FilePartType>
       <TextIdentifier> PIDF T</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-02-17T10:19:39.000000+00:00</TextDateAndTime>
+      <TextDateAndTime>1998-02-17T10:19:39+00:00</TextDateAndTime>
       <TextTitle>                                                    Paragon Imaging Comment File</TextTitle>
       <SecurityClassification>U</SecurityClassification>
-      <SecurityClassificationSystem xsi:nil="true" />
-      <Codewords xsi:nil="true" />
-      <ControlAndHandling xsi:nil="true" />
-      <ReleasingInstructions xsi:nil="true" />
-      <DeclassificationType xsi:nil="true" />
-      <DeclassificationDate xsi:nil="true" />
-      <DeclassificationExemption xsi:nil="true" />
-      <Downgrade xsi:nil="true" />
-      <DowngradeDate xsi:nil="true" />
-      <ClassificationText xsi:nil="true" />
-      <ClassificationAuthorityType xsi:nil="true" />
-      <ClassificationAuthority xsi:nil="true" />
-      <ClassificationReason xsi:nil="true" />
-      <SecuritySourceDate xsi:nil="true" />
-      <SecurityControlNumber xsi:nil="true" />
+      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+      <Codewords xsi:nil="true"></Codewords>
+      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+      <DeclassificationType xsi:nil="true"></DeclassificationType>
+      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+      <Downgrade xsi:nil="true"></Downgrade>
+      <DowngradeDate xsi:nil="true"></DowngradeDate>
+      <ClassificationText xsi:nil="true"></ClassificationText>
+      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+      <ClassificationReason xsi:nil="true"></ClassificationReason>
+      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
       <Encryption>0</Encryption>
       <TextFormat>STA</TextFormat>
       <TextExtendedSubheaderDataLength>0</TextExtendedSubheaderDataLength>
     </Header>
-    <Data>50617261676F6E20496D6167696E67207266746F706964662C2076657273696F6E20312E300A0A436F6E766572746564206F6E20576564204A756E2033302031313A30323A323720313939330A0A</Data>
+    <Data>Paragon Imaging rftopidf, version 1.0
+
+Converted on Wed Jun 30 11:02:27 1993
+
+</Data>
   </TextSegment>
 </nitf:NITF>

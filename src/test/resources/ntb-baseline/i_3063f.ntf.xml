@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3063f</OriginatingStationID>
-    <FileDateAndTime>1997-12-20T12:00:31.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1997-12-20T12:00:31.000000+00:00</FileDateAndTime>
     <FileTitle>Checks for rendering a polygon of hatch style 5.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />

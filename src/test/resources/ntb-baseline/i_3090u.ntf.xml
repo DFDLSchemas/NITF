@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3090u</OriginatingStationID>
-    <FileDateAndTime>1998-03-25T15:32:34.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1998-03-25T15:32:34.000000+00:00</FileDateAndTime>
     <FileTitle>Checks for prop. interp. of VDC &amp; draw of cent-close circ arcs in diff. quads.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -56,7 +56,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime>1997-03-25T15:32:34.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">1997-03-25T15:32:34.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

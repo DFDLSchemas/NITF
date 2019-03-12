@@ -754,7 +754,7 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Data" type="xs:string" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/TextSegmentLengths[dfdl:occursIndex()]/DataLength }" />
+              <xs:element name="Data" type="xs:string" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="{ ../../Header/TextSegmentLengths[dfdl:occursIndex()]/DataLength }" dfdl:encoding="ISO-8859-1"/>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3025b</OriginatingStationID>
-    <FileDateAndTime>1999-02-16T12:01:59.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1999-02-16T12:01:59.000000+00:00</FileDateAndTime>
     <FileTitle>Checks a JPEG-compressed 64x64 8-bit mono image with leading FF's.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +52,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>0000000001</ImageIdentifier1>
-      <ImageDateAndTime>1998-02-16T12:01:59.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">1998-02-16T12:01:59.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />
@@ -128,8 +128,7 @@
       <PayloadLength>632</PayloadLength>
       <JFIF>
         <Segment>
-          <SOI>
-          </SOI>
+          <SOI />
         </Segment>
         <Segment>
           <APP6>
@@ -413,57 +412,49 @@
           <DataBlob>D18CAA0C91963FA0AB0663D862B1BCC627935A4CF907D474AE3893EB5166A6CD4A0E0E457F</DataBlob>
         </Segment>
         <Segment>
-          <RST0>
-          </RST0>
+          <RST0 />
         </Segment>
         <Segment>
           <DataBlob>A2D8C9C564D4806580F535EF0400300019AF10230483DAA0A519A662BF</DataBlob>
         </Segment>
         <Segment>
-          <RST1>
-          </RST1>
+          <RST1 />
         </Segment>
         <Segment>
           <DataBlob>8197017D4F5AC7C575B12FCE0FA735EA86B8D9173861DBAD712056DAA13CF6AE9446A083D7DABF</DataBlob>
         </Segment>
         <Segment>
-          <RST2>
-          </RST2>
+          <RST2 />
         </Segment>
         <Segment>
           <DataBlob>D193B0AC2AF52886173EB5B06A239A66D53CE2AC9F6AC066C57F</DataBlob>
         </Segment>
         <Segment>
-          <RST3>
-          </RST3>
+          <RST3 />
         </Segment>
         <Segment>
           <DataBlob>BEE41C63EB593DEBAC6765E38C56579ADED5A2263D315D410C3907F0AABBFB1E0D72920EF5</DataBlob>
         </Segment>
         <Segment>
-          <RST4>
-          </RST4>
+          <RST4 />
         </Segment>
         <Segment>
           <DataBlob>7B1F9BE82AA0EBF8D750395663DF81F4AE0EBB08D41393D07F3AF4DE2B25941AE5D8718CD7</DataBlob>
         </Segment>
         <Segment>
-          <RST5>
-          </RST5>
+          <RST5 />
         </Segment>
         <Segment>
           <DataBlob>8C8C1AAF5D1E70A47A572DC575AAE70004271E953173FDD22B0B71CF5ADEEB5F</DataBlob>
         </Segment>
         <Segment>
-          <RST6>
-          </RST6>
+          <RST6 />
         </Segment>
         <Segment>
           <DataBlob>BEE3047D2B2075A71F7A78DB9AEB4CA070A3F3AA419DCE335D608D7BF26ACED03B57</DataBlob>
         </Segment>
         <Segment>
-          <EOI>
-          </EOI>
+          <EOI />
         </Segment>
       </JFIF>
     </Data>
