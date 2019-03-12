@@ -33,8 +33,8 @@ class TestNTBBaseline {
   @Test def test_i_3090m() { runner.runOneTest("i_3090m") }
   @Test def test_i_3090u() { runner.runOneTest("i_3090u") }
   @Test def test_i_3113g() { runner.runOneTest("i_3113g") }
-  @Test def test_i_3114e() { runner.runOneTest("i_3114e") }
-  @Test def test_i_3117ax() { runner.runOneTest("i_3117ax") }
+  @Test def test_i_3114e() { runner.runOneTest("i_3114e") } // Does not round trip - DAFFODIL-1559
+  @Test def test_i_3117ax() { runner.runOneTest("i_3117ax") } // Does not round trip - DAFFODIL-1559
   @Test def test_i_3128b() { runner.runOneTest("i_3128b") }
   @Test def test_i_3201c() { runner.runOneTest("i_3201c") }
   @Test def test_i_3228c() { runner.runOneTest("i_3228c") }
@@ -68,8 +68,8 @@ class TestNTBBaseline {
   @Test def test_ns3090q() { runner.runOneTest("ns3090q") }
   @Test def test_ns3101b() { runner.runOneTest("ns3101b") }
   @Test def test_ns3114a() { runner.runOneTest("ns3114a") }
-  @Test def test_ns3114i() { runner.runOneTest("ns3114i") }
-  @Test def test_ns3118b() { runner.runOneTest("ns3118b") }
+  @Test def test_ns3114i() { runner.runOneTest("ns3114i") } // Does not round trip - DAFFODIL-1559
+  @Test def test_ns3118b() { runner.runOneTest("ns3118b") } // Does not round trip - DAFFODIL-1559
   @Test def test_ns3119b() { runner.runOneTest("ns3119b") }
   @Test def test_ns3201a() { runner.runOneTest("ns3201a") }
   @Test def test_ns3228b() { runner.runOneTest("ns3228b") }

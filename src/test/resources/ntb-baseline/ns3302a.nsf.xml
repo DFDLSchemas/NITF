@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3302a</OriginatingStationID>
-    <FileDateAndTime>1999-03-30T12:23:50.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1999-03-30T12:23:50.000000+00:00</FileDateAndTime>
     <FileTitle>Checks uncomp. 256x256 24-bit SI blocked color image. IMODE=B. tracker.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +52,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime>1998-03-30T12:23:50.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">1998-03-30T12:23:50.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

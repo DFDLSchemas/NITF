@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3076A</OriginatingStationID>
-    <FileDateAndTime>1997-12-24T13:30:37.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1997-12-24T13:30:37.000000+00:00</FileDateAndTime>
     <FileTitle>Checks for rendering CGM elliptical arc cords, line and edge width of 1 pixel.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />

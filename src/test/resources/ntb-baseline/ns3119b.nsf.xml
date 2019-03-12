@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3119b</OriginatingStationID>
-    <FileDateAndTime>1999-01-26T13:53:11.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1999-01-26T13:53:11.000000+00:00</FileDateAndTime>
     <FileTitle>This NITF file contains 8 symbols, totalling 1,048,576 bytes.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />

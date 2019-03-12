@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3361c</OriginatingStationID>
-    <FileDateAndTime>2000-12-12T12:12:12.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">2000-12-12T12:12:12.000000+00:00</FileDateAndTime>
     <FileTitle>Boston_1 CONTAINS Four Sub-images lined up to show as a single image, dec data.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -64,7 +64,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>GRT BOSTON</ImageIdentifier1>
-      <ImageDateAndTime>2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />
@@ -155,7 +155,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>GRT BOSTON</ImageIdentifier1>
-      <ImageDateAndTime>2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />
@@ -246,7 +246,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>GRT BOSTON</ImageIdentifier1>
-      <ImageDateAndTime>2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />
@@ -337,7 +337,7 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>GRT BOSTON</ImageIdentifier1>
-      <ImageDateAndTime>2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime xsi:type="xs:dateTime">2000-12-12T12:12:11.000000+00:00</ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

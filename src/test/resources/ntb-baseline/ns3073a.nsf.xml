@@ -5,7 +5,7 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3073A</OriginatingStationID>
-    <FileDateAndTime>1997-12-22T20:47:48.000000+00:00</FileDateAndTime>
+    <FileDateAndTime xsi:type="xs:dateTime">1997-12-22T20:47:48.000000+00:00</FileDateAndTime>
     <FileTitle>Checks for rendering CGM circ arcs. line width of 1 &amp; edge width of 3 pixels.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
