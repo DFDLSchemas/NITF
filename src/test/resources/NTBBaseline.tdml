@@ -136,6 +136,51 @@ SOFTWARE.
       <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f.ntf.xml</tdml:dfdlInfoset>
     </tdml:infoset>
   </tdml:parserTestCase>
+  
+  <tdml:parserTestCase name="i_3034f_decimal" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034f_decimal.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f_decimal.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+  
+  <tdml:parserTestCase name="i_3034f_geographic" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034f_geographic.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f_geographic.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+  
+  <tdml:parserTestCase name="i_3034f_military" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034f_military.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f_military.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+  
+  <tdml:parserTestCase name="i_3034f_utm_north" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034f_utm_north.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f_utm_north.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+  
+  <tdml:parserTestCase name="i_3034f_utm_south" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
+    <tdml:document>
+      <tdml:documentPart type="file">ntb-baseline/i_3034f_utm_south.ntf</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset type="file">ntb-baseline/i_3034f_utm_south.ntf.xml</tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
 
   <tdml:parserTestCase name="i_3041a" root="NITF" model="com/tresys/nitf/xsd/nitf.dfdl.xsd">
     <tdml:document>

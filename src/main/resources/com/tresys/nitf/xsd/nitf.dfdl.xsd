@@ -402,7 +402,7 @@ The message root is 'NITF'.
                       else ' '
                     }"/>
                     <xs:element name="ImageGeographicLocation" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="60">
-                      <xs:complexType>
+                       <xs:complexType>
                         <xs:choice>
                           <xs:element name="MilitaryGridReferenceSystem"> <!-- zzBJKeeeeennnnn -->
                             <xs:complexType>
@@ -417,8 +417,12 @@ The message root is 'NITF'.
                                 <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
                                   <xs:complexType>
                                     <xs:sequence>
-                                      <xs:element name="Latitude" type="nitf:BCS-A" dfdl:length="15" />
-                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="15" />
+                                      <xs:element name="Zone" type="nitf:BCS-A" dfdl:length="2" />
+                                      <xs:element name="Band" type="nitf:BCS-A" dfdl:length="1" />
+                                      <xs:element name="J" type="nitf:BCS-A" dfdl:length="1" />
+                                      <xs:element name="K" type="nitf:BCS-A" dfdl:length="1" />
+                                      <xs:element name="Easting" type="nitf:BCS-A" dfdl:length="5" />
+                                      <xs:element name="Northing" type="nitf:BCS-A" dfdl:length="5" />
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>
@@ -438,8 +442,9 @@ The message root is 'NITF'.
                                 <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
                                   <xs:complexType>
                                     <xs:sequence>
-                                      <xs:element name="Latitude" type="nitf:BCS-A" dfdl:length="15" />
-                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="15" />
+                                      <xs:element name="Zone" type="nitf:BCS-A" dfdl:length="2" />
+                                      <xs:element name="Easting" type="nitf:BCS-A" dfdl:length="6" />
+                                      <xs:element name="Northing" type="nitf:BCS-A" dfdl:length="7" />
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>
@@ -459,8 +464,9 @@ The message root is 'NITF'.
                                 <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
                                   <xs:complexType>
                                     <xs:sequence>
-                                      <xs:element name="Latitude" type="nitf:BCS-A" dfdl:length="15" />
-                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="15" />
+                                      <xs:element name="Zone" type="nitf:BCS-A" dfdl:length="2" />
+                                      <xs:element name="Easting" type="nitf:BCS-A" dfdl:length="6" />
+                                      <xs:element name="Northing" type="nitf:BCS-A" dfdl:length="7" />
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>
@@ -480,8 +486,26 @@ The message root is 'NITF'.
                                 <xs:element name="Corner" minOccurs="4" maxOccurs="4" dfdl:occursCountKind="fixed">
                                   <xs:complexType>
                                     <xs:sequence>
-                                      <xs:element name="Latitude" type="nitf:BCS-A" dfdl:length="7" />
-                                      <xs:element name="Longitude" type="nitf:BCS-A" dfdl:length="8" />
+                                      <xs:element name="Latitude">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                              <xs:element name="Degrees" type="nitf:BCS-A" dfdl:length="2" />
+                                              <xs:element name="Minutes" type="nitf:BCS-A" dfdl:length="2" />
+                                              <xs:element name="Seconds" type="nitf:BCS-A" dfdl:length="2" />
+                                              <xs:element name="NorthSouth" type="nitf:BCS-A" dfdl:length="1" />
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Longitude">
+                                          <xs:complexType>
+                                            <xs:sequence>
+                                              <xs:element name="Degrees" type="nitf:BCS-A" dfdl:length="3" />
+                                              <xs:element name="Minutes" type="nitf:BCS-A" dfdl:length="2" />
+                                              <xs:element name="Seconds" type="nitf:BCS-A" dfdl:length="2" />
+                                              <xs:element name="EastWest" type="nitf:BCS-A" dfdl:length="1" />
+                                            </xs:sequence>
+                                          </xs:complexType>
+                                      </xs:element>
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>
