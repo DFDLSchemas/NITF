@@ -23,6 +23,11 @@ class TestNTBBaseline {
   @Test def test_i_3025b() { runner.runOneTest("i_3025b") }
   @Test def test_i_3034c() { runner.runOneTest("i_3034c") }
   @Test def test_i_3034f() { runner.runOneTest("i_3034f") }
+  @Test def test_i_3034f_decimal() { runner.runOneTest("i_3034f_decimal") }
+  @Test def test_i_3034f_geographic() { runner.runOneTest("i_3034f_geographic") }
+  @Test def test_i_3034f_military() { runner.runOneTest("i_3034f_military") }
+  @Test def test_i_3034f_utm_north() { runner.runOneTest("i_3034f_utm_north") }
+  @Test def test_i_3034f_utm_south() { runner.runOneTest("i_3034f_utm_south") }
   @Test def test_i_3041a() { runner.runOneTest("i_3041a") }
   @Test def test_i_3051e() { runner.runOneTest("i_3051e") }
   @Test def test_i_3052a() { runner.runOneTest("i_3052a") }
