@@ -1,25 +1,17 @@
-organization := "com.tresys"
-
 name := "dfdl-nitf"
-
+ 
+organization := "com.tresys"
+ 
 version := "0.0.1"
-
-crossPaths := false
-
-testOptions in ThisBuild += Tests.Argument(TestFrameworks.JUnit, "-v")
-
-libraryDependencies in ThisBuild := Seq(
+ 
+scalaVersion := "2.12.11"
+ 
+libraryDependencies := Seq(
   "com.mitre" % "dfdl-jpeg" % "0.0.1",
-  "junit" % "junit" % "4.11" % "test",
+  "org.apache.daffodil" %% "daffodil-tdml-processor" % "2.6.0" % "test",
   "com.novocode" % "junit-interface" % "0.11" % "test",
-  "org.apache.daffodil" %% "daffodil-tdml-processor" % "2.3.0" % "test"
 )
 
-retrieveManaged := true
+testOptions += Tests.Argument(TestFrameworks.JUnit, "-v")
 
-exportJars in ThisBuild := true
-
-exportJars in Test in ThisBuild := true
-
-publishArtifact in Test := true
-
+crossPaths := false
