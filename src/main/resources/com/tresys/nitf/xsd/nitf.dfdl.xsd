@@ -53,10 +53,12 @@ The message root is 'NITF'.
            elementFormDefault="unqualified">
 
   <xs:import schemaLocation="com/mitre/jpeg/xsd/jpeg.dfdl.xsd" />
-  <xs:import namespace="urn:rpf:1.0" schemaLocation="com/tresys/rpf/xsd/rpf_frame_file.dfdl.xsd" />
+  <xs:import namespace="urn:rpf:1.0" schemaLocation="com/tresys/rpf/xsd/rpf_common.dfdl.xsd" />
 
   <xs:annotation>
     <xs:appinfo source="http://www.ogf.org/dfdl/">
+
+      <dfdl:defineVariable name="isRPFTOC" type="xs:string" defaultValue="true" />
 
       <dfdl:format representation="text" alignment="1" alignmentUnits="bytes"
         binaryBooleanFalseRep="0" binaryBooleanTrueRep="1"
@@ -154,6 +156,7 @@ The message root is 'NITF'.
   <xs:simpleType name="signedBinaryIntBits" dfdl:lengthKind="explicit" dfdl:lengthUnits="bits" dfdl:representation="binary" dfdl:alignmentUnits="bits">
     <xs:restriction base="xs:int" />
   </xs:simpleType>
+
 
   <xs:element name="NITF">
     <xs:complexType>
@@ -799,7 +802,7 @@ The message root is 'NITF'.
                     <xs:element name="UniqueDESTypeIdentifier" type="nitf:BCS-A" dfdl:length="25" />
                     <xs:element name="VersionOfTheDataDefinition" type="nitf:BCS-NP" dfdl:length="2" />
                     <xs:group ref="nitf:ClassificationInformation" />
-                    <xs:element name="DESOverflowedHeaderType" type="nitf:BCS-A" minOccurs="0" dfdl:length="6" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') then 1 else 0 }" />
+                    <xs:element name="DESOverflowedHeaderType" type="nitf:BCS-A" minOccurs="0" dfdl:length="6" dfdl:occursCountKind="expression" dfdl:occursCount="{ if ((../UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') or (../UniqueDESTypeIdentifier eq 'Registered Extensions')) then 1 else 0 }" />
                     <xs:element name="DESDataItemOverflowed" type="nitf:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../DESOverflowedHeaderType)) then 1 else 0 }" />
                     <xs:element name="DESUserDefinedSubheaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
                       if (fn:exists(../DESUserDefinedSubheaderFields)) then dfdl:valueLength(../DESUserDefinedSubheaderFields[1], 'bytes') else 0
@@ -814,7 +817,7 @@ The message root is 'NITF'.
                     <xs:element ref="nitf:TaggedRecordExtensions">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
-                          <dfdl:discriminator test="{ ../../Header/UniqueDESTypeIdentifier eq 'TRE_OVERFLOW' }" />
+                          <dfdl:discriminator test="{ (../../Header/UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') or (../../Header/UniqueDESTypeIdentifier eq 'Registered Extensions') }" />
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
@@ -905,6 +908,11 @@ The message root is 'NITF'.
                     <xs:choice dfdl:choiceDispatchKey="{ ../UniqueExtensionTypeIdentifier }">
                       <xs:element dfdl:choiceBranchKey="RPFHDR" name="RPFHeader" type="rpf:headerSection" />
                       <xs:element dfdl:choiceBranchKey="RPFIMG" name="RPFImage">
+                        <xs:annotation>
+                          <xs:appinfo source="http://www.ogf.org/dfdl/">
+                            <dfdl:setVariable ref="nitf:isRPFTOC" value="false" />
+                          </xs:appinfo>
+                        </xs:annotation>
                         <xs:complexType>
                           <xs:sequence>
                             <xs:element name="LocationSection" type="rpf:locationSection" />
@@ -917,10 +925,26 @@ The message root is 'NITF'.
                       </xs:element>
                       <xs:element dfdl:choiceBranchKey="RPFDES" name="RPFData">
                         <xs:complexType>
-                          <xs:sequence>
-                            <xs:element name="AttributeSection" type="rpf:attributeSection" minOccurs="0" maxOccurs="1" />
-                            <xs:element name="ReplaceUpdateSection" type="rpf:replaceUpdateSection" minOccurs="0" maxOccurs="1" />
-                          </xs:sequence>
+                          <xs:choice dfdl:choiceDispatchKey="{ $nitf:isRPFTOC }">
+                            <xs:element name="RPFTableOfContents" dfdl:choiceBranchKey="true">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="LocationSection" type="rpf:locationSection" />
+                                  <xs:element name="BoundaryRectangleSection" type="rpf:boundaryRectangleSection" minOccurs="0" maxOccurs="1" />
+                                  <xs:element name="FrameFileIndexSection" type="rpf:frameFileIndexSection" minOccurs="0" maxOccurs="1" />
+                                  <xs:element name="ColortableIndexSection" type="rpf:colortableIndexSection" minOccurs="0" maxOccurs="1" />
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RPFFrameFileAttributes" dfdl:choiceBranchKey="false">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="AttributeSection" type="rpf:attributeSection" minOccurs="0" maxOccurs="1" />
+                                  <xs:element name="ReplaceUpdateSection" type="rpf:replaceUpdateSection" minOccurs="0" maxOccurs="1" />
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:choice>
                         </xs:complexType>
                       </xs:element>
                     </xs:choice>
