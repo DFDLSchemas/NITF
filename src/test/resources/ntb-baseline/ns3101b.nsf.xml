@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3101b</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">2000-01-07T15:35:51.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">2000-01-07T15:35:51.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks for how a system handles fonts.                   .</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />

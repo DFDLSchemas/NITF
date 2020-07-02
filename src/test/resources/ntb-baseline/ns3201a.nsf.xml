@@ -6,7 +6,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3201a</OriginatingStationID>
-    <FileDateAndTime>1999-02-17T10:19:39+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1999-02-17T10:19:39+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks an uncomp. 487x347 8-bit color w/3 LUTS each at 128 bytes. flowers.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -57,7 +59,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>IMAGE 01</ImageIdentifier1>
-      <ImageDateAndTime>1998-02-17T10:19:39+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-02-17T10:19:39+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true"></BasicEncyclopediaIdentifier>
         <FacilityOSuffix xsi:nil="true"></FacilityOSuffix>
@@ -135,7 +139,9 @@
       <FilePartType>TE</FilePartType>
       <TextIdentifier> PIDF T</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-02-17T10:19:39+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-02-17T10:19:39+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>                                                    Paragon Imaging Comment File</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>

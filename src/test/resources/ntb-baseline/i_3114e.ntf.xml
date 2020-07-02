@@ -6,7 +6,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3114E</OriginatingStationID>
-    <FileDateAndTime>1999-01-07T08:48:00+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1999-01-07T08:48:00+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks the handling of an NITF file with all UT1 text values.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -54,7 +56,9 @@
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC001</TextIdentifier>
       <TextAttachmentLevel>0</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T08:48:00+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T08:48:00+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>This is an unclassified UT1 text file with all values Hex 0xA0 to 0xFF tested.</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>

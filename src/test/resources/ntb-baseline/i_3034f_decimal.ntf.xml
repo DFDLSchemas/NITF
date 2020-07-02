@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3034F_DD</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-18T12:15:39.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1997-12-18T12:15:39.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Check ImageCoordinateRepresentation for ImageGeographicLocation/DecimalDegrees.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1996-12-18T12:15:39.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1996-12-18T12:15:39.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

@@ -171,13 +171,7 @@ The message root is 'NITF'.
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
-              <xs:element name="FileVersion" type="nitf:BCS-A" dfdl:length="5">
-                <xs:annotation>
-                  <xs:appinfo source="http://www.ogf.org/dfdl/">
-                    <dfdl:assert message="File Version must equal '02.10' for NTIF or '01.00' for NSIF" test="{ ((../FileProfileName eq 'NITF') and (. eq '02.00')) or ((../FileProfileName eq 'NSIF') and (. eq '01.00')) }" />
-                  </xs:appinfo>
-                </xs:annotation>
-              </xs:element>
+              <xs:element name="FileVersion" type="nitf:BCS-A" dfdl:length="5" />
               <xs:element name="ComplexityLevel" type="nitf:BCS-NP" dfdl:length="2" />
               <xs:element name="StandardType" type="nitf:BCS-A" dfdl:length="4">
                 <xs:annotation>
@@ -212,7 +206,7 @@ The message root is 'NITF'.
                 </xs:annotation>
               </xs:element>
               <xs:element name="FileHeaderLength" type="nitf:BCS-NP" dfdl:length="6" /> <!-- TODO: Output Value Calc -->
-              <xs:element name="NumberOfImageSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../ImageSegment) }" />
+              <xs:element name="NumberOfImageSegments" type="nitf:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ if (fn:exists(../../ImageSegment)) then fn:count(../../ImageSegment) else 0 }" />
               <xs:element name="ImageSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfImageSegments }">
                 <xs:complexType>
                   <xs:sequence>
@@ -302,7 +296,7 @@ The message root is 'NITF'.
                     <xs:element name="HeaderLength" type="nitf:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
                       200 +
                       (3  * fn:count(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESOverflowedHeaderType)) +
-                      (if (../../../DataExtensionSegment[dfdl:occursIndex()]/Header/UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') then 6 else 0) +
+                      (if ((../../../DataExtensionSegment[dfdl:occursIndex()]/Header/UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') or (../../../DataExtensionSegment[dfdl:occursIndex()]/Header/UniqueDESTypeIdentifier eq 'Registered Extensions')) then 6 else 0) +
                       (if (fn:exists(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESUserDefinedSubheaderFields)) then dfdl:valueLength(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESUserDefinedSubheaderFields[1], 'bytes') else 0)
                       }">
                       <xs:annotation>
@@ -900,54 +894,60 @@ The message root is 'NITF'.
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UniqueExtensionTypeIdentifier" type="nitf:BCS-A" dfdl:length="6" />
-              <xs:element name="LengthOfData" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../UserDefinedData, 'bytes') }" />
+              <xs:element name="LengthOfData" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+              if (fn:exists(../UserDefinedData/Wrapper)) then dfdl:valueLength(../UserDefinedData/Wrapper, 'bytes')
+              else dfdl:valueLength(../UserDefinedData/data, 'bytes') }" />
               <!-- TODO: the format of some TRE's are registered and defined in the DataExtensionRegistry maintained by JITC -->
               <xs:element name="UserDefinedData">
                 <xs:complexType>
                   <xs:choice>
-                    <xs:choice dfdl:choiceDispatchKey="{ ../UniqueExtensionTypeIdentifier }">
-                      <xs:element dfdl:choiceBranchKey="RPFHDR" name="RPFHeader" type="rpf:headerSection" />
-                      <xs:element dfdl:choiceBranchKey="RPFIMG" name="RPFImage">
-                        <xs:annotation>
-                          <xs:appinfo source="http://www.ogf.org/dfdl/">
-                            <dfdl:setVariable ref="nitf:isRPFTOC" value="false" />
-                          </xs:appinfo>
-                        </xs:annotation>
-                        <xs:complexType>
-                          <xs:sequence>
-                            <xs:element name="LocationSection" type="rpf:locationSection" />
-                            <xs:element name="CoverageSection" type="rpf:coverageSection" minOccurs="0" maxOccurs="1" />
-                            <xs:element name="ColorSection" type="rpf:colorSection" minOccurs="0" maxOccurs="1" />
-                            <xs:element name="ImageDescriptionSubHeader" type="rpf:imageDescriptionSubHeader" minOccurs="0" maxOccurs="1" />
-                            <xs:element name="RelatedImagesSection" type="rpf:relatedImagesSection" minOccurs="0" maxOccurs="1" />
-                          </xs:sequence>
-                        </xs:complexType>
-                      </xs:element>
-                      <xs:element dfdl:choiceBranchKey="RPFDES" name="RPFData">
-                        <xs:complexType>
-                          <xs:choice dfdl:choiceDispatchKey="{ $nitf:isRPFTOC }">
-                            <xs:element name="RPFTableOfContents" dfdl:choiceBranchKey="true">
-                              <xs:complexType>
-                                <xs:sequence>
-                                  <xs:element name="LocationSection" type="rpf:locationSection" />
-                                  <xs:element name="BoundaryRectangleSection" type="rpf:boundaryRectangleSection" minOccurs="0" maxOccurs="1" />
-                                  <xs:element name="FrameFileIndexSection" type="rpf:frameFileIndexSection" minOccurs="0" maxOccurs="1" />
-                                  <xs:element name="ColortableIndexSection" type="rpf:colortableIndexSection" minOccurs="0" maxOccurs="1" />
-                                </xs:sequence>
-                              </xs:complexType>
-                            </xs:element>
-                            <xs:element name="RPFFrameFileAttributes" dfdl:choiceBranchKey="false">
-                              <xs:complexType>
-                                <xs:sequence>
-                                  <xs:element name="AttributeSection" type="rpf:attributeSection" minOccurs="0" maxOccurs="1" />
-                                  <xs:element name="ReplaceUpdateSection" type="rpf:replaceUpdateSection" minOccurs="0" maxOccurs="1" />
-                                </xs:sequence>
-                              </xs:complexType>
-                            </xs:element>
-                          </xs:choice>
-                        </xs:complexType>
-                      </xs:element>
-                    </xs:choice>
+                    <xs:element name="Wrapper">
+                      <xs:complexType>
+                        <xs:choice dfdl:choiceDispatchKey="{ ../../UniqueExtensionTypeIdentifier }">
+                          <xs:element dfdl:choiceBranchKey="RPFHDR" name="RPFHeader" type="rpf:headerSection" />
+                          <xs:element dfdl:choiceBranchKey="RPFIMG" name="RPFImage">
+                            <xs:annotation>
+                              <xs:appinfo source="http://www.ogf.org/dfdl/">
+                                <dfdl:setVariable ref="nitf:isRPFTOC" value="false" />
+                              </xs:appinfo>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="LocationSection" type="rpf:locationSection" />
+                                <xs:element name="CoverageSection" type="rpf:coverageSection" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="ColorSection" type="rpf:colorSection" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="ImageDescriptionSubHeader" type="rpf:imageDescriptionSubHeader" minOccurs="0" maxOccurs="1" />
+                                <xs:element name="RelatedImagesSection" type="rpf:relatedImagesSection" minOccurs="0" maxOccurs="1" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element dfdl:choiceBranchKey="RPFDES" name="RPFData">
+                            <xs:complexType>
+                              <xs:choice dfdl:choiceDispatchKey="{ $nitf:isRPFTOC }">
+                                <xs:element name="RPFTableOfContents" dfdl:choiceBranchKey="true">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="LocationSection" type="rpf:locationSection" />
+                                      <xs:element name="BoundaryRectangleSection" type="rpf:boundaryRectangleSection" minOccurs="0" maxOccurs="1" />
+                                      <xs:element name="FrameFileIndexSection" type="rpf:frameFileIndexSection" minOccurs="0" maxOccurs="1" />
+                                      <xs:element name="ColortableIndexSection" type="rpf:colortableIndexSection" minOccurs="0" maxOccurs="1" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="RPFFrameFileAttributes" dfdl:choiceBranchKey="false">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="AttributeSection" type="rpf:attributeSection" minOccurs="0" maxOccurs="1" />
+                                      <xs:element name="ReplaceUpdateSection" type="rpf:replaceUpdateSection" minOccurs="0" maxOccurs="1" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
                     <xs:element name="data" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../../LengthOfData }" />
                   </xs:choice>
                 </xs:complexType>

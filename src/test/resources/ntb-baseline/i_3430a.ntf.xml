@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>i_3430A</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1998-06-16T13:48:47.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1998-06-16T13:48:47.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks multi block(4) 1024x1024 with 12/12. ABPP=12,NBPP=12. airstrip.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1997-06-16T13:48:47.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1997-06-16T13:48:47.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />
