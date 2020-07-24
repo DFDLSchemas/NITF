@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+  <Header>
+    <FileProfileName>NITF</FileProfileName>
+    <FileVersion>02.00</FileVersion>
+    <ComplexityLevel>1</ComplexityLevel>
+    <StandardType></StandardType>
+    <OriginatingStationID>NGA</OriginatingStationID>
+    <FileDateAndTime>
+      <dateTime_2.0>2019-10-17T21:32:34+00:00</dateTime_2.0>
+    </FileDateAndTime>
+    <FileTitle>       a.toc</FileTitle>
+    <ClassificationInfo2.1>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+      <Codewords xsi:nil="true"></Codewords>
+      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+      <DeclassificationType xsi:nil="true"></DeclassificationType>
+      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+      <Downgrade xsi:nil="true"></Downgrade>
+      <DowngradeDate xsi:nil="true"></DowngradeDate>
+      <ClassificationText xsi:nil="true"></ClassificationText>
+      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+      <ClassificationReason xsi:nil="true"></ClassificationReason>
+      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+    </ClassificationInfo2.1>
+    <FileCopyNumber>0</FileCopyNumber>
+    <FileNumberOfCopies>0</FileNumberOfCopies>
+    <Encryption>0</Encryption>
+    <HeaderInfo2.1>
+      <FileBackgroundColor>
+        <Red>4E</Red>
+        <Green>74</Green>
+        <Blue>6C</Blue>
+      </FileBackgroundColor>
+      <OriginatorsName> Geo-Intel Agency</OriginatorsName>
+      <OriginatorsPhoneNumber xsi:nil="true"></OriginatorsPhoneNumber>
+    </HeaderInfo2.1>
+    <FileLength>1469</FileLength>
+    <FileHeaderLength>463</FileHeaderLength>
+    <NumberOfImageSegments>0</NumberOfImageSegments>
+    <NumberOfGraphicSegments>0</NumberOfGraphicSegments>
+    <ReservedForFutureUse>0</ReservedForFutureUse>
+    <NumberOfTextSegments>0</NumberOfTextSegments>
+    <NumberOfDataExtensionSegments>1</NumberOfDataExtensionSegments>
+    <DataExtensionSegmentLengths>
+      <HeaderLength>209</HeaderLength>
+      <DataLength>797</DataLength>
+    </DataExtensionSegmentLengths>
+    <NumberOfReservedExtensionSegments>0</NumberOfReservedExtensionSegments>
+    <UserDefinedHeaderDataLength>62</UserDefinedHeaderDataLength>
+    <UserDefinedHeaderOverflow>1</UserDefinedHeaderOverflow>
+    <UserDefinedHeaderData>
+      <nitf:TaggedRecordExtensions>
+        <TaggedRecordExtension>
+          <UniqueExtensionTypeIdentifier>RPFHDR</UniqueExtensionTypeIdentifier>
+          <LengthOfData>48</LengthOfData>
+          <UserDefinedData>
+            <Wrapper>
+              <RPFHeader>
+                <Endian>0</Endian>
+                <Length>48</Length>
+                <FileName>       a.toc</FileName>
+                <NewReplaceUpdate>1</NewReplaceUpdate>
+                <GoverningStandardName>MIL-STD-2411  </GoverningStandardName>
+                <GoverningStandardDate>1994-10-06+00:00</GoverningStandardDate>
+                <SecurityClassification>U</SecurityClassification>
+                <SecurityCountryCode>  </SecurityCountryCode>
+                <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                <LocationSectionLocation>683</LocationSectionLocation>
+              </RPFHeader>
+            </Wrapper>
+          </UserDefinedData>
+        </TaggedRecordExtension>
+      </nitf:TaggedRecordExtensions>
+    </UserDefinedHeaderData>
+    <ExtendedHeaderDataLength>0</ExtendedHeaderDataLength>
+  </Header>
+  <DataExtensionSegment>
+    <Header>
+      <FilePartType>DE</FilePartType>
+      <UniqueDESTypeIdentifier>Registered Extensions</UniqueDESTypeIdentifier>
+      <VersionOfTheDataDefinition>1</VersionOfTheDataDefinition>
+      <ClassificationInfo2.1>
+        <SecurityClassification>U</SecurityClassification>
+        <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+        <Codewords xsi:nil="true"></Codewords>
+        <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+        <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+        <DeclassificationType xsi:nil="true"></DeclassificationType>
+        <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+        <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+        <Downgrade xsi:nil="true"></Downgrade>
+        <DowngradeDate xsi:nil="true"></DowngradeDate>
+        <ClassificationText xsi:nil="true"></ClassificationText>
+        <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+        <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+        <ClassificationReason xsi:nil="true"></ClassificationReason>
+        <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+        <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+      </ClassificationInfo2.1>
+      <DESOverflowedHeaderType>UDHD</DESOverflowedHeaderType>
+      <DESDataItemOverflowed>0</DESDataItemOverflowed>
+      <DESUserDefinedSubheaderLength>0</DESUserDefinedSubheaderLength>
+    </Header>
+    <Data>
+      <nitf:TaggedRecordExtensions>
+        <TaggedRecordExtension>
+          <UniqueExtensionTypeIdentifier>RPFDES</UniqueExtensionTypeIdentifier>
+          <LengthOfData>786</LengthOfData>
+          <UserDefinedData>
+            <Wrapper>
+              <RPFData>
+                <RPFTableOfContents>
+                  <LocationSection>
+                    <Length>54</Length>
+                    <LocationOffset>14</LocationOffset>
+                    <NumberOfLocationRecords>4</NumberOfLocationRecords>
+                    <LocationRecordLength>10</LocationRecordLength>
+                    <AggregateLength>732</AggregateLength>
+                    <ComponentLocationTable>
+                      <ComponentLocationRecord>
+                        <ID>148</ID>
+                        <Length>8</Length>
+                        <Location>737</Location>
+                      </ComponentLocationRecord>
+                      <ComponentLocationRecord>
+                        <ID>149</ID>
+                        <Length>396</Length>
+                        <Location>745</Location>
+                      </ComponentLocationRecord>
+                      <ComponentLocationRecord>
+                        <ID>150</ID>
+                        <Length>13</Length>
+                        <Location>1141</Location>
+                      </ComponentLocationRecord>
+                      <ComponentLocationRecord>
+                        <ID>151</ID>
+                        <Length>315</Length>
+                        <Location>1154</Location>
+                      </ComponentLocationRecord>
+                    </ComponentLocationTable>
+                  </LocationSection>
+                  <BoundaryRectangleSection>
+                    <BoundaryRectangleTableOffset>0</BoundaryRectangleTableOffset>
+                    <NumberOfBoundaryRectangleRecords>3</NumberOfBoundaryRectangleRecords>
+                    <BoundaryRectangleRecordLength>132</BoundaryRectangleRecordLength>
+                    <BoundaryRectangleTable>
+                      <BoundaryRectangleRecord>
+                        <ProductDataType>CADRG</ProductDataType>
+                        <CompressionRatio>55:1 </CompressionRatio>
+                        <ScaleOrResolution>1:5M        </ScaleOrResolution>
+                        <Zone>3</Zone>
+                        <Producer>NGA  </Producer>
+                        <coordinates>
+                          <UpperLeftLat>62.307692307692314</UpperLeftLat>
+                          <UpperLeftLon>-11.25</UpperLeftLon>
+                          <LowerLeftLat>41.53846153846154</LowerLeftLat>
+                          <LowerLeftLon>-11.25</LowerLeftLon>
+                          <UpperRightLat>62.307692307692314</UpperRightLat>
+                          <UpperRightLon>22.5</UpperRightLon>
+                          <LowerRightLat>41.53846153846154</LowerRightLat>
+                          <LowerRightLon>22.5</LowerRightLon>
+                          <VerticalResolution>754.0528846153846</VerticalResolution>
+                          <HorizontalResolution>750.0</HorizontalResolution>
+                          <LatInterval>0.006760817307692308</LatInterval>
+                          <LonInterval>0.010986328125</LonInterval>
+                        </coordinates>
+                        <NumberOfFramesNorth-South>2</NumberOfFramesNorth-South>
+                        <NumberOfFramesEast-West>2</NumberOfFramesEast-West>
+                      </BoundaryRectangleRecord>
+                      <BoundaryRectangleRecord>
+                        <ProductDataType>CADRG</ProductDataType>
+                        <CompressionRatio>55:1 </CompressionRatio>
+                        <ScaleOrResolution>1:5M        </ScaleOrResolution>
+                        <Zone>4</Zone>
+                        <Producer>NGA  </Producer>
+                        <coordinates>
+                          <UpperLeftLat>62.307692307692314</UpperLeftLat>
+                          <UpperLeftLon>-13.84615384615384</UpperLeftLon>
+                          <LowerLeftLat>51.92307692307693</LowerLeftLat>
+                          <LowerLeftLon>-13.84615384615384</LowerLeftLon>
+                          <UpperRightLat>62.307692307692314</UpperRightLat>
+                          <UpperRightLon>27.692307692307704</UpperRightLon>
+                          <LowerRightLat>51.92307692307693</LowerRightLat>
+                          <LowerRightLon>27.692307692307704</LowerRightLon>
+                          <VerticalResolution>754.0528846153846</VerticalResolution>
+                          <HorizontalResolution>749.25</HorizontalResolution>
+                          <LatInterval>0.006760817307692308</LatInterval>
+                          <LonInterval>0.013521634615384616</LonInterval>
+                        </coordinates>
+                        <NumberOfFramesNorth-South>1</NumberOfFramesNorth-South>
+                        <NumberOfFramesEast-West>2</NumberOfFramesEast-West>
+                      </BoundaryRectangleRecord>
+                      <BoundaryRectangleRecord>
+                        <ProductDataType>CADRG</ProductDataType>
+                        <CompressionRatio>55:1 </CompressionRatio>
+                        <ScaleOrResolution>1:5M        </ScaleOrResolution>
+                        <Zone>2</Zone>
+                        <Producer>NGA  </Producer>
+                        <coordinates>
+                          <UpperLeftLat>51.92307692307693</UpperLeftLat>
+                          <UpperLeftLon>-3.3962264150943327</UpperLeftLon>
+                          <LowerLeftLat>41.53846153846154</LowerLeftLat>
+                          <LowerLeftLon>-3.3962264150943327</LowerLeftLon>
+                          <UpperRightLat>51.92307692307693</UpperRightLat>
+                          <UpperRightLon>23.773584905660385</UpperRightLon>
+                          <LowerRightLat>41.53846153846154</LowerRightLat>
+                          <LowerRightLon>23.773584905660385</LowerRightLon>
+                          <VerticalResolution>754.0528846153846</VerticalResolution>
+                          <HorizontalResolution>747.6792452830189</HorizontalResolution>
+                          <LatInterval>0.006760817307692308</LatInterval>
+                          <LonInterval>0.00884433962264151</LonInterval>
+                        </coordinates>
+                        <NumberOfFramesNorth-South>1</NumberOfFramesNorth-South>
+                        <NumberOfFramesEast-West>2</NumberOfFramesEast-West>
+                      </BoundaryRectangleRecord>
+                    </BoundaryRectangleTable>
+                  </BoundaryRectangleSection>
+                  <FrameFileIndexSection>
+                    <HightestSecurityClassification>U</HightestSecurityClassification>
+                    <FrameFileIndexTableOffset>0</FrameFileIndexTableOffset>
+                    <NumberOfFrameFileIndexRecords>8</NumberOfFrameFileIndexRecords>
+                    <NumberOfPathnameRecords>3</NumberOfPathnameRecords>
+                    <FrameFileIndexRecordLength>33</FrameFileIndexRecordLength>
+                    <FrameFileIndexSubsection>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>0</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>0</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>1</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>264</PathnameRecordOffset>
+                        <FrameFileName>0000b023.gn3</FrameFileName>
+                        <GeographicLocation>NJFM33</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>0</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>1</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>1</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>264</PathnameRecordOffset>
+                        <FrameFileName>0000z023.gn3</FrameFileName>
+                        <GeographicLocation>NKFG35</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>1</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>0</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>1</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>281</PathnameRecordOffset>
+                        <FrameFileName>00009023.gn4</FrameFileName>
+                        <GeographicLocation>NKGG55</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>0</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>0</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>0</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>264</PathnameRecordOffset>
+                        <FrameFileName>0000a023.gn3</FrameFileName>
+                        <GeographicLocation>MJDM53</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>2</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>0</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>0</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>298</PathnameRecordOffset>
+                        <FrameFileName>00016023.gn2</FrameFileName>
+                        <GeographicLocation>MJMM43</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>2</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>0</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>1</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>298</PathnameRecordOffset>
+                        <FrameFileName>00017023.gn2</FrameFileName>
+                        <GeographicLocation>NJLM13</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>0</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>1</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>0</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>264</PathnameRecordOffset>
+                        <FrameFileName>0000y023.gn3</FrameFileName>
+                        <GeographicLocation>MKDG55</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <FrameFileIndexRecord>
+                        <BoundaryRectangleRecordNumber>1</BoundaryRectangleRecordNumber>
+                        <FrameLocationRowNumber>0</FrameLocationRowNumber>
+                        <FrameLocationColumnNumber>0</FrameLocationColumnNumber>
+                        <PathnameRecordOffset>281</PathnameRecordOffset>
+                        <FrameFileName>00008023.gn4</FrameFileName>
+                        <GeographicLocation>MKBG15</GeographicLocation>
+                        <SecurityClassification>U</SecurityClassification>
+                        <SecurityCountryCode>  </SecurityCountryCode>
+                        <SecurityReleaseMarking>  </SecurityReleaseMarking>
+                      </FrameFileIndexRecord>
+                      <PathnameRecord>
+                        <PathnameLength>15</PathnameLength>
+                        <Pathname>./cgnc/cgncz03/</Pathname>
+                      </PathnameRecord>
+                      <PathnameRecord>
+                        <PathnameLength>15</PathnameLength>
+                        <Pathname>./cgnc/cgncz04/</Pathname>
+                      </PathnameRecord>
+                      <PathnameRecord>
+                        <PathnameLength>15</PathnameLength>
+                        <Pathname>./cgnc/cgncz02/</Pathname>
+                      </PathnameRecord>
+                    </FrameFileIndexSubsection>
+                  </FrameFileIndexSection>
+                </RPFTableOfContents>
+              </RPFData>
+            </Wrapper>
+          </UserDefinedData>
+        </TaggedRecordExtension>
+      </nitf:TaggedRecordExtensions>
+    </Data>
+  </DataExtensionSegment>
+</nitf:NITF>
