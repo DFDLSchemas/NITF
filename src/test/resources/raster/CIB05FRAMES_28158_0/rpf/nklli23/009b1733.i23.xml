@@ -224,11 +224,13 @@
                         <ID>130</ID>
                         <Length>96</Length>
                         <Location>1376</Location>
+                        <hasCoverageSectionSet>true</hasCoverageSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>131</ID>
                         <Length>6</Length>
                         <Location>2631</Location>
+                        <hasCompressionSectionSet>true</hasCompressionSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>132</ID>
@@ -239,6 +241,7 @@
                         <ID>134</ID>
                         <Length>14</Length>
                         <Location>1472</Location>
+                        <hasColorSectionSet>true</hasColorSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>135</ID>
@@ -259,11 +262,13 @@
                         <ID>140</ID>
                         <Length>221184</Length>
                         <Location>68235</Location>
+                        <hasSpatialDataSectionSet>true</hasSpatialDataSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>141</ID>
                         <Length>10</Length>
                         <Location>289672</Location>
+                        <hasAttributeSectionSet>true</hasAttributeSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>142</ID>
@@ -274,11 +279,13 @@
                         <ID>143</ID>
                         <Length>186</Length>
                         <Location>290022</Location>
+                        <hasExplicitArealCoverageSectionSet>true</hasExplicitArealCoverageSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>146</ID>
                         <Length>8</Length>
                         <Location>289639</Location>
+                        <hasReplaceUpdateSectionSet>true</hasReplaceUpdateSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>147</ID>
@@ -1672,12 +1679,435 @@
             <Wrapper>
               <RPFData>
                 <RPFFrameFileAttributes>
-                  <AttributeSection>
-                    <NumberOfAttributeOffsetRecords>0</NumberOfAttributeOffsetRecords>
-                    <NumberOfExplicitArealCoverageRecords>0</NumberOfExplicitArealCoverageRecords>
-                    <AttributeOffsetTableOffset>65561</AttributeOffsetTableOffset>
-                    <AttributeOffsetRecordLength>12336</AttributeOffsetRecordLength>
-                  </AttributeSection>
+                  <ReplaceUpdateSection20>
+                    <ReplaceUpdateTableOffset>0</ReplaceUpdateTableOffset>
+                    <NumberOfReplaceUpdateRecords>1</NumberOfReplaceUpdateRecords>
+                    <ReplaceUpdateRecordLength>25</ReplaceUpdateRecordLength>
+                    <ReplaceUpdateRecord>
+                      <NewFileName>009B1733.I23</NewFileName>
+                      <OldFileName>009B1723.I23</OldFileName>
+                      <ReplaceUpdateStatus>1</ReplaceUpdateStatus>
+                    </ReplaceUpdateRecord>
+                  </ReplaceUpdateSection20>
+                  <AttributeSection20>
+                    <NumberOfAttributeOffsetRecords>25</NumberOfAttributeOffsetRecords>
+                    <NumberOfExplicitArealCoverageRecords>1</NumberOfExplicitArealCoverageRecords>
+                    <AttributeOffsetTableOffset>0</AttributeOffsetTableOffset>
+                    <AttributeOffsetRecordLength>8</AttributeOffsetRecordLength>
+                    <AttributeOffsetRecord>
+                      <AttributeID>2</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>0</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>200</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>1</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>208</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>3</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>216</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>9</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>224</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>9</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>228</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>11</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>230</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>11</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>234</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>22</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>236</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>22</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>248</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>1</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>252</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>3</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>260</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>9</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>268</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>9</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>272</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>11</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>274</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>11</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>278</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>22</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>280</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>22</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>2</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>292</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>1</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>296</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>3</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>304</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>9</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>312</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>9</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>316</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>11</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>318</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>11</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>322</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>22</AttributeID>
+                      <ParameterID>1</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>324</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeOffsetRecord>
+                      <AttributeID>22</AttributeID>
+                      <ParameterID>2</ParameterID>
+                      <ArealCoverageSequenceNumber>1</ArealCoverageSequenceNumber>
+                      <AttributeRecordOffset>336</AttributeRecordOffset>
+                    </AttributeOffsetRecord>
+                    <AttributeRecord>
+                      <attrID>2</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <ProductionDate>1998-02-03+00:00</ProductionDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>1</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <CurrencyDate>1993-05-23+00:00</CurrencyDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>3</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <SignificantDate>1993-05-23+00:00</SignificantDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>9</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <HorizontalAbsoluteAccuracy>
+                          <Value>25</Value>
+                        </HorizontalAbsoluteAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>9</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <HorizontalAbsoluteAccuracy>
+                          <Units>1</Units>
+                        </HorizontalAbsoluteAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>11</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <HorizontalRelativeAccuracy>
+                          <Value>24</Value>
+                        </HorizontalRelativeAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>11</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <HorizontalRelativeAccuracy>
+                          <Units>1</Units>
+                        </HorizontalRelativeAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>22</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <DataSource>
+                          <Source>DPS</Source>
+                        </DataSource>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>22</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <DataSource>
+                          <GSD>5</GSD>
+                        </DataSource>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>1</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <CurrencyDate>1993-05-23+00:00</CurrencyDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>3</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <SignificantDate>1993-05-23+00:00</SignificantDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>9</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <HorizontalAbsoluteAccuracy>
+                          <Value>26</Value>
+                        </HorizontalAbsoluteAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>9</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <HorizontalAbsoluteAccuracy>
+                          <Units>1</Units>
+                        </HorizontalAbsoluteAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>11</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <HorizontalRelativeAccuracy>
+                          <Value>25</Value>
+                        </HorizontalRelativeAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>11</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <HorizontalRelativeAccuracy>
+                          <Units>1</Units>
+                        </HorizontalRelativeAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>22</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <DataSource>
+                          <Source>DPS</Source>
+                        </DataSource>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>22</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <DataSource>
+                          <GSD>5</GSD>
+                        </DataSource>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>1</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <CurrencyDate>1993-05-13+00:00</CurrencyDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>3</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <SignificantDate>1993-05-13+00:00</SignificantDate>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>9</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <HorizontalAbsoluteAccuracy>
+                          <Value>23</Value>
+                        </HorizontalAbsoluteAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>9</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <HorizontalAbsoluteAccuracy>
+                          <Units>1</Units>
+                        </HorizontalAbsoluteAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>11</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <HorizontalRelativeAccuracy>
+                          <Value>21</Value>
+                        </HorizontalRelativeAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>11</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <HorizontalRelativeAccuracy>
+                          <Units>1</Units>
+                        </HorizontalRelativeAccuracy>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>22</attrID>
+                      <paramID>1</paramID>
+                      <ParameterValue>
+                        <DataSource>
+                          <Source>DPS</Source>
+                        </DataSource>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <AttributeRecord>
+                      <attrID>22</attrID>
+                      <paramID>2</paramID>
+                      <ParameterValue>
+                        <DataSource>
+                          <GSD>5</GSD>
+                        </DataSource>
+                      </ParameterValue>
+                    </AttributeRecord>
+                    <ExplicitArealCoverageSection>
+                      <ExplicitArealCoverageTableOffset>8</ExplicitArealCoverageTableOffset>
+                      <ExplicitArealCoverageRecordLength>2</ExplicitArealCoverageRecordLength>
+                      <CornerCoordinatesRecordLength>16</CornerCoordinatesRecordLength>
+                      <ExplicitArealCoverageRecord>
+                        <NumberOfVerticies>11</NumberOfVerticies>
+                        <CornerCoordinateRecord>
+                          <Lat>56.0200894</Lat>
+                          <Lon>10.55238814</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>56.00368065</Lat>
+                          <Lon>10.5505448</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.97702199</Lat>
+                          <Lon>10.50293007</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.81517736</Lat>
+                          <Lon>10.49480018</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.80511237</Lat>
+                          <Lon>10.47840264</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.81230013</Lat>
+                          <Lon>9.01237831</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.82278765</Lat>
+                          <Lon>9.00104209</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.8229501</Lat>
+                          <Lon>8.97734273</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.80473342</Lat>
+                          <Lon>8.97404865</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>55.80506166</Lat>
+                          <Lon>8.92677026</Lon>
+                        </CornerCoordinateRecord>
+                        <CornerCoordinateRecord>
+                          <Lat>56.02011608</Lat>
+                          <Lon>8.96736864</Lon>
+                        </CornerCoordinateRecord>
+                      </ExplicitArealCoverageRecord>
+                    </ExplicitArealCoverageSection>
+                  </AttributeSection20>
                 </RPFFrameFileAttributes>
               </RPFData>
             </Wrapper>

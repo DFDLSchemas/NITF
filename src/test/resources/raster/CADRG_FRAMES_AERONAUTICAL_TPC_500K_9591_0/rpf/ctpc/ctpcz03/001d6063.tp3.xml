@@ -239,11 +239,13 @@
                         <ID>130</ID>
                         <Length>96</Length>
                         <Location>1808</Location>
+                        <hasCoverageSectionSet>true</hasCoverageSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>131</ID>
                         <Length>6</Length>
                         <Location>5911</Location>
+                        <hasCompressionSectionSet>true</hasCompressionSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>132</ID>
@@ -254,6 +256,7 @@
                         <ID>134</ID>
                         <Length>14</Length>
                         <Location>1904</Location>
+                        <hasColorSectionSet>true</hasColorSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>135</ID>
@@ -274,21 +277,25 @@
                         <ID>138</ID>
                         <Length>6</Length>
                         <Location>5896</Location>
+                        <hasMaskSectionSet>true</hasMaskSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>139</ID>
                         <Length>1772</Length>
                         <Location>4087</Location>
+                        <hasColorConverterSectionSet>true</hasColorConverterSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>140</ID>
                         <Length>221184</Length>
                         <Location>71515</Location>
+                        <hasSpatialDataSectionSet>true</hasSpatialDataSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>141</ID>
                         <Length>10</Length>
                         <Location>292919</Location>
+                        <hasAttributeSectionSet>true</hasAttributeSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>142</ID>
@@ -299,11 +306,13 @@
                         <ID>143</ID>
                         <Length>164</Length>
                         <Location>293873</Location>
+                        <hasExplicitArealCoverageSectionSet>true</hasExplicitArealCoverageSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>146</ID>
                         <Length>8</Length>
                         <Location>294045</Location>
+                        <hasReplaceUpdateSectionSet>true</hasReplaceUpdateSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>147</ID>

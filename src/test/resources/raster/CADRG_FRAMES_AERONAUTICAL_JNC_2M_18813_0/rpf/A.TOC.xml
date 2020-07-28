@@ -127,6 +127,7 @@
                         <ID>148</ID>
                         <Length>8</Length>
                         <Location>737</Location>
+                        <hasBoundaryRectangleSectionSet>true</hasBoundaryRectangleSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>149</ID>
@@ -137,6 +138,7 @@
                         <ID>150</ID>
                         <Length>13</Length>
                         <Location>1141</Location>
+                        <hasFrameFileIndexSectionSet>true</hasFrameFileIndexSectionSet>
                       </ComponentLocationRecord>
                       <ComponentLocationRecord>
                         <ID>151</ID>
