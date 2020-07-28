@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3059a</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-19T23:51:56.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1997-12-19T23:51:56.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks for rendering CGM ellipses, line width of 50 edge width 1 pixel.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />

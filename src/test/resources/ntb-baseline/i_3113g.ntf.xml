@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>i_3113g</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1999-10-15T12:06:13.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1999-10-15T12:06:13.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>-Checks a LBR downsample file with an uncompressed overlay and annotations.-----</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -64,7 +66,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1999-09-15T12:06:13.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1999-09-15T12:06:13.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />
@@ -1186,7 +1190,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1999-09-15T12:06:13.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1999-09-15T12:06:13.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

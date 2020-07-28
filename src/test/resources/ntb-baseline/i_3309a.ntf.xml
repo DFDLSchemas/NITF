@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3309a</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1999-03-30T14:28:44.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1999-03-30T14:28:44.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks JPEG 2048x2048 8-bit block mono w/ QFAC=3, RSTI=16, IMODE=B. camel.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>0000000001</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1998-03-30T14:28:44.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-03-30T14:28:44.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

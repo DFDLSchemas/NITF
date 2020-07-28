@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3051e</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-19T06:45:11.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1997-12-19T06:45:11.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks for CGM text in the proper location.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />

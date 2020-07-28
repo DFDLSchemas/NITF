@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3301b</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1998-01-22T03:36:49.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1998-01-22T03:36:49.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>This is an imode b color image with padded pixels to be displayed as TP.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1997-01-22T03:36:49.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1997-01-22T03:36:49.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

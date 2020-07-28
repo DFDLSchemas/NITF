@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3038a</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-18T20:09:58.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1997-12-18T20:09:58.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks all run length on bi-lev comp at 1D,1024x1024 FAX imagery. semaphore.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1996-12-18T20:09:58.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1996-12-18T20:09:58.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

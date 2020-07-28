@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3417c</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">2000-04-19T08:08:57.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">2000-04-19T08:08:57.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks COMRAT of 03.5 using 12-bit quan and huff SAR tables.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>0000000001</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1998-04-19T08:08:57.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-04-19T08:08:57.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

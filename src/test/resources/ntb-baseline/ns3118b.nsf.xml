@@ -6,7 +6,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3118b</OriginatingStationID>
-    <FileDateAndTime>1999-01-07T14:12:45+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1999-01-07T14:12:45+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks for handling of an MTF file in text segment two.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -73,7 +75,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>0000000001</ImageIdentifier1>
-      <ImageDateAndTime>1998-01-07T14:12:45+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T14:12:45+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true"></BasicEncyclopediaIdentifier>
         <FacilityOSuffix xsi:nil="true"></FacilityOSuffix>
@@ -1973,7 +1977,9 @@
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC052</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T14:12:45+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T14:12:45+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>This is the title of unclassified text file #1 in NITF  file   U21DG0J0.</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -2284,7 +2290,9 @@ opqrstuvwxyz{|}~
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC051</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T14:12:45+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T14:12:45+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>This is the title of unclassified text file #2 in NITF  file   U21DG0J0.</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -2313,7 +2321,9 @@ opqrstuvwxyz{|}~
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC050</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T14:12:45+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T14:12:45+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>This is the title of unclassified text file #3 in NITF  file   U21DG0J0.</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -2624,7 +2634,9 @@ opqrstuvwxyz{|}~
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC053</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T14:12:45+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T14:12:45+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>This is the title of unclassified text file #4 in NITF  file   U21DG0J0.</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
@@ -2935,7 +2947,9 @@ opqrstuvwxyz{|}~
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC054</TextIdentifier>
       <TextAttachmentLevel>1</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T14:12:45+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1998-01-07T14:12:45+00:00</dateTime>
+      </TextDateAndTime>
       <TextTitle>This is the title of unclassified text file #5 in NITF  file   U21DG0J0.</TextTitle>
       <SecurityClassification>U</SecurityClassification>
       <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>

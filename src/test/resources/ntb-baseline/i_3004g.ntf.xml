@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3004G</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">2000-05-22T12:34:14.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">2000-05-22T12:34:14.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks to see how a system uses GEO data around 00, 180.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
@@ -52,7 +54,9 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1999-05-22T12:34:14.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime xsi:type="xs:dateTime">1999-05-22T12:34:14.000000+00:00</dateTime>
+      </ImageDateAndTime>
       <TargetIdentifier>
         <BasicEncyclopediaIdentifier xsi:nil="true" />
         <FacilityOSuffix xsi:nil="true" />

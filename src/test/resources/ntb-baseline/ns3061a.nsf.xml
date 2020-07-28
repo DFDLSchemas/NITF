@@ -5,7 +5,9 @@
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3061a</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-20T02:03:38.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime xsi:type="xs:dateTime">1997-12-20T02:03:38.000000+00:00</dateTime>
+    </FileDateAndTime>
     <FileTitle>Checks for rendering CGM polyline display various white line widths.</FileTitle>
     <SecurityClassification>U</SecurityClassification>
     <SecurityClassificationSystem xsi:nil="true" />
