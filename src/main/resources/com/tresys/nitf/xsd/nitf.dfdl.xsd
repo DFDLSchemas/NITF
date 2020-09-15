@@ -675,7 +675,7 @@ The message root is 'NITF'.
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="PayloadLength" type="xs:int" dfdl:inputValueCalc="{ (../../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength) - (if (fn:exists(../MaskTable)) then dfdl:valueLength(../MaskTable[1], 'bytes') else 0) }" />
+                    <xs:element name="PayloadLength" type="xs:long" dfdl:inputValueCalc="{ (../../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength) - (if (fn:exists(../MaskTable)) then dfdl:valueLength(../MaskTable[1], 'bytes') else 0) }" />
                     <xs:choice dfdl:choiceDispatchKey="{ ../Header/ImageCompression }">
                       <xs:element ref="JFIF" dfdl:choiceBranchKey="C3 M3 C5 M5 I1" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
                       <xs:element name="JPEG2000" dfdl:choiceBranchKey="C8 M8" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
