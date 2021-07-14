@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- Copyright (c) 2014 Tresys Technology, LLC. All rights reserved. Developed by: 
+  Tresys Technology, LLC http://www.tresys.com Permission is hereby granted, free of 
+  charge, to any person obtaining a copy of this software and associated documentation 
+  files (the "Software"), to deal with the Software without restriction, including 
+  without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+  and/or sell copies of the Software, and to permit persons to whom the Software is 
+  furnished to do so, subject to the following conditions: 1. Redistributions of source 
+  code must retain the above copyright notice, this list of conditions and the following 
+  disclaimers. 2. Redistributions in binary form must reproduce the above copyright 
+  notice, this list of conditions and the following disclaimers in the documentation 
+  and/or other materials provided with the distribution. 3. Neither the names of Tresys 
+  Technology, nor the names of its contributors may be used to endorse or promote products 
+  derived from this Software without specific prior written permission. THE SOFTWARE 
+  IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
+  BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE 
+  AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE 
+  FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT 
+  OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
+  OR OTHER DEALINGS WITH THE SOFTWARE. -->
+
+<xs:schema targetNamespace="urn:nitfUserDefinedExtensions" xmlns:tns="urn:nitfUserDefinedExtensions"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:fn="http://www.w3.org/2005/xpath-functions"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
+  xmlns:dfdlx="http://www.ogf.org/dfdl/dfdl-1.0/extensions"
+  xmlns:nitf="urn:nitf:2.1"
+  elementFormDefault="unqualified">
+
+  <xs:import namespace="urn:nitf:2.1" schemaLocation="com/tresys/nitf/xsd/nitf.dfdl.xsd" />
+
+  <xs:import schemaLocation="com/mitre/jpeg/xsd/jpeg.dfdl.xsd" />
+
+  <xs:annotation>
+    <xs:appinfo source="http://www.ogf.org/dfdl/">
+      <dfdl:format representation="text" alignment="1" alignmentUnits="bytes"
+        binaryBooleanFalseRep="0" binaryBooleanTrueRep="1"
+        binaryCalendarEpoch="1970-01-01T00:00:00+00:00" binaryCalendarRep="bcd"
+        binaryDecimalVirtualPoint="0" binaryFloatRep="ieee"
+        binaryNumberCheckPolicy="lax" binaryNumberRep="binary"
+        binaryPackedSignCodes="C D F C" calendarCenturyStart="53"
+        calendarCheckPolicy="lax" calendarDaysInFirstWeek="4"
+        calendarFirstDayOfWeek="Monday" calendarLanguage="en-US"
+        calendarObserveDST="yes" calendarPatternKind="implicit"
+        calendarPattern="yyyy-MM-dd'T'HH:mm:ss" calendarTimeZone="UTC"
+        choiceLengthKind="implicit" decimalSigned="yes"
+        documentFinalTerminatorCanBeMissing="no" emptyValueDelimiterPolicy="none"
+        encoding="us-ascii" encodingErrorPolicy="replace" escapeSchemeRef=""
+        fillByte="%NUL;" floating="no" ignoreCase="no" initiatedContent="no"
+        initiator="" leadingSkip="0" lengthKind="implicit" lengthUnits="bytes"
+        occursCountKind="implicit" outputNewLine="%CR;%LF;"
+        prefixIncludesPrefixLength="no" separator=""
+        separatorPosition="infix" sequenceKind="ordered" terminator=""
+        textBidi="no" textBooleanFalseRep="false" textBooleanJustification="left"
+        textBooleanPadCharacter="%SP;" textBooleanTrueRep="true"
+        textCalendarJustification="left" textCalendarPadCharacter="%SP;"
+        textNumberCheckPolicy="strict" textNumberJustification="right"
+        textNumberPadCharacter="0" textNumberPattern="#0" textNumberRep="standard"
+        textNumberRoundingIncrement="0.0" textNumberRoundingMode="roundUp"
+        textNumberRounding="pattern" textOutputMinLength="0" textPadKind="padChar"
+        textStandardBase="10" textStandardDecimalSeparator="."
+        textStandardGroupingSeparator="," textStandardInfinityRep="Inf"
+        textStandardNaNRep="NaN" textStandardZeroRep="" textStandardExponentRep=""
+        textStringJustification="left" textStringPadCharacter="%SP;"
+        textTrimKind="none" textZonedSignStyle="asciiStandard" trailingSkip="0"
+        truncateSpecifiedLengthString="no" utf16Width="fixed"
+        bitOrder="mostSignificantBitFirst" byteOrder="bigEndian"/>
+    </xs:appinfo>
+  </xs:annotation>
+
+  <xs:complexType name="tre_type">
+    <xs:sequence>
+      <xs:element name="UniqueExtensionTypeIdentifier" type="nitf:BCS-A" dfdl:length="6" />
+      <xs:element name="LengthOfData" type="nitf:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../UserDefinedData, 'bytes') }" />
+      <xs:sequence>
+        <xs:annotation>
+          <xs:appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:newVariableInstance ref="nitf:payloadSizeInBytes" />
+            <dfdl:setVariable ref="nitf:payloadSizeInBytes" value="{ LengthOfData }" />
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:element name="UserDefinedData" type="nitf:hexBinaryOrBlob" dfdl:lengthKind="explicit" dfdl:length="{ ../LengthOfData }" />
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="image_data_type">
+    <xs:sequence>
+      <xs:element name="MaskTable" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:contains(../../Header/ImageCompression, 'M')) then 1 else 0 }">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="BlockedImageDataOffset" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" />
+            <xs:element name="BlockMaskRecordLength" type="nitf:unsignedBinaryIntBytes" dfdl:length="2" />
+            <xs:element name="PadPixelMaskRecordLength" type="nitf:unsignedBinaryIntBytes" dfdl:length="2" />
+            <xs:element name="PadOutputPixelCodeLength" type="nitf:unsignedBinaryIntBytes" dfdl:length="2" />
+            <xs:element name="PadOutputPixelCode" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../PadOutputPixelCodeLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ fn:ceiling(../PadOutputPixelCodeLength div 8.0) }" dfdl:lengthUnits="bytes">
+              <xs:complexType>
+                <xs:sequence dfdl:alignmentUnits="bits">
+                  <xs:sequence dfdl:hiddenGroupRef="nitf:PadOutputPixelCodeLeadingSpace" />
+                  <xs:choice dfdl:choiceDispatchKey="{ ../../../Header/PixelValueType }" dfdl:alignmentUnits="bits">
+                    <xs:element name="Integer" dfdl:choiceBranchKey="INT" type="nitf:unsignedBinaryIntBits" dfdl:length="{ ../../PadOutputPixelCodeLength }"/>
+                    <xs:element name="SignedInteger" dfdl:choiceBranchKey="SI" type="nitf:signedBinaryIntBits" dfdl:length="{ ../../PadOutputPixelCodeLength }" />
+                    <xs:choice dfdl:choiceBranchKey="R" dfdl:choiceDispatchKey="{ ../../../Header/NumberOfBitsPerPixelPerBand }" dfdl:alignmentUnits="bits">
+                      <xs:annotation>
+                        <xs:appinfo source="http://www.ogf.org/dfdl/">
+                          <dfdl:assert test="{ ../PadOutputPixelCodeLength eq ../../../Header/NumberOfBitsPerPixelPerBand }" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:element name="Float" dfdl:choiceBranchKey="32" type="xs:float" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                      <xs:element name="Double" dfdl:choiceBranchKey="64" type="xs:double" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                    </xs:choice>
+                    <xs:sequence dfdl:choiceBranchKey="C" dfdl:alignmentUnits="bits">
+                      <xs:annotation>
+                        <xs:appinfo source="http://www.ogf.org/dfdl/">
+                          <dfdl:assert test="{ ../PadOutputPixelCodeLength eq 64 }" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:element name="Real" type="xs:float" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                      <xs:element name="Imaginary" type="xs:float" dfdl:representation="binary" dfdl:alignmentUnits="bits"/>
+                    </xs:sequence>
+                    <xs:element name="BiLevel" dfdl:choiceBranchKey="B" type="nitf:unsignedBinaryIntBits" dfdl:length="1">
+                      <xs:annotation>
+                        <xs:appinfo source="http://www.ogf.org/dfdl/">
+                          <dfdl:assert test="{ ../../PadOutputPixelCodeLength eq 1 }" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:choice>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="BlockMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../BlockMaskRecordLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1]/Value else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
+            <xs:element name="PadPixelMaskRecord" minOccurs="0" maxOccurs="unbounded" type="nitf:unsignedBinaryIntBytes" dfdl:length="4" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../PadOutputPixelCodeLength eq 0) then 0 else (../../../Header/NumberOfBlocksPerRow * ../../../Header/NumberOfBlocksPerColumn * (if (../../../Header/ImageMode eq 'S') then (if (fn:exists(../../../Header/NumberOfMultispectralBands)) then ../../../Header/NumberOfMultispectralBands[1]/Value else ../../../Header/NumberOfBands) else xs:unsignedInt(1))) }" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PayloadLength" type="xs:long" dfdl:inputValueCalc="{ (../../../Header/ImageSegmentLengths[dfdl:occursIndex()]/DataLength) - (if (fn:exists(../MaskTable)) then dfdl:valueLength(../MaskTable[1], 'bytes') else 0) }" />
+      <xs:choice dfdl:choiceDispatchKey="{ ../Header/ImageCompression }">
+        <xs:annotation>
+          <xs:appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:newVariableInstance ref="nitf:payloadSizeInBytes" />
+            <dfdl:setVariable ref="nitf:payloadSizeInBytes" value="{ PayloadLength }" />
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:element ref="JFIF" dfdl:choiceBranchKey="C3 M3 C5 M5 I1" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+        <xs:element name="JPEG2000" dfdl:choiceBranchKey="C8 M8" type="nitf:hexBinaryOrBlob" />
+        <xs:element name="BiLevel" dfdl:choiceBranchKey="C1 M1" type="nitf:hexBinaryOrBlob" />
+        <xs:element name="VectorQuantization" dfdl:choiceBranchKey="C4 M4" type="nitf:hexBinaryOrBlob" />
+        <xs:element name="NoCompression" dfdl:choiceBranchKey="NC NM" type="nitf:hexBinaryOrBlob" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
