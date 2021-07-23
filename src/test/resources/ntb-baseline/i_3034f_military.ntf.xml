@@ -1,28 +1,33 @@
-<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<nitf:NITF xmlns:nitf="urn:nitf:2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Header>
     <FileProfileName>NITF</FileProfileName>
     <FileVersion>02.10</FileVersion>
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3034F_MG</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-18T12:15:39.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime2.1>1997-12-18T12:15:39+00:00</dateTime2.1>
+    </FileDateAndTime>
     <FileTitle>Check ImageCoordinateRepresentation for MilitaryGridReferenceSystem.</FileTitle>
-    <SecurityClassification>U</SecurityClassification>
-    <SecurityClassificationSystem xsi:nil="true" />
-    <Codewords xsi:nil="true" />
-    <ControlAndHandling xsi:nil="true" />
-    <ReleasingInstructions xsi:nil="true" />
-    <DeclassificationType xsi:nil="true" />
-    <DeclassificationDate xsi:nil="true" />
-    <DeclassificationExemption xsi:nil="true" />
-    <Downgrade xsi:nil="true" />
-    <DowngradeDate xsi:nil="true" />
-    <ClassificationText xsi:nil="true" />
-    <ClassificationAuthorityType xsi:nil="true" />
-    <ClassificationAuthority xsi:nil="true" />
-    <ClassificationReason xsi:nil="true" />
-    <SecuritySourceDate xsi:nil="true" />
-    <SecurityControlNumber xsi:nil="true" />
+    <ClassificationInformation>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+      <Codewords xsi:nil="true"></Codewords>
+      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+      <DeclassificationType xsi:nil="true"></DeclassificationType>
+      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+      <Downgrade xsi:nil="true"></Downgrade>
+      <DowngradeDate xsi:nil="true"></DowngradeDate>
+      <ClassificationText xsi:nil="true"></ClassificationText>
+      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+      <ClassificationReason xsi:nil="true"></ClassificationReason>
+      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+    </ClassificationInformation>
     <FileCopyNumber>1</FileCopyNumber>
     <FileNumberOfCopies>1</FileNumberOfCopies>
     <Encryption>0</Encryption>
@@ -52,29 +57,33 @@
     <Header>
       <FilePartType>IM</FilePartType>
       <ImageIdentifier1>Missing ID</ImageIdentifier1>
-      <ImageDateAndTime xsi:type="xs:dateTime">1996-12-18T12:15:39.000000+00:00</ImageDateAndTime>
+      <ImageDateAndTime>
+        <dateTime2.1>1996-12-18T12:15:39+00:00</dateTime2.1>
+      </ImageDateAndTime>
       <TargetIdentifier>
-        <BasicEncyclopediaIdentifier xsi:nil="true" />
-        <FacilityOSuffix xsi:nil="true" />
-        <CountryCode xsi:nil="true" />
+        <BasicEncyclopediaIdentifier xsi:nil="true"></BasicEncyclopediaIdentifier>
+        <FacilityOSuffix xsi:nil="true"></FacilityOSuffix>
+        <CountryCode xsi:nil="true"></CountryCode>
       </TargetIdentifier>
       <ImageIdentifier2>- BASE IMAGE -</ImageIdentifier2>
-      <SecurityClassification>U</SecurityClassification>
-      <SecurityClassificationSystem xsi:nil="true" />
-      <Codewords xsi:nil="true" />
-      <ControlAndHandling xsi:nil="true" />
-      <ReleasingInstructions xsi:nil="true" />
-      <DeclassificationType xsi:nil="true" />
-      <DeclassificationDate xsi:nil="true" />
-      <DeclassificationExemption xsi:nil="true" />
-      <Downgrade xsi:nil="true" />
-      <DowngradeDate xsi:nil="true" />
-      <ClassificationText xsi:nil="true" />
-      <ClassificationAuthorityType xsi:nil="true" />
-      <ClassificationAuthority xsi:nil="true" />
-      <ClassificationReason xsi:nil="true" />
-      <SecuritySourceDate xsi:nil="true" />
-      <SecurityControlNumber xsi:nil="true" />
+      <ClassificationInformation>
+        <SecurityClassification>U</SecurityClassification>
+        <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+        <Codewords xsi:nil="true"></Codewords>
+        <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+        <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+        <DeclassificationType xsi:nil="true"></DeclassificationType>
+        <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+        <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+        <Downgrade xsi:nil="true"></Downgrade>
+        <DowngradeDate xsi:nil="true"></DowngradeDate>
+        <ClassificationText xsi:nil="true"></ClassificationText>
+        <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+        <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+        <ClassificationReason xsi:nil="true"></ClassificationReason>
+        <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+        <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+      </ClassificationInformation>
       <Encryption>0</Encryption>
       <ImageSource>Unknown</ImageSource>
       <NumberOfSignificantRowsInImage>18</NumberOfSignificantRowsInImage>
@@ -85,51 +94,51 @@
       <ActualBitsPerPixelPerBand>1</ActualBitsPerPixelPerBand>
       <PixelJustification>R</PixelJustification>
       <ImageCoordinateRepresentation>U</ImageCoordinateRepresentation>
-        <ImageGeographicLocation>
-          <MilitaryGridReferenceSystem>
-            <Corner>
-                <Zone>45</Zone>
-                <Band>S</Band>
-                <J>U</J>
-                <K>S</K>
-                <Easting>13117</Easting>
-                <Northing>51215</Northing>
-            </Corner>
-            <Corner>
-                <Zone>45</Zone>
-                <Band>S</Band>
-                <J>U</J>
-                <K>S</K>
-                <Easting>13143</Easting>
-                <Northing>51214</Northing>
-            </Corner>
-            <Corner>
-                <Zone>45</Zone>
-                <Band>S</Band>
-                <J>U</J>
-                <K>S</K>
-                <Easting>13143</Easting>
-                <Northing>51184</Northing>
-            </Corner>
-            <Corner>
-                <Zone>45</Zone>
-                <Band>S</Band>
-                <J>U</J>
-                <K>S</K>
-                <Easting>13117</Easting>
-                <Northing>51184</Northing>
-            </Corner>
-          </MilitaryGridReferenceSystem>
-        </ImageGeographicLocation>
+      <ImageGeographicLocation>
+        <MilitaryGridReferenceSystem>
+          <Corner>
+            <Zone>45</Zone>
+            <Band>S</Band>
+            <J>U</J>
+            <K>S</K>
+            <Easting>13117</Easting>
+            <Northing>51215</Northing>
+          </Corner>
+          <Corner>
+            <Zone>45</Zone>
+            <Band>S</Band>
+            <J>U</J>
+            <K>S</K>
+            <Easting>13143</Easting>
+            <Northing>51214</Northing>
+          </Corner>
+          <Corner>
+            <Zone>45</Zone>
+            <Band>S</Band>
+            <J>U</J>
+            <K>S</K>
+            <Easting>13143</Easting>
+            <Northing>51184</Northing>
+          </Corner>
+          <Corner>
+            <Zone>45</Zone>
+            <Band>S</Band>
+            <J>U</J>
+            <K>S</K>
+            <Easting>13117</Easting>
+            <Northing>51184</Northing>
+          </Corner>
+        </MilitaryGridReferenceSystem>
+      </ImageGeographicLocation>
       <NumberOfImageComments>0</NumberOfImageComments>
       <ImageCompression>NM</ImageCompression>
       <NumberOfBands>1</NumberOfBands>
       <Bands>
         <Band>
           <Representation>LU</Representation>
-          <Subcategory xsi:nil="true" />
+          <Subcategory xsi:nil="true"></Subcategory>
           <ImageFilterCondition>N</ImageFilterCondition>
-          <StandardImageFilterCode xsi:nil="true" />
+          <StandardImageFilterCode xsi:nil="true"></StandardImageFilterCode>
           <NumberOfLUTS>3</NumberOfLUTS>
           <NumberOfLUTEntries>
             <Value>2</Value>
@@ -168,7 +177,9 @@
         <PadPixelMaskRecord>0</PadPixelMaskRecord>
       </MaskTable>
       <PayloadLength>79</PayloadLength>
-      <NoCompression>0000400000003E0000001FF000000FFF800007FFFC0003FFFFE001FFFFFF00FFFFFFF80001F00000003E00000007C0000000F80000001F00000003E00000007C0000000F80000001F00000003E0000</NoCompression>
+      <NoCompression>
+        <HexBinaryPayload>0000400000003E0000001FF000000FFF800007FFFC0003FFFFE001FFFFFF00FFFFFFF80001F00000003E00000007C0000000F80000001F00000003E00000007C0000000F80000001F00000003E0000</HexBinaryPayload>
+      </NoCompression>
     </Data>
   </ImageSegment>
 </nitf:NITF>

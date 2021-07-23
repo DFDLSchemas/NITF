@@ -1,28 +1,33 @@
-<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<nitf:NITF xmlns:nitf="urn:nitf:2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Header>
     <FileProfileName>NSIF</FileProfileName>
     <FileVersion>01.00</FileVersion>
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>NS3061a</OriginatingStationID>
-    <FileDateAndTime xsi:type="xs:dateTime">1997-12-20T02:03:38.000000+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime2.1>1997-12-20T02:03:38+00:00</dateTime2.1>
+    </FileDateAndTime>
     <FileTitle>Checks for rendering CGM polyline display various white line widths.</FileTitle>
-    <SecurityClassification>U</SecurityClassification>
-    <SecurityClassificationSystem xsi:nil="true" />
-    <Codewords xsi:nil="true" />
-    <ControlAndHandling xsi:nil="true" />
-    <ReleasingInstructions xsi:nil="true" />
-    <DeclassificationType xsi:nil="true" />
-    <DeclassificationDate xsi:nil="true" />
-    <DeclassificationExemption xsi:nil="true" />
-    <Downgrade xsi:nil="true" />
-    <DowngradeDate xsi:nil="true" />
-    <ClassificationText xsi:nil="true" />
-    <ClassificationAuthorityType xsi:nil="true" />
-    <ClassificationAuthority xsi:nil="true" />
-    <ClassificationReason xsi:nil="true" />
-    <SecuritySourceDate xsi:nil="true" />
-    <SecurityControlNumber xsi:nil="true" />
+    <ClassificationInformation>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+      <Codewords xsi:nil="true"></Codewords>
+      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+      <DeclassificationType xsi:nil="true"></DeclassificationType>
+      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+      <Downgrade xsi:nil="true"></Downgrade>
+      <DowngradeDate xsi:nil="true"></DowngradeDate>
+      <ClassificationText xsi:nil="true"></ClassificationText>
+      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+      <ClassificationReason xsi:nil="true"></ClassificationReason>
+      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+    </ClassificationInformation>
     <FileCopyNumber>1</FileCopyNumber>
     <FileNumberOfCopies>1</FileNumberOfCopies>
     <Encryption>0</Encryption>
@@ -53,22 +58,24 @@
       <FilePartType>SY</FilePartType>
       <GraphicIdentifier>0000000001</GraphicIdentifier>
       <GraphicName>multi.cgm  SYMBOL.</GraphicName>
-      <SecurityClassification>U</SecurityClassification>
-      <SecurityClassificationSystem xsi:nil="true" />
-      <Codewords xsi:nil="true" />
-      <ControlAndHandling xsi:nil="true" />
-      <ReleasingInstructions xsi:nil="true" />
-      <DeclassificationType xsi:nil="true" />
-      <DeclassificationDate xsi:nil="true" />
-      <DeclassificationExemption xsi:nil="true" />
-      <Downgrade xsi:nil="true" />
-      <DowngradeDate xsi:nil="true" />
-      <ClassificationText xsi:nil="true" />
-      <ClassificationAuthorityType xsi:nil="true" />
-      <ClassificationAuthority xsi:nil="true" />
-      <ClassificationReason xsi:nil="true" />
-      <SecuritySourceDate xsi:nil="true" />
-      <SecurityControlNumber xsi:nil="true" />
+      <ClassificationInformation>
+        <SecurityClassification>U</SecurityClassification>
+        <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+        <Codewords xsi:nil="true"></Codewords>
+        <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+        <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+        <DeclassificationType xsi:nil="true"></DeclassificationType>
+        <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+        <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+        <Downgrade xsi:nil="true"></Downgrade>
+        <DowngradeDate xsi:nil="true"></DowngradeDate>
+        <ClassificationText xsi:nil="true"></ClassificationText>
+        <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+        <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+        <ClassificationReason xsi:nil="true"></ClassificationReason>
+        <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+        <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+      </ClassificationInformation>
       <Encryption>0</Encryption>
       <GraphicType>C</GraphicType>
       <ReservedForFutureUse1>0</ReservedForFutureUse1>

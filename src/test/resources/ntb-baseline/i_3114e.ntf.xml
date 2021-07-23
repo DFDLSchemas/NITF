@@ -1,29 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<nitf:NITF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nitf="urn:nitf:2.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<nitf:NITF xmlns:nitf="urn:nitf:2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Header>
     <FileProfileName>NITF</FileProfileName>
     <FileVersion>02.10</FileVersion>
     <ComplexityLevel>3</ComplexityLevel>
     <StandardType>BF01</StandardType>
     <OriginatingStationID>I_3114E</OriginatingStationID>
-    <FileDateAndTime>1999-01-07T08:48:00+00:00</FileDateAndTime>
+    <FileDateAndTime>
+      <dateTime2.1>1999-01-07T08:48:00+00:00</dateTime2.1>
+    </FileDateAndTime>
     <FileTitle>Checks the handling of an NITF file with all UT1 text values.</FileTitle>
-    <SecurityClassification>U</SecurityClassification>
-    <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
-    <Codewords xsi:nil="true"></Codewords>
-    <ControlAndHandling xsi:nil="true"></ControlAndHandling>
-    <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
-    <DeclassificationType xsi:nil="true"></DeclassificationType>
-    <DeclassificationDate xsi:nil="true"></DeclassificationDate>
-    <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
-    <Downgrade xsi:nil="true"></Downgrade>
-    <DowngradeDate xsi:nil="true"></DowngradeDate>
-    <ClassificationText xsi:nil="true"></ClassificationText>
-    <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
-    <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
-    <ClassificationReason xsi:nil="true"></ClassificationReason>
-    <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
-    <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+    <ClassificationInformation>
+      <SecurityClassification>U</SecurityClassification>
+      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+      <Codewords xsi:nil="true"></Codewords>
+      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+      <DeclassificationType xsi:nil="true"></DeclassificationType>
+      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+      <Downgrade xsi:nil="true"></Downgrade>
+      <DowngradeDate xsi:nil="true"></DowngradeDate>
+      <ClassificationText xsi:nil="true"></ClassificationText>
+      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+      <ClassificationReason xsi:nil="true"></ClassificationReason>
+      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+    </ClassificationInformation>
     <FileCopyNumber>1</FileCopyNumber>
     <FileNumberOfCopies>1</FileNumberOfCopies>
     <Encryption>0</Encryption>
@@ -54,24 +58,28 @@
       <FilePartType>TE</FilePartType>
       <TextIdentifier>JITC001</TextIdentifier>
       <TextAttachmentLevel>0</TextAttachmentLevel>
-      <TextDateAndTime>1998-01-07T08:48:00+00:00</TextDateAndTime>
+      <TextDateAndTime>
+        <dateTime2.1>1998-01-07T08:48:00+00:00</dateTime2.1>
+      </TextDateAndTime>
       <TextTitle>This is an unclassified UT1 text file with all values Hex 0xA0 to 0xFF tested.</TextTitle>
-      <SecurityClassification>U</SecurityClassification>
-      <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
-      <Codewords xsi:nil="true"></Codewords>
-      <ControlAndHandling xsi:nil="true"></ControlAndHandling>
-      <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
-      <DeclassificationType xsi:nil="true"></DeclassificationType>
-      <DeclassificationDate xsi:nil="true"></DeclassificationDate>
-      <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
-      <Downgrade xsi:nil="true"></Downgrade>
-      <DowngradeDate xsi:nil="true"></DowngradeDate>
-      <ClassificationText xsi:nil="true"></ClassificationText>
-      <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
-      <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
-      <ClassificationReason xsi:nil="true"></ClassificationReason>
-      <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
-      <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+      <ClassificationInformation>
+        <SecurityClassification>U</SecurityClassification>
+        <SecurityClassificationSystem xsi:nil="true"></SecurityClassificationSystem>
+        <Codewords xsi:nil="true"></Codewords>
+        <ControlAndHandling xsi:nil="true"></ControlAndHandling>
+        <ReleasingInstructions xsi:nil="true"></ReleasingInstructions>
+        <DeclassificationType xsi:nil="true"></DeclassificationType>
+        <DeclassificationDate xsi:nil="true"></DeclassificationDate>
+        <DeclassificationExemption xsi:nil="true"></DeclassificationExemption>
+        <Downgrade xsi:nil="true"></Downgrade>
+        <DowngradeDate xsi:nil="true"></DowngradeDate>
+        <ClassificationText xsi:nil="true"></ClassificationText>
+        <ClassificationAuthorityType xsi:nil="true"></ClassificationAuthorityType>
+        <ClassificationAuthority xsi:nil="true"></ClassificationAuthority>
+        <ClassificationReason xsi:nil="true"></ClassificationReason>
+        <SecuritySourceDate xsi:nil="true"></SecuritySourceDate>
+        <SecurityControlNumber xsi:nil="true"></SecurityControlNumber>
+      </ClassificationInformation>
       <Encryption>0</Encryption>
       <TextFormat>UT1</TextFormat>
       <TextExtendedSubheaderDataLength>0</TextExtendedSubheaderDataLength>
