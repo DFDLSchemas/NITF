@@ -1,14 +1,12 @@
 package com.tresys.nitf
+
+import org.junit.AfterClass
 import org.junit.Test
-import org.apache.daffodil.tdml.DFDLTestSuite
-import org.apache.daffodil.util.Misc
+import org.apache.daffodil.tdml.Runner
 
 object TestCustomMetadata {
-  val tdmlFile = "custom_metadata.tdml"
-  val validateTDML = true
-  val validateDFDLSchema = true
-  lazy val runner = new DFDLTestSuite(Misc.getRequiredResource(tdmlFile), validateTDML, validateDFDLSchema)
-  runner.setCheckAllTopLevel(true)
+  lazy val runner = Runner("/custom_metadata.tdml")
+  @AfterClass def shutdown(): Unit = { runner.reset }
 }
 
 class TestCustomMetadata {
