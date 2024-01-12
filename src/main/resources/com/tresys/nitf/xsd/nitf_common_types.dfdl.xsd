@@ -98,6 +98,10 @@ schema projects.
         <dfdl:format nilKind="literalCharacter" nilValue="%SP;" useNilForDefault="no" nilValueDelimiterPolicy="none" />
       </dfdl:defineFormat>
 
+      <dfdl:defineFormat name="textNumber">
+        <dfdl:format lengthKind="explicit" textPadKind="none" textTrimKind="none" />
+      </dfdl:defineFormat>
+
       <dfdl:format ref="nitfGeneralFormat" />
 
     </xs:appinfo>
@@ -113,20 +117,106 @@ schema projects.
     <xs:restriction base="xs:string" />
   </xs:simpleType>
 
-  <!-- Should only allow plus, minus, and digits 0-9 -->
-  <xs:simpleType name="BCS-N" dfdl:lengthKind="explicit" dfdl:textTrimKind="none" dfdl:textNumberPattern="#0" >
-    <xs:restriction base="xs:long" />
+  <!-- Should only allow plus, minus, and digits 0-9, and zero's padded to the right of the negative sign -->
+  <xs:simpleType name="BCS-N_5" dfdl:ref="nitfc:textNumber" dfdl:length="5" dfdl:textNumberPattern="*0#0000" dfdl:textStandardZeroRep="00000">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-9999" />
+      <xs:maxInclusive value="99999" />
+    </xs:restriction>
   </xs:simpleType>
 
-  <!-- Should only allow digits 0-9. This must only be used for types less than or equal to 9 digits long -->
-  <xs:simpleType name="BCS-NP" dfdl:lengthKind="explicit" dfdl:textTrimKind="none" dfdl:textNumberPattern="#0" >
-    <xs:restriction base="xs:unsignedInt" />
+  <!-- Should only allow digits 0-9 -->
+  <xs:simpleType name="BCS-NP_1" dfdl:ref="nitfc:textNumber" dfdl:length="1" dfdl:textNumberPattern="0">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9" />
+    </xs:restriction>
   </xs:simpleType>
 
-  <!-- Should only allow digits 0-9. For performance, this should only be used for types greather than 9 digits long -->
-  <xs:simpleType name="BCS-NPbig" dfdl:lengthKind="explicit" dfdl:textTrimKind="none" dfdl:textNumberPattern="#0" >
-    <xs:restriction base="xs:unsignedLong" />
+  <xs:simpleType name="BCS-NP_2" dfdl:ref="nitfc:textNumber" dfdl:length="2" dfdl:textNumberPattern="00">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="99" />
+    </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_3" dfdl:ref="nitfc:textNumber" dfdl:length="3" dfdl:textNumberPattern="000">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_4" dfdl:ref="nitfc:textNumber" dfdl:length="4" dfdl:textNumberPattern="0000">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_5" dfdl:ref="nitfc:textNumber" dfdl:length="5" dfdl:textNumberPattern="00000">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="99999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_6" dfdl:ref="nitfc:textNumber" dfdl:length="6" dfdl:textNumberPattern="000000">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_7" dfdl:ref="nitfc:textNumber" dfdl:length="7" dfdl:textNumberPattern="0000000">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_8" dfdl:ref="nitfc:textNumber" dfdl:length="8" dfdl:textNumberPattern="00000000">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="99999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_9" dfdl:ref="nitfc:textNumber" dfdl:length="9" dfdl:textNumberPattern="000000000">
+    <xs:restriction base="xs:unsignedLong">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="999999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_10" dfdl:ref="nitfc:textNumber" dfdl:length="10" dfdl:textNumberPattern="0000000000">
+    <xs:restriction base="xs:unsignedLong">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9999999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_11" dfdl:ref="nitfc:textNumber" dfdl:length="11" dfdl:textNumberPattern="00000000000">
+    <xs:restriction base="xs:unsignedLong">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="99999999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_12" dfdl:ref="nitfc:textNumber" dfdl:length="12" dfdl:textNumberPattern="000000000000">
+    <xs:restriction base="xs:unsignedLong">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="999999999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BCS-NP_13" dfdl:ref="nitfc:textNumber" dfdl:length="13" dfdl:textNumberPattern="0000000000000">
+    <xs:restriction base="xs:unsignedLong">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9999999999999" />
+    </xs:restriction>
+  </xs:simpleType>
+
 
   <xs:complexType name="dateTime">
     <xs:choice>

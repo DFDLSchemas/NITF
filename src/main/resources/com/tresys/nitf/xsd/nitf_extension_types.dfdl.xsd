@@ -65,7 +65,7 @@ in NITF, such as TaggedRecordExtensions and ImageData formats.
   <xs:complexType name="taggedRecordExtension">
     <xs:sequence>
       <xs:element name="UniqueExtensionTypeIdentifier" type="nitfc:BCS-A" dfdl:length="6" />
-      <xs:element name="LengthOfData" type="nitfc:BCS-NP" dfdl:length="5" />
+      <xs:element name="LengthOfData" type="nitfc:BCS-NP_5" />
       <xs:sequence>
         <xs:annotation>
           <xs:appinfo source="http://www.ogf.org/dfdl/">
