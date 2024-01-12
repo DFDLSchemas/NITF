@@ -94,15 +94,15 @@ The message root is 'NITF'.
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
-              <xs:element name="ComplexityLevel" type="nitfc:BCS-NP" dfdl:length="2" />
+              <xs:element name="ComplexityLevel" type="nitfc:BCS-NP_2" />
               <xs:element name="StandardType" type="nitfc:BCS-A" dfdl:length="4" />
               <xs:element name="OriginatingStationID" type="nitfc:BCS-A" dfdl:length="10" />
               <xs:element name="FileDateAndTime" type="nitfc:dateTime" />
               <xs:element name="FileTitle" type="nitfc:ECS-A" dfdl:length="80" nillable="true" dfdl:ref="nitfc:nilString"/>
               <xs:element name="ClassificationInformation" type="nitf:classificationInfo" />
-              <xs:element name="FileCopyNumber" type="nitfc:BCS-NP" dfdl:length="5" />
-              <xs:element name="FileNumberOfCopies" type="nitfc:BCS-NP" dfdl:length="5" />
-              <xs:element name="Encryption" type="nitfc:BCS-N" dfdl:length="1" />
+              <xs:element name="FileCopyNumber" type="nitfc:BCS-NP_5" />
+              <xs:element name="FileNumberOfCopies" type="nitfc:BCS-NP_5" />
+              <xs:element name="Encryption" type="nitfc:BCS-NP_1" />
               <xs:element name="FileBackgroundColor" minOccurs="0" maxOccurs="1" dfdl:occursCountKind="expression" dfdl:occursCount="{ if ($nitf:nitfVersion eq '02.10') then 1 else 0 }">
                 <xs:complexType>
                   <xs:sequence>
@@ -114,19 +114,19 @@ The message root is 'NITF'.
               </xs:element>
               <xs:element name="OriginatorsName" type="nitfc:ECS-A" dfdl:length="{ if ($nitf:nitfVersion eq '02.00') then 27 else 24 }" nillable="true" dfdl:ref="nitfc:nilString" />
               <xs:element name="OriginatorsPhoneNumber" type="nitfc:ECS-A" dfdl:length="18" nillable="true" dfdl:ref="nitfc:nilString" />
-              <xs:element name="FileLength" type="nitfc:BCS-NPbig" dfdl:length="12" > <!-- TODO: Output Value Calc -->
+              <xs:element name="FileLength" type="nitfc:BCS-NP_12" > <!-- TODO: Output Value Calc -->
                 <xs:annotation>
                   <xs:appinfo source="http://www.ogf.org/dfdl/">
                     <dfdl:assert message="FileLength of 999999999999 (unknown file length when header was created) is not supported." test="{ . ne 999999999999 }" />
                   </xs:appinfo>
                 </xs:annotation>
               </xs:element>
-              <xs:element name="FileHeaderLength" type="nitfc:BCS-NP" dfdl:length="6" /> <!-- TODO: Output Value Calc -->
-              <xs:element name="NumberOfImageSegments" type="nitfc:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../ImageSegment) }" />
+              <xs:element name="FileHeaderLength" type="nitfc:BCS-NP_6" /> <!-- TODO: Output Value Calc -->
+              <xs:element name="NumberOfImageSegments" type="nitfc:BCS-NP_3" dfdl:outputValueCalc="{ fn:count(../../ImageSegment) }" />
               <xs:element name="ImageSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfImageSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitfc:BCS-NP" dfdl:length="6" dfdl:outputValueCalc="{
+                    <xs:element name="HeaderLength" type="nitfc:BCS-NP_6" dfdl:outputValueCalc="{
                       259 +
                       (if ($nitf:nitfVersion eq '02.00') then dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Header/ClassificationInformation, 'bytes') else 167) +
                       (60 * fn:count(../../../ImageSegment[dfdl:occursIndex()]/Header/ImageGeographicLocation)) +
@@ -145,7 +145,7 @@ The message root is 'NITF'.
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitfc:BCS-NPbig" dfdl:length="10" dfdl:outputValueCalc="{ dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Data, 'bytes') }">
+                    <xs:element name="DataLength" type="nitfc:BCS-NP_10" dfdl:outputValueCalc="{ dfdl:valueLength(../../../ImageSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999999999 (unknown image data length when header was created) is not supported." test="{ . ne 9999999999 }" />
@@ -155,11 +155,11 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="NumberOfGraphicSegments" type="nitfc:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../GraphicSegment) }" />
+              <xs:element name="NumberOfGraphicSegments" type="nitfc:BCS-NP_3" dfdl:outputValueCalc="{ fn:count(../../GraphicSegment) }" />
               <xs:element name="GraphicSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfGraphicSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitfc:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                    <xs:element name="HeaderLength" type="nitfc:BCS-NP_4" dfdl:outputValueCalc="{
                       258 +
                       (3  * fn:count(../../../GraphicSegment[dfdl:occursIndex()]/Header/GraphicExtendedSubheaderOverflow)) +
                       (if (fn:exists(../../../GraphicSegment[dfdl:occursIndex()]/Header/GraphicExtendedSubheaderData)) then dfdl:valueLength(../../../GraphicSegment[dfdl:occursIndex()]/Header/GraphicExtendedSubheaderData[1], 'bytes') else 0)
@@ -170,7 +170,7 @@ The message root is 'NITF'.
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitfc:BCS-NP" dfdl:length="6" dfdl:outputValueCalc="{ dfdl:valueLength(../../../GraphicSegment[dfdl:occursIndex()]/Data, 'bytes') }">
+                    <xs:element name="DataLength" type="nitfc:BCS-NP_6" dfdl:outputValueCalc="{ dfdl:valueLength(../../../GraphicSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 999999 (unknown graphic data length when header was created) is not supported." test="{ . ne 999999 }" />
@@ -180,12 +180,12 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="ReservedForFutureUse" type="nitfc:BCS-NP" dfdl:length="3" />
-              <xs:element name="NumberOfTextSegments" type="nitfc:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../TextSegment) }" />
+              <xs:element name="ReservedForFutureUse" type="nitfc:BCS-NP_3" />
+              <xs:element name="NumberOfTextSegments" type="nitfc:BCS-NP_3" dfdl:outputValueCalc="{ fn:count(../../TextSegment) }" />
               <xs:element name="TextSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfTextSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitfc:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                    <xs:element name="HeaderLength" type="nitfc:BCS-NP_4" dfdl:outputValueCalc="{
                       282 +
                       (3  * fn:count(../../../TextSegment[dfdl:occursIndex()]/Header/TextExtendedSubheaderOverflow)) +
                       (if (fn:exists(../../../TextSegment[dfdl:occursIndex()]/Header/TextExtendedSubheaderData)) then dfdl:valueLength(../../../TextSegment[dfdl:occursIndex()]/Header/TextExtendedSubheaderData[1], 'bytes') else 0)
@@ -196,7 +196,7 @@ The message root is 'NITF'.
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../../../TextSegment[dfdl:occursIndex()]/Data, 'bytes') }">
+                    <xs:element name="DataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{ dfdl:valueLength(../../../TextSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 99999 (unknown text data length when header was created) is not supported." test="{ . ne 99999 }" />
@@ -206,11 +206,11 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="NumberOfDataExtensionSegments" type="nitfc:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../DataExtensionSegment) }" />
+              <xs:element name="NumberOfDataExtensionSegments" type="nitfc:BCS-NP_3" dfdl:outputValueCalc="{ fn:count(../../DataExtensionSegment) }" />
               <xs:element name="DataExtensionSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfDataExtensionSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitfc:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                    <xs:element name="HeaderLength" type="nitfc:BCS-NP_4" dfdl:outputValueCalc="{
                       200 +
                       (3  * fn:count(../../../DataExtensionSegment[dfdl:occursIndex()]/Header/DESOverflowedHeaderType)) +
                       (if ((../../../DataExtensionSegment[dfdl:occursIndex()]/Header/UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') or (../../../DataExtensionSegment[dfdl:occursIndex()]/Header/UniqueDESTypeIdentifier eq 'Registered Extensions')) then 6 else 0) +
@@ -222,7 +222,7 @@ The message root is 'NITF'.
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitfc:BCS-NP" dfdl:length="9"> <!-- dfdl:outputValueCalc="{ dfdl:valueLength(../../../DataExtensionSegment[dfdl:occursIndex()]/Data, 'bytes') }"> -->
+                    <xs:element name="DataLength" type="nitfc:BCS-NP_9"> <!-- dfdl:outputValueCalc="{ dfdl:valueLength(../../../DataExtensionSegment[dfdl:occursIndex()]/Data, 'bytes') }"> -->
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 999999999 (unknown data extension data length when header was created) is not supported." test="{ . ne 999999999 }" />
@@ -232,11 +232,11 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="NumberOfReservedExtensionSegments" type="nitfc:BCS-NP" dfdl:length="3" dfdl:outputValueCalc="{ fn:count(../../ReservedExtensionSegment) }" />
+              <xs:element name="NumberOfReservedExtensionSegments" type="nitfc:BCS-NP_3" dfdl:outputValueCalc="{ fn:count(../../ReservedExtensionSegment) }" />
               <xs:element name="ReservedExtensionSegmentLengths" minOccurs="0" maxOccurs="999" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfReservedExtensionSegments }">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="HeaderLength" type="nitfc:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                    <xs:element name="HeaderLength" type="nitfc:BCS-NP_4" dfdl:outputValueCalc="{
                       200 +
                       (if (fn:exists(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Header/RESUserDefinedSubheaderFields)) then dfdl:valueLength(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Header/RESUserDefinedSubheaderFields[1], 'bytes') else 0)
                       }">
@@ -246,7 +246,7 @@ The message root is 'NITF'.
                         </xs:appinfo>
                       </xs:annotation>
                     </xs:element>
-                    <xs:element name="DataLength" type="nitfc:BCS-NP" dfdl:length="7" dfdl:outputValueCalc="{ dfdl:valueLength(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Data, 'bytes') }">
+                    <xs:element name="DataLength" type="nitfc:BCS-NP_7" dfdl:outputValueCalc="{ dfdl:valueLength(../../../ReservedExtensionSegment[dfdl:occursIndex()]/Data, 'bytes') }">
                       <xs:annotation>
                         <xs:appinfo source="http://www.ogf.org/dfdl/">
                           <dfdl:assert message="FileLength of 9999999 (unknown reserved extension data length when header was created) is not supported." test="{ . ne 9999999 }" />
@@ -256,10 +256,10 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="UserDefinedHeaderDataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+              <xs:element name="UserDefinedHeaderDataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{
                 if (fn:exists(../UserDefinedHeaderData)) then dfdl:valueLength(../UserDefinedHeaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
                 }"/>
-              <xs:element name="UserDefinedHeaderOverflow" minOccurs="0" type="nitfc:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedHeaderDataLength eq 0) then 0 else 1 }" />
+              <xs:element name="UserDefinedHeaderOverflow" minOccurs="0" type="nitfc:BCS-NP_3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedHeaderDataLength eq 0) then 0 else 1 }" />
               <xs:element name="UserDefinedHeaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedHeaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../UserDefinedHeaderDataLength - 3 }">
                 <xs:complexType>
                   <xs:sequence>
@@ -267,10 +267,10 @@ The message root is 'NITF'.
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="ExtendedHeaderDataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+              <xs:element name="ExtendedHeaderDataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{
                 if (fn:exists(../ExtendedHeaderData)) then dfdl:valueLength(../ExtendedHeaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
                 }"/>
-              <xs:element name="ExtendedHeaderDataOverflow" minOccurs="0" type="nitfc:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ExtendedHeaderDataLength eq 0) then 0 else 1 }" />
+              <xs:element name="ExtendedHeaderDataOverflow" minOccurs="0" type="nitfc:BCS-NP_3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ExtendedHeaderDataLength eq 0) then 0 else 1 }" />
               <xs:element name="ExtendedHeaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ExtendedHeaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../ExtendedHeaderDataLength - 3 }">
                 <xs:complexType>
                   <xs:sequence>
@@ -302,14 +302,14 @@ The message root is 'NITF'.
                     </xs:element>
                     <xs:element name="ImageIdentifier2" type="nitfc:BCS-A" dfdl:length="80" nillable="true" dfdl:ref="nitfc:nilString" />
                     <xs:element name="ClassificationInformation" type="nitf:classificationInfo" />
-                    <xs:element name="Encryption" type="nitfc:BCS-NP" dfdl:length="1" />
+                    <xs:element name="Encryption" type="nitfc:BCS-NP_1" />
                     <xs:element name="ImageSource" type="nitfc:BCS-A" dfdl:length="42" nillable="true" dfdl:ref="nitfc:nilString" />
-                    <xs:element name="NumberOfSignificantRowsInImage" type="nitfc:BCS-NP" dfdl:length="8" />
-                    <xs:element name="NumberOfSignificantColumnsInImage" type="nitfc:BCS-NP" dfdl:length="8" />
+                    <xs:element name="NumberOfSignificantRowsInImage" type="nitfc:BCS-NP_8" />
+                    <xs:element name="NumberOfSignificantColumnsInImage" type="nitfc:BCS-NP_8" />
                     <xs:element name="PixelValueType" type="nitfc:BCS-A" dfdl:length="3" />
                     <xs:element name="ImageRepresentation" type="nitfc:BCS-A" dfdl:length="8" />
                     <xs:element name="ImageCategory" type="nitfc:BCS-A" dfdl:length="8" />
-                    <xs:element name="ActualBitsPerPixelPerBand" type="nitfc:BCS-NP" dfdl:length="2" />
+                    <xs:element name="ActualBitsPerPixelPerBand" type="nitfc:BCS-NP_2" />
                     <xs:element name="PixelJustification" type="nitfc:BCS-A" dfdl:length="1" />
                     <xs:element name="ImageCoordinateRepresentation" type="nitfc:BCS-A" dfdl:length="1" nillable="true" dfdl:ref="nitfc:nilString" dfdl:outputValueCalc="{
                       if (fn:exists(../ImageGeographicLocation)) then
@@ -456,7 +456,7 @@ The message root is 'NITF'.
                         </xs:choice>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="NumberOfImageComments" type="nitfc:BCS-NP" dfdl:length="1" dfdl:outputValueCalc="{ fn:count(../ImageComment) }" />
+                    <xs:element name="NumberOfImageComments" type="nitfc:BCS-NP_1" dfdl:outputValueCalc="{ fn:count(../ImageComment) }" />
                     <xs:element name="ImageComment" minOccurs="0" maxOccurs="9" type="nitfc:ECS-A" dfdl:occursCountKind="expression" dfdl:occursCount="{ ../NumberOfImageComments }" dfdl:length="80" />
                     <xs:element name="ImageCompression" type="nitfc:BCS-A" dfdl:length="2" />
                     <xs:element name="CompressionRateCode" type="nitfc:BCS-A" minOccurs="0" dfdl:length="4" dfdl:occursCountKind="expression"
@@ -468,11 +468,11 @@ The message root is 'NITF'.
                            then 1
                            else 0
                          }" />
-                    <xs:element name="NumberOfBands" type="nitfc:BCS-NP" dfdl:length="1" dfdl:outputValueCalc="{ if (fn:count(../Bands/Band) le 9) then fn:count(../Bands/Band) else 0  }" />
+                    <xs:element name="NumberOfBands" type="nitfc:BCS-NP_1" dfdl:outputValueCalc="{ if (fn:count(../Bands/Band) le 9) then fn:count(../Bands/Band) else 0  }" />
                     <xs:element name="NumberOfMultispectralBands" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfBands eq 0) then 1 else 0 }">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Value" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ if (fn:count(../../Bands/Band) gt 9) then fn:count(../../Bands/Band) else fn:error('nitf', 'fn:error called.', .) }" />
+                          <xs:element name="Value" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{ if (fn:count(../../Bands/Band) gt 9) then fn:count(../../Bands/Band) else fn:error('nitf', 'fn:error called.', .) }" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -486,11 +486,11 @@ The message root is 'NITF'.
                                 <xs:element name="Subcategory" type="nitfc:BCS-A" dfdl:length="6" nillable="true" dfdl:ref="nitfc:nilString" />
                                 <xs:element name="ImageFilterCondition" type="nitfc:BCS-A" dfdl:length="1" />
                                 <xs:element name="StandardImageFilterCode" type="nitfc:BCS-A" dfdl:length="3" nillable="true" dfdl:ref="nitfc:nilString" />
-                                <xs:element name="NumberOfLUTS" type="nitfc:BCS-NP" dfdl:length="1" dfdl:outputValueCalc="{ fn:count(../LUT) }"/>
+                                <xs:element name="NumberOfLUTS" type="nitfc:BCS-NP_1" dfdl:outputValueCalc="{ fn:count(../LUT) }"/>
                                 <xs:element name="NumberOfLUTEntries" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../NumberOfLUTS eq 0) then 0 else 1 }">
                                   <xs:complexType>
                                     <xs:sequence>
-                                      <xs:element name="Value" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{ dfdl:valueLength(../../LUT[1], 'bytes') }" />
+                                      <xs:element name="Value" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{ dfdl:valueLength(../../LUT[1], 'bytes') }" />
                                     </xs:sequence>
                                   </xs:complexType>
                                 </xs:element>
@@ -501,28 +501,28 @@ The message root is 'NITF'.
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="ImageSyncCode" type="nitfc:BCS-NP" dfdl:length="1" />
+                    <xs:element name="ImageSyncCode" type="nitfc:BCS-NP_1" />
                     <xs:element name="ImageMode" type="nitfc:BCS-A" dfdl:length="1" />
-                    <xs:element name="NumberOfBlocksPerRow" type="nitfc:BCS-NP" dfdl:length="4" />
-                    <xs:element name="NumberOfBlocksPerColumn" type="nitfc:BCS-NP" dfdl:length="4" />
-                    <xs:element name="NumberOfPixelsPerBlockHorizontal" type="nitfc:BCS-NP" dfdl:length="4" />
-                    <xs:element name="NumberOfPixelsPerBlockVertical" type="nitfc:BCS-NP" dfdl:length="4" />
-                    <xs:element name="NumberOfBitsPerPixelPerBand" type="nitfc:BCS-NP" dfdl:length="2" />
-                    <xs:element name="ImageDisplayLevel" type="nitfc:BCS-NP" dfdl:length="3" />
-                    <xs:element name="AttachmentLevel" type="nitfc:BCS-NP" dfdl:length="3" />
+                    <xs:element name="NumberOfBlocksPerRow" type="nitfc:BCS-NP_4" />
+                    <xs:element name="NumberOfBlocksPerColumn" type="nitfc:BCS-NP_4" />
+                    <xs:element name="NumberOfPixelsPerBlockHorizontal" type="nitfc:BCS-NP_4" />
+                    <xs:element name="NumberOfPixelsPerBlockVertical" type="nitfc:BCS-NP_4" />
+                    <xs:element name="NumberOfBitsPerPixelPerBand" type="nitfc:BCS-NP_2" />
+                    <xs:element name="ImageDisplayLevel" type="nitfc:BCS-NP_3" />
+                    <xs:element name="AttachmentLevel" type="nitfc:BCS-NP_3" />
                     <xs:element name="ImageLocation">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Row" type="nitfc:BCS-N" dfdl:length="5" />
-                          <xs:element name="Column" type="nitfc:BCS-N" dfdl:length="5" />
+                          <xs:element name="Row" type="nitfc:BCS-N_5" />
+                          <xs:element name="Column" type="nitfc:BCS-N_5" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="ImageMagnification" type="nitfc:BCS-A" dfdl:length="4" />
-                    <xs:element name="UserDefinedImageDataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                    <xs:element name="UserDefinedImageDataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{
                       if (fn:exists(../UserDefinedImageData)) then dfdl:valueLength(../UserDefinedImageData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
                       }" />
-                    <xs:element name="UserDefinedOverflow" type="nitfc:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedImageDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="UserDefinedOverflow" type="nitfc:BCS-NP_3" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedImageDataLength eq 0) then 0 else 1 }" />
                     <xs:element name="UserDefinedImageData" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../UserDefinedImageDataLength - 3 }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../UserDefinedImageDataLength eq 0) then 0 else 1 }">
                       <xs:complexType>
                         <xs:sequence>
@@ -530,10 +530,10 @@ The message root is 'NITF'.
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="ImageExtendedSubheaderDataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                    <xs:element name="ImageExtendedSubheaderDataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{
                       if (fn:exists(../ImageExtendedSubheaderData)) then dfdl:valueLength(../ImageExtendedSubheaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
                       }" />
-                    <xs:element name="ImageExtendedSubheaderOverflow" type="nitfc:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ImageExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="ImageExtendedSubheaderOverflow" type="nitfc:BCS-NP_3" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ImageExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
                     <xs:element name="ImageExtendedSubheaderData" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../ImageExtendedSubheaderDataLength - 3 }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../ImageExtendedSubheaderDataLength eq 0) then 0 else 1 }">
                       <xs:complexType>
                         <xs:sequence>
@@ -559,24 +559,24 @@ The message root is 'NITF'.
                     <xs:element name="GraphicIdentifier" type="nitfc:BCS-A" dfdl:length="10" />
                     <xs:element name="GraphicName" type="nitfc:ECS-A" dfdl:length="20" />
                     <xs:element name="ClassificationInformation" type="nitf:classificationInfo" />
-                    <xs:element name="Encryption" type="nitfc:BCS-NP" dfdl:length="1" />
+                    <xs:element name="Encryption" type="nitfc:BCS-NP_1" />
                     <xs:element name="GraphicType" type="nitfc:BCS-A" dfdl:length="1" />
-                    <xs:element name="ReservedForFutureUse1" type="nitfc:BCS-NPbig" dfdl:length="13" />
-                    <xs:element name="GraphicDisplayLevel" type="nitfc:BCS-NP" dfdl:length="3" />
-                    <xs:element name="GraphicAttachmentLevel" type="nitfc:BCS-NP" dfdl:length="3" />
+                    <xs:element name="ReservedForFutureUse1" type="nitfc:BCS-NP_13" />
+                    <xs:element name="GraphicDisplayLevel" type="nitfc:BCS-NP_3" />
+                    <xs:element name="GraphicAttachmentLevel" type="nitfc:BCS-NP_3" />
                     <xs:element name="GraphicLocation">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Row" type="nitfc:BCS-N" dfdl:length="5" />
-                          <xs:element name="Column" type="nitfc:BCS-N" dfdl:length="5" />
+                          <xs:element name="Row" type="nitfc:BCS-N_5" />
+                          <xs:element name="Column" type="nitfc:BCS-N_5" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="FirstGraphicBoundLocation">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Row" type="nitfc:BCS-N" dfdl:length="5" />
-                          <xs:element name="Column" type="nitfc:BCS-N" dfdl:length="5" />
+                          <xs:element name="Row" type="nitfc:BCS-N_5" />
+                          <xs:element name="Column" type="nitfc:BCS-N_5" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -584,16 +584,16 @@ The message root is 'NITF'.
                     <xs:element name="SecondGraphicBoundLocation">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="Row" type="nitfc:BCS-N" dfdl:length="5" />
-                          <xs:element name="Column" type="nitfc:BCS-N" dfdl:length="5" />
+                          <xs:element name="Row" type="nitfc:BCS-N_5" />
+                          <xs:element name="Column" type="nitfc:BCS-N_5" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="ReservedForFutureUse2" type="nitfc:BCS-NP" dfdl:length="2" />
-                    <xs:element name="GraphicExtendedSubheaderDataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                    <xs:element name="ReservedForFutureUse2" type="nitfc:BCS-NP_2" />
+                    <xs:element name="GraphicExtendedSubheaderDataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{
                       if (fn:exists(../GraphicExtendedSubheaderData)) then dfdl:valueLength(../GraphicExtendedSubheaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
                       }" />
-                    <xs:element name="GraphicExtendedSubheaderOverflow" minOccurs="0" type="nitfc:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="GraphicExtendedSubheaderOverflow" minOccurs="0" type="nitfc:BCS-NP_3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
                     <xs:element name="GraphicExtendedSubheaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../GraphicExtendedSubheaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../GraphicExtendedSubheaderDataLength - 3 }">
                       <xs:complexType>
                         <xs:sequence>
@@ -617,16 +617,16 @@ The message root is 'NITF'.
                   <xs:sequence>
                     <xs:element name="FilePartType" type="nitfc:BCS-A" dfdl:length="2" />
                     <xs:element name="TextIdentifier" type="nitfc:BCS-A" dfdl:length="7" />
-                    <xs:element name="TextAttachmentLevel" type="nitfc:BCS-NP" dfdl:length="3" />
+                    <xs:element name="TextAttachmentLevel" type="nitfc:BCS-NP_3" />
                     <xs:element name="TextDateAndTime" type="nitfc:dateTime" />
                     <xs:element name="TextTitle" type="nitfc:ECS-A" dfdl:length="80" />
                     <xs:element name="ClassificationInformation" type="nitf:classificationInfo" />
-                    <xs:element name="Encryption" type="nitfc:BCS-NP" dfdl:length="1" />
+                    <xs:element name="Encryption" type="nitfc:BCS-NP_1" />
                     <xs:element name="TextFormat" type="nitfc:BCS-A" dfdl:length="3" />
-                    <xs:element name="TextExtendedSubheaderDataLength" type="nitfc:BCS-NP" dfdl:length="5" dfdl:outputValueCalc="{
+                    <xs:element name="TextExtendedSubheaderDataLength" type="nitfc:BCS-NP_5" dfdl:outputValueCalc="{
                       if (fn:exists(../TextExtendedSubheaderData)) then dfdl:valueLength(../TextExtendedSubheaderData[1]/nitf:TaggedRecordExtensions, 'bytes') + 3 else 0
                       }" />
-                    <xs:element name="TextExtendedSubheaderOverflow" minOccurs="0" type="nitfc:BCS-NP" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
+                    <xs:element name="TextExtendedSubheaderOverflow" minOccurs="0" type="nitfc:BCS-NP_3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" />
                     <xs:element name="TextExtendedSubheaderData" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../TextExtendedSubheaderDataLength eq 0) then 0 else 1 }" dfdl:lengthKind="explicit" dfdl:length="{ ../TextExtendedSubheaderDataLength - 3 }">
                       <xs:complexType>
                         <xs:sequence>
@@ -650,12 +650,12 @@ The message root is 'NITF'.
                   <xs:sequence>
                     <xs:element name="FilePartType" type="nitfc:BCS-A" dfdl:length="2" />
                     <xs:element name="UniqueDESTypeIdentifier" type="nitfc:BCS-A" dfdl:length="25" />
-                    <xs:element name="VersionOfTheDataDefinition" type="nitfc:BCS-NP" dfdl:length="2" />
+                    <xs:element name="VersionOfTheDataDefinition" type="nitfc:BCS-NP_2" />
                     <xs:element name="ClassificationInformation" type="nitf:classificationInfo" />
                     <xs:element name="DESOverflowedHeaderType" type="nitfc:BCS-A" minOccurs="0" dfdl:length="6" dfdl:occursCountKind="expression"
                       dfdl:occursCount="{ if ((../UniqueDESTypeIdentifier eq 'TRE_OVERFLOW') or (../UniqueDESTypeIdentifier eq 'Registered Extensions')) then 1 else 0 }" />
-                    <xs:element name="DESDataItemOverflowed" type="nitfc:BCS-NP" minOccurs="0" dfdl:length="3" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../DESOverflowedHeaderType)) then 1 else 0 }" />
-                    <xs:element name="DESUserDefinedSubheaderLength" type="nitfc:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                    <xs:element name="DESDataItemOverflowed" type="nitfc:BCS-NP_3" minOccurs="0" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (fn:exists(../DESOverflowedHeaderType)) then 1 else 0 }" />
+                    <xs:element name="DESUserDefinedSubheaderLength" type="nitfc:BCS-NP_4" dfdl:outputValueCalc="{
                       if (fn:exists(../DESUserDefinedSubheaderFields)) then dfdl:valueLength(../DESUserDefinedSubheaderFields[1], 'bytes') else 0
                       }" />
                     <xs:element name="DESUserDefinedSubheaderFields" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../DESUserDefinedSubheaderLength }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../DESUserDefinedSubheaderLength eq 0) then 0 else 1 }" />
@@ -688,9 +688,9 @@ The message root is 'NITF'.
                   <xs:sequence>
                     <xs:element name="FilePartType" type="nitfc:BCS-A" dfdl:length="2" />
                     <xs:element name="UniqueRESTypeIdentifier" type="nitfc:BCS-A" dfdl:length="25" />
-                    <xs:element name="VersionOfTheDataDefinition" type="nitfc:BCS-NP" dfdl:length="2" />
+                    <xs:element name="VersionOfTheDataDefinition" type="nitfc:BCS-NP_2" />
                     <xs:element name="ClassificationInformation" type="nitf:classificationInfo" />
-                    <xs:element name="RESUserDefinedSubheaderLength" type="nitfc:BCS-NP" dfdl:length="4" dfdl:outputValueCalc="{
+                    <xs:element name="RESUserDefinedSubheaderLength" type="nitfc:BCS-NP_4" dfdl:outputValueCalc="{
                       if (fn:exists(../RESUserDefinedSubheaderFields)) then dfdl:valueLength(../RESUserDefinedSubheaderFields[1], 'bytes') else 0
                       }" />
                     <xs:element name="RESUserDefinedSubheaderFields" type="xs:hexBinary" minOccurs="0" dfdl:lengthKind="explicit" dfdl:length="{ ../RESUserDefinedSubheaderLength }" dfdl:occursCountKind="expression" dfdl:occursCount="{ if (../RESUserDefinedSubheaderLength eq 0) then 0 else 1 }" />
