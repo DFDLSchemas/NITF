@@ -102,7 +102,7 @@ schema projects.
         <dfdl:format lengthKind="explicit" textPadKind="none" textTrimKind="none" />
       </dfdl:defineFormat>
 
-      <dfdl:format ref="nitfGeneralFormat" />
+      <dfdl:format ref="nitfc:nitfGeneralFormat" />
 
     </xs:appinfo>
   </xs:annotation>
