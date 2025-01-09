@@ -778,7 +778,10 @@ The message root is 'NITF'.
 
   <xs:group name="PadOutputPixelCodeLeadingSpace">
     <xs:sequence>
-      <xs:element name="LeadingSpace" type="xs:int" dfdl:lengthKind="explicit" dfdl:length="{ if (../../../../Header/PixelJustification eq 'L') then 0 else (xs:int(fn:ceiling(../../PadOutputPixelCodeLength div 8.0) * 8) - ../../PadOutputPixelCodeLength) }" dfdl:lengthUnits="bits" dfdl:representation="binary" dfdl:outputValueCalc="{ 0 }"/>
+      <xs:element name="LeadingSpace" type="xs:string" dfdl:encoding="X-DFDL-BITS-MSBF" dfdl:lengthKind="explicit"
+          dfdl:length="{ if (../../../../Header/PixelJustification eq 'L') then 0 else (xs:int(fn:ceiling(../../PadOutputPixelCodeLength div 8.0) * 8) - ../../PadOutputPixelCodeLength) }"
+          dfdl:lengthUnits="characters" dfdl:representation="text" dfdl:truncateSpecifiedLengthString="yes"
+          dfdl:outputValueCalc="{ '00000000' }"/>
     </xs:sequence>
   </xs:group>
 
