@@ -89,7 +89,9 @@ in NITF, such as TaggedRecordExtensions and ImageData formats.
             <dfdl:setVariable ref="nitf:payloadSizeInBytes" value="{ PayloadLength }" />
           </xs:appinfo>
         </xs:annotation>
-        <xs:element ref="JFIF" dfdl:choiceBranchKey="C3 M3 C5 M5 I1" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }" />
+        <xs:element ref="JFIF" dfdl:choiceBranchKey="C3 M3 C5 M5 I1"
+          dfdl:lengthUnits="bytes" dfdl:lengthKind="explicit" dfdl:length="{ ../PayloadLength }"
+          dfdl:fillByte="%NUL;" />
         <xs:element name="JPEG2000" dfdl:choiceBranchKey="C8 M8" type="nitfc:hexBinaryOrBlob" />
         <xs:element name="BiLevel" dfdl:choiceBranchKey="C1 M1" type="nitfc:hexBinaryOrBlob" />
         <xs:element name="VectorQuantization" dfdl:choiceBranchKey="C4 M4" type="nitfc:hexBinaryOrBlob" />
